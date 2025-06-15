@@ -2,6 +2,13 @@
 import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Layout/Header';
 import Footer from '@/components/Layout/Footer';
+import ServicesHero from '@/components/Services/ServicesHero';
+import ServicesList from '@/components/Services/ServicesList';
+import WhyChooseUs from '@/components/Services/WhyChooseUs';
+import PricingSection from '@/components/Services/PricingSection';
+import ProcessSection from '@/components/Services/ProcessSection';
+import TestimonialsSection from '@/components/Services/TestimonialsSection';
+import ContactCTA from '@/components/Services/ContactCTA';
 
 const Services = () => {
   return (
@@ -15,17 +22,14 @@ const Services = () => {
 
       <div className="min-h-screen bg-white">
         <Header />
-        <main className="section-padding">
-          <div className="container-custom">
-            <div className="text-center animate-fade-in">
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                خدمات <span className="gradient-text">حرفه‌ای</span> ما
-              </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                در حال توسعه صفحه خدمات با جزئیات کامل...
-              </p>
-            </div>
-          </div>
+        <main>
+          <ServicesHero />
+          <ServicesList />
+          <WhyChooseUs />
+          <ProcessSection />
+          <PricingSection />
+          <TestimonialsSection />
+          <ContactCTA />
         </main>
         <Footer />
       </div>
