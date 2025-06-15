@@ -84,42 +84,47 @@ const MegaMenu = () => {
   return (
     <div className="relative">
       <button
-        className="flex items-center text-text-700 hover:text-primary-600 transition-colors duration-200 py-2"
+        className="flex items-center text-text-700 hover:text-primary-600 transition-colors duration-200 py-2 px-3 rounded-md hover:bg-primary-50"
         onMouseEnter={() => setIsOpen(true)}
         onMouseLeave={() => setIsOpen(false)}
+        aria-haspopup="true"
+        aria-expanded={isOpen}
       >
-        <span>خدمات</span>
-        <ChevronDown className="mr-1 h-4 w-4" />
+        <span className="font-medium">خدمات</span>
+        <ChevronDown className={`mr-1 h-4 w-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
 
       {isOpen && (
         <div
-          className="absolute top-full right-0 mt-1 w-screen max-w-6xl bg-white rounded-lg shadow-2xl border border-primary-100 py-8 z-50"
+          className="absolute top-full right-0 mt-2 w-screen max-w-7xl bg-white rounded-xl shadow-2xl border border-primary-100 py-8 z-50 animate-fade-in"
           onMouseEnter={() => setIsOpen(true)}
           onMouseLeave={() => setIsOpen(false)}
+          role="menu"
+          aria-label="خدمات عصر سئو"
         >
           <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-5 gap-8 px-8">
             {menuCategories.map((category, index) => (
               <div key={index} className="space-y-4">
                 <div className="flex items-center space-x-2 space-x-reverse">
-                  <span className="text-2xl">{category.icon}</span>
+                  <span className="text-2xl" role="img" aria-label={category.title}>{category.icon}</span>
                   <h3 className="text-lg font-bold text-text-900 border-b-2 border-primary-200 pb-2">
                     {category.title}
                   </h3>
                 </div>
-                <ul className="space-y-3">
+                <ul className="space-y-3" role="none">
                   {category.items.map((item, itemIndex) => (
-                    <li key={itemIndex}>
+                    <li key={itemIndex} role="none">
                       <Link
                         to={item.href}
-                        className="group block p-3 rounded-lg hover:bg-primary-50 transition-colors duration-200"
+                        className="group block p-3 rounded-lg hover:bg-primary-50 transition-all duration-200 hover:shadow-sm"
                         onClick={() => setIsOpen(false)}
+                        role="menuitem"
                       >
                         <div className="font-semibold text-text-800 group-hover:text-primary-600 transition-colors duration-200 mb-1">
                           {item.title}
                         </div>
                         {item.description && (
-                          <div className="text-sm text-text-600 group-hover:text-text-700">
+                          <div className="text-sm text-text-600 group-hover:text-text-700 leading-relaxed">
                             {item.description}
                           </div>
                         )}
@@ -131,18 +136,21 @@ const MegaMenu = () => {
             ))}
           </div>
           
-          {/* CTA Section */}
+          {/* Enhanced CTA Section */}
           <div className="mt-8 pt-6 border-t border-primary-100 px-8">
-            <div className="bg-gradient-to-r from-primary-500 to-secondary-500 rounded-xl p-6 text-white text-center">
-              <h4 className="text-xl font-bold mb-2">مشاوره رایگان</h4>
-              <p className="mb-4">با متخصصان ما تماس بگیرید و راهکار بهترین خدمات را دریافت کنید</p>
-              <Link
-                to="/contact"
-                className="inline-block bg-white text-primary-600 px-6 py-2 rounded-lg font-semibold hover:bg-primary-50 transition-colors duration-200"
-                onClick={() => setIsOpen(false)}
-              >
-                درخواست مشاوره
-              </Link>
+            <div className="bg-gradient-to-r from-primary-500 via-primary-600 to-secondary-500 rounded-xl p-6 text-white text-center relative overflow-hidden">
+              <div className="absolute inset-0 bg-black/10 rounded-xl"></div>
+              <div className="relative z-10">
+                <h4 className="text-xl font-bold mb-2">مشاوره رایگان دریافت کنید</h4>
+                <p className="mb-4 text-white/90">با متخصصان ما تماس بگیرید و راهکار بهترین خدمات را دریافت کنید</p>
+                <Link
+                  to="/contact"
+                  className="inline-block bg-white text-primary-600 px-8 py-3 rounded-lg font-semibold hover:bg-primary-50 transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5"
+                  onClick={() => setIsOpen(false)}
+                >
+                  درخواست مشاوره رایگان
+                </Link>
+              </div>
             </div>
           </div>
         </div>
