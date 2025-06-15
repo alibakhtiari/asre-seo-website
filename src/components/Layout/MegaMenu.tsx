@@ -44,11 +44,11 @@ const MegaMenu = () => {
 
       {isOpen && (
         <div
-          className="absolute top-full right-0 mt-2 w-screen max-w-4xl bg-white rounded-xl shadow-lg border border-gray-100 z-50"
+          className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-screen max-w-4xl bg-white rounded-xl shadow-lg border border-gray-100 z-50"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           style={{
-            transform: 'translateY(0)',
+            transform: 'translateX(-50%) translateY(0)',
             opacity: 1,
             transition: 'all 0.2s ease'
           }}
