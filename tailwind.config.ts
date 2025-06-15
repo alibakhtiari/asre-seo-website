@@ -23,6 +23,7 @@ export default {
 				'vazir': ['Vazirmatn', 'sans-serif'],
 			},
 			colors: {
+				// Shadcn UI colors
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -56,6 +57,75 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				
+				// New color system
+				text: {
+					50: 'rgb(var(--text-50))',
+					100: 'rgb(var(--text-100))',
+					200: 'rgb(var(--text-200))',
+					300: 'rgb(var(--text-300))',
+					400: 'rgb(var(--text-400))',
+					500: 'rgb(var(--text-500))',
+					600: 'rgb(var(--text-600))',
+					700: 'rgb(var(--text-700))',
+					800: 'rgb(var(--text-800))',
+					900: 'rgb(var(--text-900))',
+					950: 'rgb(var(--text-950))',
+				},
+				background: {
+					50: 'rgb(var(--background-50))',
+					100: 'rgb(var(--background-100))',
+					200: 'rgb(var(--background-200))',
+					300: 'rgb(var(--background-300))',
+					400: 'rgb(var(--background-400))',
+					500: 'rgb(var(--background-500))',
+					600: 'rgb(var(--background-600))',
+					700: 'rgb(var(--background-700))',
+					800: 'rgb(var(--background-800))',
+					900: 'rgb(var(--background-900))',
+					950: 'rgb(var(--background-950))',
+				},
+				primary: {
+					50: 'rgb(var(--primary-50))',
+					100: 'rgb(var(--primary-100))',
+					200: 'rgb(var(--primary-200))',
+					300: 'rgb(var(--primary-300))',
+					400: 'rgb(var(--primary-400))',
+					500: 'rgb(var(--primary-500))',
+					600: 'rgb(var(--primary-600))',
+					700: 'rgb(var(--primary-700))',
+					800: 'rgb(var(--primary-800))',
+					900: 'rgb(var(--primary-900))',
+					950: 'rgb(var(--primary-950))',
+				},
+				secondary: {
+					50: 'rgb(var(--secondary-50))',
+					100: 'rgb(var(--secondary-100))',
+					200: 'rgb(var(--secondary-200))',
+					300: 'rgb(var(--secondary-300))',
+					400: 'rgb(var(--secondary-400))',
+					500: 'rgb(var(--secondary-500))',
+					600: 'rgb(var(--secondary-600))',
+					700: 'rgb(var(--secondary-700))',
+					800: 'rgb(var(--secondary-800))',
+					900: 'rgb(var(--secondary-900))',
+					950: 'rgb(var(--secondary-950))',
+				},
+				accent: {
+					50: 'rgb(var(--accent-50))',
+					100: 'rgb(var(--accent-100))',
+					200: 'rgb(var(--accent-200))',
+					300: 'rgb(var(--accent-300))',
+					400: 'rgb(var(--accent-400))',
+					500: 'rgb(var(--accent-500))',
+					600: 'rgb(var(--accent-600))',
+					700: 'rgb(var(--accent-700))',
+					800: 'rgb(var(--accent-800))',
+					900: 'rgb(var(--accent-900))',
+					950: 'rgb(var(--accent-950))',
+				},
+
+				// Legacy colors for compatibility
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -65,30 +135,6 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				},
-				'asre-blue': {
-					50: '#f0f9ff',
-					100: '#e0f2fe',
-					200: '#bae6fd',
-					300: '#7dd3fc',
-					400: '#38bdf8',
-					500: '#0ea5e9',
-					600: '#0284c7',
-					700: '#0369a1',
-					800: '#075985',
-					900: '#0c4a6e',
-				},
-				'asre-green': {
-					50: '#f0fdf4',
-					100: '#dcfce7',
-					200: '#bbf7d0',
-					300: '#86efac',
-					400: '#4ade80',
-					500: '#22c55e',
-					600: '#16a34a',
-					700: '#15803d',
-					800: '#166534',
-					900: '#14532d',
 				}
 			},
 			borderRadius: {
@@ -140,6 +186,14 @@ export default {
 					'50%': {
 						transform: 'translateY(-20px)'
 					}
+				},
+				'glow': {
+					'0%, 100%': {
+						boxShadow: '0 0 20px rgba(var(--primary-500), 0.3)'
+					},
+					'50%': {
+						boxShadow: '0 0 40px rgba(var(--primary-500), 0.6)'
+					}
 				}
 			},
 			animation: {
@@ -147,7 +201,8 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.6s ease-out',
 				'slide-in-right': 'slide-in-right 0.6s ease-out',
-				'float': 'float 6s ease-in-out infinite'
+				'float': 'float 6s ease-in-out infinite',
+				'glow': 'glow 2s ease-in-out infinite'
 			}
 		}
 	},
