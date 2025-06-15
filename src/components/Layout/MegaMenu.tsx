@@ -79,7 +79,7 @@ const MegaMenu = () => {
       ]
     },
     {
-      title: 'هوش مصنوعی',
+      title: 'خدمات هوش مصنوعی',
       icon: '🤖',
       color: 'text-violet-600',
       items: [
@@ -87,7 +87,12 @@ const MegaMenu = () => {
         { title: 'تولید محتوا با AI', href: '/services/ai/auto-content-generation', isNew: true },
         { title: 'تحلیل رفتار کاربران', href: '/services/ai/user-behavior-analysis' },
         { title: 'سئو هوشمند', href: '/services/ai/smart-seo' },
-        { title: 'چت‌بات فارسی', href: '/services/ai/persian-chatbot' }
+        { title: 'چت‌بات فارسی', href: '/services/ai/persian-chatbot' },
+        { title: 'بهینه‌سازی نرخ تبدیل', href: '/services/ai/conversion-optimization' },
+        { title: 'شخصی‌سازی محتوا', href: '/services/ai/content-personalization' },
+        { title: 'مانیتورینگ برند', href: '/services/ai/brand-monitoring' },
+        { title: 'تولید ویدیو با AI', href: '/services/ai/ai-video-generation', isNew: true },
+        { title: 'مشاوره AI', href: '/services/ai/ai-consulting' }
       ]
     }
   ];
@@ -116,12 +121,6 @@ const MegaMenu = () => {
             transition: 'all 0.2s ease'
           }}
         >
-          {/* Header */}
-          <div className="px-6 py-4 border-b border-gray-100">
-            <h3 className="text-lg font-semibold text-text-900">خدمات عصر سئو</h3>
-            <p className="text-sm text-text-500 mt-1">راهکارهای جامع دیجیتال مارکتینگ</p>
-          </div>
-
           {/* Menu Grid - 4 Columns */}
           <div className="p-6">
             <div className="grid grid-cols-4 gap-6">
@@ -168,29 +167,6 @@ const MegaMenu = () => {
                   </ul>
                 </div>
               ))}
-            </div>
-
-            {/* Simple CTA */}
-            <div className="mt-6 pt-6 border-t border-gray-100">
-              <div className="text-center">
-                <p className="text-sm text-text-600 mb-3">مشاوره رایگان دریافت کنید</p>
-                <div className="flex gap-3 justify-center">
-                  <Link
-                    to="/contact"
-                    className="bg-primary-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary-700 transition-colors"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    تماس با ما
-                  </Link>
-                  <Link
-                    to="/services"
-                    className="border border-gray-300 text-text-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-50 transition-colors"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    همه خدمات
-                  </Link>
-                </div>
-              </div>
             </div>
           </div>
         </div>
