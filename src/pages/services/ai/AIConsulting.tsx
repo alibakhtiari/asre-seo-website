@@ -1,7 +1,7 @@
 
 import ServicePageTemplate from '@/components/Services/ServicePageTemplate';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { BrainCog, Lightbulb, FlowChart, Users, BadgeCheck } from 'lucide-react';
+import { BrainCog, Lightbulb, Workflow, Users, BadgeCheck } from 'lucide-react';
 
 const features = [
   {
@@ -15,7 +15,7 @@ const features = [
     description: 'از طراحی تا اجرایی‌سازی، همه مراحل پروژه هوش مصنوعی توسط تیم خبره پیگیری می‌شود.'
   },
   {
-    icon: <FlowChart className="h-6 w-6 text-green-700"/>,
+    icon: <Workflow className="h-6 w-6 text-green-700"/>,
     title: 'اتوماسیون هوشمند فرایندها',
     description: 'شناسایی و اتوماسیون فرایندهای قابل بهبود با هوش مصنوعی و یادگیری ماشین.'
   },
