@@ -5,9 +5,14 @@ import { HelmetProvider } from 'react-helmet-async';
 import './App.css';
 
 // Main Pages
+import Index from '@/pages/Index';
 import Services from '@/pages/Services';
 import SEOService from '@/pages/SEOService';
 import GoogleAdsService from '@/pages/GoogleAdsService';
+import Blog from '@/pages/Blog';
+import About from '@/pages/About';
+import Contact from '@/pages/Contact';
+import NotFound from '@/pages/NotFound';
 
 // SEO Services
 import WebsiteSEO from '@/pages/services/seo/WebsiteSEO';
@@ -57,10 +62,13 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Services />} />
+            <Route path="/" element={<Index />} />
             <Route path="/services" element={<Services />} />
             <Route path="/services/seo" element={<SEOService />} />
             <Route path="/services/google-ads" element={<GoogleAdsService />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
 
             {/* SEO Services */}
             <Route path="/services/seo/website-seo" element={<WebsiteSEO />} />
@@ -101,6 +109,9 @@ function App() {
             <Route path="/services/ai/brand-monitoring" element={<BrandMonitoring />} />
             <Route path="/services/ai/ai-video-generation" element={<AIVideoGeneration />} />
             <Route path="/services/ai/ai-consulting" element={<AIConsulting />} />
+            
+            {/* Catch all route */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
       </QueryClientProvider>
