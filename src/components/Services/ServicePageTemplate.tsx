@@ -126,10 +126,7 @@ const ServicePageTemplate = ({
         <Header />
         <main>
           {/* Minimal Hero Section */}
-          <section className="relative bg-gradient-to-br from-slate-50 to-blue-50/30 border-b border-slate-100">
-            <div className="container-custom py-16 md:py-24">
-              {/* Breadcrumb */}
-              <nav className="mb-8" aria-label="مسیر">
+              <nav className="m-4 pt-2" aria-label="مسیر">
                 <ol className="flex items-center space-x-2 space-x-reverse text-sm text-slate-600">
                   <li>
                     <Link to="/" className="hover:text-slate-900 transition-colors">
@@ -146,6 +143,9 @@ const ServicePageTemplate = ({
                   <li className="text-slate-900 font-medium">{heroTitle}</li>
                 </ol>
               </nav>
+          <section className="flex justify-center relative bg-gradient-to-br from-slate-50 to-blue-50/30 border-b border-slate-100">
+            <div className="container-custom py-8 md:py-12">
+              {/* Breadcrumb */}
 
               <div className="max-w-4xl">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
@@ -156,7 +156,7 @@ const ServicePageTemplate = ({
                 </p>
                 
                 {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 mb-16">
+                <div className="flex flex-col sm:flex-row gap-4 mb-16 justify-center">
                   <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 shadow-sm">
                     <Phone className="ml-2 h-5 w-5" />
                     مشاوره رایگان
@@ -168,20 +168,20 @@ const ServicePageTemplate = ({
                 </div>
 
                 {/* Trust Indicators - Minimal */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center sm:text-right">
-                  <div className="flex items-center justify-center sm:justify-start gap-3 text-slate-600">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center sm:text-right bg-slate-100 rounded-3xl p-4">
+                  <div className="flex items-center justify-center text-slate-600">
                     <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
                       <Star className="h-5 w-5 text-blue-600" />
                     </div>
                     <span className="font-medium">+۵۰۰ پروژه موفق</span>
                   </div>
-                  <div className="flex items-center justify-center sm:justify-start gap-3 text-slate-600">
+                  <div className="flex items-center justify-center text-slate-600">
                     <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
                       <CheckCircle className="h-5 w-5 text-green-600" />
                     </div>
                     <span className="font-medium">ضمانت کیفیت</span>
                   </div>
-                  <div className="flex items-center justify-center sm:justify-start gap-3 text-slate-600">
+                  <div className="flex items-center justify-center text-slate-600">
                     <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
                       <Clock className="h-5 w-5 text-purple-600" />
                     </div>
