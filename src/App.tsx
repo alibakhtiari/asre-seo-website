@@ -10,9 +10,11 @@ import Services from '@/pages/Services';
 import SEOService from '@/pages/SEOService';
 import GoogleAdsService from '@/pages/GoogleAdsService';
 import Blog from '@/pages/Blog';
+import BlogPost from '@/pages/BlogPost';
 import About from '@/pages/About';
 import Contact from '@/pages/Contact';
 import NotFound from '@/pages/NotFound';
+import FloatingActions from '@/components/FloatingActions';
 
 // SEO Services
 import WebsiteSEO from '@/pages/services/seo/WebsiteSEO';
@@ -67,6 +69,7 @@ function App() {
             <Route path="/services/seo" element={<SEOService />} />
             <Route path="/services/google-ads" element={<GoogleAdsService />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
 
