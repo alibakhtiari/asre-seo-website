@@ -116,6 +116,7 @@ function App() {
             {/* Catch all route */}
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <FloatingActions />
         </BrowserRouter>
       </QueryClientProvider>
     </HelmetProvider>
