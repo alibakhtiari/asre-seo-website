@@ -10,14 +10,14 @@ import useBlogPosts, { BlogPost } from '@/hooks/useBlogPosts';
 
 const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
-  const { getPostBySlug } = useBlogPosts();
+  const { getPostBySlug, loading: postsLoading } = useBlogPosts();
   const [post, setPost] = useState<BlogPost | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const loadPost = async () => {
-      if (!slug) return;
-      
+      if (!slug || postsLoading) return;
+
       setLoading(true);
       const postData = await getPostBySlug(slug);
       setPost(postData);
@@ -25,9 +25,9 @@ const BlogPostPage = () => {
     };
 
     loadPost();
-  }, [slug, getPostBySlug]);
+  }, [slug, getPostBySlug, postsLoading]);
 
-  if (loading) {
+  if (loading || postsLoading) {
     return (
       <div className="min-h-screen bg-white">
         <Header />
