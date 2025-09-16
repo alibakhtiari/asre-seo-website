@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 export interface BlogPost {
   title: string;
@@ -77,7 +77,7 @@ const useBlogPosts = () => {
     loadPosts();
   }, []);
 
-  const getPostBySlug = async (slug: string): Promise<BlogPost | null> => {
+  const getPostBySlug = useCallback(async (slug: string): Promise<BlogPost | null> => {
     try {
       // In a real app, this would fetch the MD file content
       const response = await fetch(`/blog/${slug}.md`);
@@ -143,7 +143,7 @@ const useBlogPosts = () => {
       console.error('Error loading post:', error);
       return null;
     }
-  };
+  }, [posts]);
 
   return {
     posts,
