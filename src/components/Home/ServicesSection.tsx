@@ -36,7 +36,7 @@ const ServicesSection = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             خدمات <span className="gradient-text">حرفه‌ای</span> ما
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-800 max-w-3xl mx-auto leading-relaxed">
             با استفاده از جدیدترین تکنولوژی‌ها و روش‌های بازاریابی، کسب‌وکار شما را به سطح بعدی می‌بریم
           </p>
         </div>
@@ -56,14 +56,14 @@ const ServicesSection = () => {
                 <CardTitle className="text-xl font-bold text-gray-900 mb-2">
                   {service.title}
                 </CardTitle>
-                <CardDescription className="text-gray-600 leading-relaxed">
+                <CardDescription className="text-gray-800 leading-relaxed">
                   {service.description}
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3 mb-6">
                   {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-gray-700">
+                    <li key={featureIndex} className="flex items-center text-gray-800">
                       <div className="w-2 h-2 bg-gradient-to-r from-asre-blue-500 to-asre-green-500 rounded-full ml-3"></div>
                       {feature}
                     </li>
