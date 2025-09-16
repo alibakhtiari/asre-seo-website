@@ -1,16 +1,17 @@
 import { useState, useEffect, useCallback } from 'react';
 
 export interface BlogPost {
+  id: number;
   title: string;
   excerpt: string;
-  category: string;
   author: string;
   date: string;
   readTime: string;
-  image: string;
-  featured: boolean;
   tags: string[];
+  category: string;
+  image: string;
   slug: string;
+  featured?: boolean;
   content?: string;
   keyTakeaways?: string[];
   tableOfContents?: { title: string; id: string; level: number }[];
@@ -19,40 +20,41 @@ export interface BlogPost {
 
 const BLOG_POSTS: BlogPost[] = [
   {
-    title: 'راهنمای کامل سئو برای مبتدیان ۲۰۲۴',
-    excerpt: 'یادگیری اصول اولیه سئو و بهینه‌سازی وب‌سایت برای موتورهای جستجو',
-    category: 'آموزش سئو',
-    author: 'تیم عصر سئو',
-    date: '2024-01-15',
-    readTime: '۱۰ دقیقه',
-    image: '/placeholder.svg',
-    featured: true,
-    tags: ['سئو', 'بهینه‌سازی', 'موتورهای جستجو', 'آموزش'],
-    slug: 'seo-guide-2024'
+    id: 1,
+    title: "راهنمای کامل سئو تکنیکال 2024",
+    excerpt: "آموزش جامع سئو تکنیکال برای بهبود رتبه‌بندی وب‌سایت در گوگل",
+    author: "تیم عصر سئو",
+    date: "2024-01-15",
+    readTime: "15 دقیقه خواندن",
+    tags: ["سئو تکنیکال", "بهینه‌سازی", "گوگل"],
+    category: "آموزش سئو",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2015&q=80",
+    slug: "seo-guide-2024",
+    featured: true
   },
   {
-    title: 'نحوه افزایش ترافیک وب‌سایت با تبلیغات گوگل',
-    excerpt: 'استراتژی‌های موثر برای راه‌اندازی کمپین‌های تبلیغاتی موفق در گوگل ادز',
-    category: 'گوگل ادز',
-    author: 'احمد محمدی',
-    date: '2024-01-12',
-    readTime: '۸ دقیقه',
-    image: '/placeholder.svg',
-    featured: false,
-    tags: ['گوگل ادز', 'تبلیغات', 'PPC', 'بازاریابی دیجیتال'],
-    slug: 'google-ads-guide-2024'
+    id: 2,
+    title: "راهنمای گوگل ادز 2024",
+    excerpt: "نحوه راه‌اندازی و بهینه‌سازی کمپین‌های تبلیغاتی گوگل ادز",
+    author: "علی احمدی",
+    date: "2024-01-10",
+    readTime: "12 دقیقه خواندن",
+    tags: ["گوگل ادز", "تبلیغات", "بازاریابی"],
+    category: "تبلیغات",
+    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2039&q=80",
+    slug: "google-ads-guide-2024"
   },
   {
-    title: 'ترندهای دیجیتال مارکتینگ در سال ۲۰۲۴',
-    excerpt: 'بررسی آخرین ترندها و روش‌های نوین بازاریابی دیجیتال',
-    category: 'دیجیتال مارکتینگ',
-    author: 'سارا احمدی',
-    date: '2024-01-10',
-    readTime: '۱۲ دقیقه',
-    image: '/placeholder.svg',
-    featured: false,
-    tags: ['دیجیتال مارکتینگ', 'ترندها', 'هوش مصنوعی', 'شخصی‌سازی'],
-    slug: 'digital-marketing-trends-2024'
+    id: 3,
+    title: "ترندهای دیجیتال مارکتینگ 2024",
+    excerpt: "جدیدترین روندها و تکنیک‌های دیجیتال مارکتینگ در سال 2024",
+    author: "سارا کریمی",
+    date: "2024-01-05",
+    readTime: "10 دقیقه خواندن",
+    tags: ["دیجیتال مارکتینگ", "ترندها", "استراتژی"],
+    category: "بازاریابی",
+    image: "https://images.unsplash.com/photo-1553895501-af9e282e7fc1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    slug: "digital-marketing-trends-2024"
   }
 ];
 
@@ -62,60 +64,68 @@ const useBlogPosts = () => {
 
   useEffect(() => {
     // Simulate API call
-    const loadPosts = async () => {
-      try {
-        // In a real app, this would fetch from an API or read MD files
-        await new Promise(resolve => setTimeout(resolve, 500));
-        setPosts(BLOG_POSTS);
-      } catch (error) {
-        console.error('Error loading blog posts:', error);
-      } finally {
-        setLoading(false);
-      }
+    const fetchPosts = async () => {
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      setPosts(BLOG_POSTS);
+      setLoading(false);
     };
 
-    loadPosts();
+    fetchPosts();
   }, []);
 
-  const getPostBySlug = useCallback(async (slug: string): Promise<BlogPost | null> => {
+  const calculateReadingTime = (content: string) => {
+    const wordsPerMinute = 200; // Persian reading speed
+    const words = content.trim().split(/\s+/).length;
+    const time = Math.ceil(words / wordsPerMinute);
+    return `${time} دقیقه خواندن`;
+  };
+
+  const getPostBySlug = useCallback(async (slug: string) => {
+    const post = posts.find(p => p.slug === slug);
+    if (!post) return null;
+
     try {
-      // In a real app, this would fetch the MD file content
       const response = await fetch(`/blog/${slug}.md`);
-      if (!response.ok) return null;
+      if (!response.ok) return post;
       
       const mdContent = await response.text();
-      const post = posts.find(p => p.slug === slug);
-      
-      if (!post) return null;
 
       // Parse frontmatter and content
       const frontmatterMatch = mdContent.match(/^---\n(.*?)\n---\n(.*)$/s);
       if (!frontmatterMatch) return post;
 
-      const content = frontmatterMatch[2];
+      let content = frontmatterMatch[2];
       
-      // Extract key takeaways
+      // Extract key takeaways and remove from content
       const keyTakeawaysMatch = content.match(/## نکات کلیدی\n\n(.*?)\n\n##/s);
       const keyTakeaways = keyTakeawaysMatch 
         ? keyTakeawaysMatch[1].split('\n').filter(line => line.startsWith('- ')).map(line => line.substring(2).trim())
         : [];
+      
+      // Remove key takeaways section from content
+      if (keyTakeawaysMatch) {
+        content = content.replace(/## نکات کلیدی\n\n.*?\n\n##/s, '##');
+      }
 
-      // Extract table of contents
+      // Extract table of contents and remove from content
       const headingRegex = /^(#{1,6})\s+(.+?)(?:\s+\{#([^}]+)\})?$/gm;
       const tableOfContents: { title: string; id: string; level: number }[] = [];
       let match;
+      
+      // Reset regex for fresh start
+      headingRegex.lastIndex = 0;
       
       while ((match = headingRegex.exec(content)) !== null) {
         const level = match[1].length;
         const title = match[2].trim();
         const id = match[3] || title.toLowerCase().replace(/\s+/g, '-');
         
-        if (level >= 2) {
+        if (level >= 2 && title !== 'نکات کلیدی' && title !== 'سوالات متداول') {
           tableOfContents.push({ title, id, level });
         }
       }
 
-      // Extract FAQs
+      // Extract FAQs and remove from content
       const faqsMatch = content.match(/## سوالات متداول\n\n(.*?)(?:\n##|$)/s);
       const faqs: { question: string; answer: string }[] = [];
       
@@ -130,14 +140,21 @@ const useBlogPosts = () => {
             answer: faqMatch[2].trim()
           });
         }
+        
+        // Remove FAQs section from content
+        content = content.replace(/## سوالات متداول\n\n.*$/s, '');
       }
+
+      // Calculate reading time
+      const readTime = calculateReadingTime(content);
 
       return {
         ...post,
-        content,
+        content: content.trim(),
         keyTakeaways,
         tableOfContents,
-        faqs
+        faqs,
+        readTime
       };
     } catch (error) {
       console.error('Error loading post:', error);

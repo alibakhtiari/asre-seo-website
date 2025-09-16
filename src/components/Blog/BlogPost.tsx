@@ -81,7 +81,7 @@ const BlogPostComponent = ({ post }: BlogPostProps) => {
         )}
       </Helmet>
 
-      <article className="max-w-4xl mx-auto">
+      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <header className="mb-8">
           <div className="flex items-center gap-4 mb-6">
@@ -99,8 +99,8 @@ const BlogPostComponent = ({ post }: BlogPostProps) => {
             {post.title}
           </h1>
           
-          <div className="flex items-center justify-between mb-6 text-sm text-gray-500">
-            <div className="flex items-center gap-4">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 text-sm text-gray-500 gap-4">
+            <div className="flex flex-wrap items-center gap-4">
               <div className="flex items-center gap-1">
                 <User className="h-4 w-4" />
                 {post.author}
@@ -113,13 +113,24 @@ const BlogPostComponent = ({ post }: BlogPostProps) => {
             </div>
             
             <div className="flex gap-2">
-              <Button variant="outline" size="sm">
+              <Button 
+                variant="outline" 
+                size="sm"
+                onClick={() => {
+                  if (navigator.share) {
+                    navigator.share({
+                      title: post.title,
+                      text: post.excerpt,
+                      url: window.location.href
+                    });
+                  } else {
+                    navigator.clipboard.writeText(window.location.href);
+                    // You could add a toast notification here
+                  }
+                }}
+              >
                 <Share2 className="h-4 w-4 ml-2" />
                 اشتراک‌گذاری
-              </Button>
-              <Button variant="outline" size="sm">
-                <Bookmark className="h-4 w-4 ml-2" />
-                ذخیره
               </Button>
             </div>
           </div>
@@ -189,7 +200,7 @@ const BlogPostComponent = ({ post }: BlogPostProps) => {
           </Card>
         )}
 
-        <div className="grid lg:grid-cols-1 gap-8">
+        <div className="grid grid-cols-1 gap-8">
 
           {/* Article Content */}
           <div className="prose prose-lg max-w-none mb-12 prose-headings:text-gray-900 prose-h2:text-2xl prose-h3:text-xl prose-p:text-gray-700 prose-p:leading-relaxed prose-strong:text-gray-900 prose-ul:text-gray-700 prose-ol:text-gray-700">

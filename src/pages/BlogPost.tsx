@@ -87,14 +87,9 @@ const BlogPostPage = () => {
             </div>
           </nav>
 
-          <div className="grid lg:grid-cols-4 gap-8">
-            <div className="lg:col-span-3">
-              <BlogPostComponent post={post} />
-            </div>
-            <div className="lg:col-span-1">
-              <BlogSidebar />
-            </div>
-          </div>
+        <div className="max-w-4xl mx-auto">
+          <BlogPostComponent post={post} />
+        </div>
         </div>
       </main>
       <Footer />
