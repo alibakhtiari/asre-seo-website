@@ -1,8 +1,10 @@
 
+'use client'
+
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import MegaMenu from './MegaMenu';
 
 const Header = () => {
@@ -21,7 +23,7 @@ const Header = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
           {/* Enhanced Logo */}
-          <Link to="/" className="flex items-center space-x-2 space-x-reverse group">
+          <Link href="/" className="flex items-center space-x-2 space-x-reverse group">
             <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center group-hover:shadow-lg transition-shadow duration-200">
               <span className="text-white font-bold text-lg">ع</span>
             </div>
@@ -37,7 +39,7 @@ const Header = () => {
               index === 0 ? (
                 <Link
                   key={index}
-                  to={item.href}
+                  href={item.href}
                   className="text-text-700 hover:text-primary-600 transition-colors duration-200 font-medium"
                 >
                   {item.title}
@@ -47,7 +49,7 @@ const Header = () => {
               ) : (
                 <Link
                   key={index}
-                  to={item.href}
+                  href={item.href}
                   className="text-text-700 hover:text-primary-600 transition-colors duration-200 font-medium"
                 >
                   {item.title}
@@ -84,7 +86,7 @@ const Header = () => {
               {menuItems.map((item, index) => (
                 <Link
                   key={index}
-                  to={item.href}
+                  href={item.href}
                   className="block text-text-700 hover:text-primary-600 transition-colors duration-200 py-2 px-4 rounded-md hover:bg-primary-50"
                   onClick={() => setIsMenuOpen(false)}
                 >

@@ -1,4 +1,6 @@
 
+'use client'
+
 import { useState, useRef, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 import MenuCategory from './MegaMenu/MenuCategory';

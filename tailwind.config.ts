@@ -8,6 +8,9 @@ export default {
 		"./components/**/*.{ts,tsx}",
 		"./app/**/*.{ts,tsx}",
 		"./src/**/*.{ts,tsx}",
+		"./src/app/**/*.{ts,tsx}",
+		"./src/components/**/*.{ts,tsx}",
+		"./src/pages/**/*.{ts,tsx}",
 	],
 	prefix: "",
 	theme: {
@@ -57,8 +60,8 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				
-				// New color system
+
+				// Extended color system
 				text: {
 					50: 'rgb(var(--text-50))',
 					100: 'rgb(var(--text-100))',
@@ -72,7 +75,7 @@ export default {
 					900: 'rgb(var(--text-900))',
 					950: 'rgb(var(--text-950))',
 				},
-				background: {
+				brand: {
 					50: 'rgb(var(--background-50))',
 					100: 'rgb(var(--background-100))',
 					200: 'rgb(var(--background-200))',
@@ -85,7 +88,7 @@ export default {
 					900: 'rgb(var(--background-900))',
 					950: 'rgb(var(--background-950))',
 				},
-				primary: {
+				brand_primary: {
 					50: 'rgb(var(--primary-50))',
 					100: 'rgb(var(--primary-100))',
 					200: 'rgb(var(--primary-200))',
@@ -98,7 +101,7 @@ export default {
 					900: 'rgb(var(--primary-900))',
 					950: 'rgb(var(--primary-950))',
 				},
-				secondary: {
+				brand_secondary: {
 					50: 'rgb(var(--secondary-50))',
 					100: 'rgb(var(--secondary-100))',
 					200: 'rgb(var(--secondary-200))',
@@ -111,7 +114,7 @@ export default {
 					900: 'rgb(var(--secondary-900))',
 					950: 'rgb(var(--secondary-950))',
 				},
-				accent: {
+				brand_accent: {
 					50: 'rgb(var(--accent-50))',
 					100: 'rgb(var(--accent-100))',
 					200: 'rgb(var(--accent-200))',
@@ -206,5 +209,8 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [
+		// eslint-disable-next-line @typescript-eslint/no-var-requires
+		require("tailwindcss-animate")
+	],
 } satisfies Config;

@@ -1,6 +1,8 @@
+'use client'
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { 
   Search, 
   Globe, 
@@ -127,7 +129,7 @@ const AllServicesSection = () => {
               {/* Services Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {category.services.map((service, serviceIndex) => (
-                  <Link key={serviceIndex} to={service.href} className="group">
+                  <Link key={serviceIndex} href={service.href} className="group">
                     <Card className="service-card hover-lift hover-glow h-full relative overflow-hidden">
                       {/* New/Popular Badge */}
                       {(service.isNew || service.isPopular) && (

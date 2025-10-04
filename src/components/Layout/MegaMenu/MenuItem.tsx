@@ -1,6 +1,6 @@
 
 import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { MenuItem as MenuItemType } from './types';
 
 interface MenuItemProps {
@@ -12,7 +12,7 @@ const MenuItem = ({ item, onClose }: MenuItemProps) => {
   return (
     <li>
       <Link
-        to={item.href}
+        href={item.href}
         className="group flex items-center justify-between p-2 rounded-lg hover:bg-gray-50 transition-colors"
         onClick={onClose}
       >

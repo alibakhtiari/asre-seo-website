@@ -1,5 +1,5 @@
 
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Mail } from 'lucide-react';
 
 const Footer = () => {
@@ -60,7 +60,7 @@ const Footer = () => {
               {footerLinks.services.map((link, index) => (
                 <li key={index}>
                   <Link
-                    to={link.href}
+                    href={link.href}
                     className="text-gray-300 hover:text-white transition-colors duration-200"
                   >
                     {link.title}
@@ -77,7 +77,7 @@ const Footer = () => {
               {footerLinks.company.map((link, index) => (
                 <li key={index}>
                   <Link
-                    to={link.href}
+                    href={link.href}
                     className="text-gray-300 hover:text-white transition-colors duration-200"
                   >
                     {link.title}
@@ -94,7 +94,7 @@ const Footer = () => {
               {footerLinks.support.map((link, index) => (
                 <li key={index}>
                   <Link
-                    to={link.href}
+                    href={link.href}
                     className="text-gray-300 hover:text-white transition-colors duration-200"
                   >
                     {link.title}
@@ -112,13 +112,13 @@ const Footer = () => {
               © {currentYear} عصر سئو. تمامی حقوق محفوظ است.
             </p>
             <div className="flex items-center space-x-6 space-x-reverse text-sm text-gray-400">
-              <Link to="/privacy" className="hover:text-white transition-colors">
+              <Link href="/privacy" className="hover:text-white transition-colors">
                 حریم خصوصی
               </Link>
-              <Link to="/terms" className="hover:text-white transition-colors">
+              <Link href="/terms" className="hover:text-white transition-colors">
                 قوانین و مقررات
               </Link>
-              <Link to="/sitemap" className="hover:text-white transition-colors">
+              <Link href="/sitemap" className="hover:text-white transition-colors">
                 نقشه سایت
               </Link>
             </div>
