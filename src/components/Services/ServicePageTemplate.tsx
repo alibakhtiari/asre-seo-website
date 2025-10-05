@@ -3,7 +3,7 @@ import Header from '@/components/Layout/Header';
 import Footer from '@/components/Layout/Footer';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Phone, Mail, Star, CheckCircle, Clock } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 interface ServicePageTemplateProps {
   title: string;
@@ -88,13 +88,13 @@ const ServicePageTemplate = ({
               <nav className="m-4 pt-2" aria-label="مسیر">
                 <ol className="flex items-center space-x-2 space-x-reverse text-sm text-slate-600">
                   <li>
-                    <Link to="/" className="hover:text-slate-900 transition-colors">
+                    <Link href="/" className="hover:text-slate-900 transition-colors">
                       خانه
                     </Link>
                   </li>
                   <li className="text-slate-400">/</li>
                   <li>
-                    <Link to="/services" className="hover:text-slate-900 transition-colors">
+                    <Link href="/services" className="hover:text-slate-900 transition-colors">
                       خدمات
                     </Link>
                   </li>
@@ -171,13 +171,13 @@ const ServicePageTemplate = ({
                     برای اطلاعات بیشتر و مشاوره رایگان با ما تماس بگیرید.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Link to="/contact">
+                    <Link href="/contact">
                       <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8">
                         تماس با ما
                         <ArrowLeft className="ml-2 h-5 w-5" />
                       </Button>
                     </Link>
-                    <Link to="/services">
+                    <Link href="/services">
                       <Button variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-50 px-8">
                         مشاهده سایر خدمات
                       </Button>

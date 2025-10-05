@@ -1,9 +1,11 @@
 
+'use client'
+
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Clock, User, ArrowLeft } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import useBlogPosts from '@/hooks/useBlogPosts';
 
 const BlogGrid = () => {
@@ -64,7 +66,7 @@ const BlogGrid = () => {
                       </Badge>
                     )}
                   </div>
-                  <Link to={`/blog/${post.slug}`}>
+                  <Link href={`/blog/${post.slug}`}>
                     <h3 className="text-xl font-bold text-gray-900 mb-3 hover:text-primary transition-colors">
                       {post.title}
                     </h3>
@@ -86,7 +88,7 @@ const BlogGrid = () => {
                       </div>
                       <span>{new Date(post.date).toLocaleDateString('fa-IR')}</span>
                     </div>
-                    <Link to={`/blog/${post.slug}`}>
+                    <Link href={`/blog/${post.slug}`}>
                       <Button variant="ghost" className="text-primary hover:text-primary/80">
                         ادامه مطلب
                         <ArrowLeft className="h-4 w-4 mr-2" />

@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import './globals.css'
+import FloatingActions from '@/components/FloatingActions'
 
 const vazirMatn = localFont({
   src: [
@@ -15,6 +17,8 @@ const vazirMatn = localFont({
   ],
   display: 'swap',
 })
+
+const queryClient = new QueryClient()
 
 export const metadata: Metadata = {
   title: 'عصر سئو | بهترین خدمات دیجیتال مارکتینگ، سئو و هوش مصنوعی در ایران',
@@ -88,7 +92,10 @@ export default function RootLayout({
   return (
     <html lang="fa" dir="rtl">
       <body className={`${vazirMatn.className} antialiased`}>
-        {children}
+        <QueryClientProvider client={queryClient}>
+          {children}
+          <FloatingActions />
+        </QueryClientProvider>
       </body>
     </html>
   )
