@@ -1,5 +1,4 @@
 
-import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Layout/Header';
 import Footer from '@/components/Layout/Footer';
 import ServicesHero from '@/components/Services/ServicesHero';
@@ -76,49 +75,6 @@ const Services = () => {
 
   return (
     <>
-      <Helmet>
-        <title>خدمات دیجیتال مارکتینگ و سئو | عصر سئو - AsreSEO</title>
-        <meta 
-          name="description" 
-          content="خدمات حرفه‌ای سئو، تبلیغات گوگل ادز، دیجیتال مارکتینگ، طراحی وب‌سایت و هوش مصنوعی. با تیم متخصص عصر سئو کسب‌وکار خود را به قله موفقیت برسانید. مشاوره رایگان ☎️ ۰۲۱-۱۲۳۴۵۶۷۸" 
-        />
-        <meta 
-          name="keywords" 
-          content="خدمات سئو, تبلیغات گوگل, دیجیتال مارکتینگ, طراحی وب‌سایت, سئو تکنیکال, بهینه‌سازی سایت, Google Ads, هوش مصنوعی, محتوا سازی, لینک سازی" 
-        />
-        <link rel="canonical" href="https://asreseo.com/services" />
-        
-        {/* Open Graph Tags */}
-        <meta property="og:title" content="خدمات دیجیتال مارکتینگ و سئو | عصر سئو" />
-        <meta property="og:description" content="خدمات حرفه‌ای سئو، تبلیغات گوگل، دیجیتال مارکتینگ و طراحی وب‌سایت با تیم متخصص عصر سئو" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://asreseo.com/services" />
-        <meta property="og:image" content="https://asreseo.com/og-services.jpg" />
-        <meta property="og:locale" content="fa_IR" />
-        <meta property="og:site_name" content="عصر سئو" />
-        
-        {/* Twitter Cards */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="خدمات دیجیتال مارکتینگ و سئو | عصر سئو" />
-        <meta name="twitter:description" content="خدمات حرفه‌ای سئو، تبلیغات گوگل، دیجیتال مارکتینگ و طراحی وب‌سایت" />
-        <meta name="twitter:image" content="https://asreseo.com/twitter-services.jpg" />
-        
-        {/* Additional SEO Tags */}
-        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-        <meta name="author" content="عصر سئو" />
-        <meta name="language" content="Persian" />
-        <meta name="geo.region" content="IR" />
-        <meta name="geo.placename" content="Tehran" />
-        
-        {/* Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify(structuredData)}
-        </script>
-        
-        {/* Preconnect for Performance */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      </Helmet>
 
       <div className="min-h-screen bg-white">
         <Header />

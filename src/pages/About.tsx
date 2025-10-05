@@ -1,18 +1,19 @@
 
-import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Layout/Header';
 import Footer from '@/components/Layout/Footer';
+
+export const metadata = {
+  title: 'درباره ما | عصر سئو',
+  description: 'آشنایی با تیم متخصص عصر سئو و تجربه چندین ساله ما در زمینه دیجیتال مارکتینگ، سئو و طراحی وب‌سایت.',
+  keywords: 'درباره عصر سئو, تیم متخصص سئو, تجربه دیجیتال مارکتینگ',
+  alternates: {
+    canonical: 'https://asreseo.com/about',
+  },
+};
 
 const About = () => {
   return (
     <>
-      <Helmet>
-        <title>درباره ما | عصر سئو</title>
-        <meta name="description" content="آشنایی با تیم متخصص عصر سئو و تجربه چندین ساله ما در زمینه دیجیتال مارکتینگ، سئو و طراحی وب‌سایت." />
-        <meta name="keywords" content="درباره عصر سئو, تیم متخصص سئو, تجربه دیجیتال مارکتینگ" />
-        <link rel="canonical" href="https://asreseo.com/about" />
-      </Helmet>
-
       <div className="min-h-screen bg-white">
         <Header />
         <main className="section-padding">

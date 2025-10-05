@@ -2,8 +2,6 @@
 import React, { Suspense } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
-import { AnimatePresence, motion } from 'framer-motion';
 import './App.css';
 
 // Main Pages
@@ -60,39 +58,11 @@ const AIConsulting = React.lazy(() => import('@/pages/services/ai/AIConsulting')
 
 const queryClient = new QueryClient();
 
-const pageVariants = {
-  initial: {
-    opacity: 0,
-    y: 20,
-  },
-  in: {
-    opacity: 1,
-    y: 0,
-  },
-  out: {
-    opacity: 0,
-    y: -20,
-  },
-};
-
-const pageTransition = {
-  duration: 0.4,
-};
-
 function AnimatedRoutes() {
   const location = useLocation();
 
   return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        key={location.pathname}
-        initial="initial"
-        animate="in"
-        exit="out"
-        variants={pageVariants}
-        transition={pageTransition}
-        className="w-full"
-      >
+    <div key={location.pathname} className="w-full animate-fade-in">
         <Routes location={location}>
               <Route path="/" element={<Index />} />
               <Route path="/services" element={<Services />} />
@@ -146,23 +116,20 @@ function AnimatedRoutes() {
               {/* Catch all route */}
               <Route path="*" element={<NotFound />} />
         </Routes>
-      </motion.div>
-    </AnimatePresence>
+    </div>
   );
 }
 
 function App() {
   return (
-    <HelmetProvider>
-      <QueryClientProvider client={queryClient}>
-        <BrowserRouter>
-          <Suspense fallback={<div>Loading...</div>}>
-            <AnimatedRoutes />
-          </Suspense>
-          <FloatingActions />
-        </BrowserRouter>
-      </QueryClientProvider>
-    </HelmetProvider>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <Suspense fallback={<div>Loading...</div>}>
+          <AnimatedRoutes />
+        </Suspense>
+        <FloatingActions />
+      </BrowserRouter>
+    </QueryClientProvider>
   );
 }
 

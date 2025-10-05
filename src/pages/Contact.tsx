@@ -1,5 +1,4 @@
 
-import { Helmet } from 'react-helmet-async';
 import { useState } from 'react';
 import Header from '@/components/Layout/Header';
 import Footer from '@/components/Layout/Footer';
@@ -48,15 +47,7 @@ const Contact = () => {
   };
 
   return (
-    <>
-      <Helmet>
-        <title>تماس با ما | عصر سئو</title>
-        <meta name="description" content="با تیم متخصص عصر سئو در تماس باشید. مشاوره رایگان دریافت کنید و پروژه دیجیتال مارکتینگ خود را شروع کنید." />
-        <meta name="keywords" content="تماس با عصر سئو, مشاوره رایگان سئو, ارتباط با متخصص دیجیتال مارکتینگ" />
-        <link rel="canonical" href="https://asreseo.com/contact" />
-      </Helmet>
-
-      <div className="min-h-screen bg-gradient-to-br from-background-50 to-background-100">
+    <div className="min-h-screen bg-gradient-to-br from-background-50 to-background-100">
         <Header />
         <main className="section-padding">
           {/* Hero Section */}

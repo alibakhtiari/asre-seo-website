@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
@@ -49,39 +48,7 @@ const BlogPostComponent = ({ post }: BlogPostProps) => {
   };
 
   return (
-    <>
-      <Helmet>
-        <title>{post.title} | وبلاگ عصر سئو</title>
-        <meta name="description" content={post.excerpt} />
-        <meta name="keywords" content={post.tags.join(', ')} />
-        <meta name="author" content={post.author} />
-        <link rel="canonical" href={`https://asreseo.com/blog/${post.slug}`} />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content={post.title} />
-        <meta property="og:description" content={post.excerpt} />
-        <meta property="og:image" content={post.image} />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://asreseo.com/blog/${post.slug}`} />
-        
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={post.title} />
-        <meta name="twitter:description" content={post.excerpt} />
-        <meta name="twitter:image" content={post.image} />
-        
-        {/* Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify(jsonLdArticle)}
-        </script>
-        {post.faqs && post.faqs.length > 0 && (
-          <script type="application/ld+json">
-            {JSON.stringify(jsonLdFAQ)}
-          </script>
-        )}
-      </Helmet>
-
-      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <header className="mb-8">
           <div className="flex items-center gap-4 mb-6">
@@ -271,7 +238,6 @@ const BlogPostComponent = ({ post }: BlogPostProps) => {
           </Card>
         </div>
       </article>
-    </>
   );
 };
 

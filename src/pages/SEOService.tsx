@@ -1,5 +1,4 @@
 
-import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Layout/Header';
 import Footer from '@/components/Layout/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -9,12 +8,6 @@ import { Search, TrendingUp, Target, BarChart } from 'lucide-react';
 const SEOService = () => {
   return (
     <>
-      <Helmet>
-        <title>خدمات سئو و بهینه‌سازی وب‌سایت | عصر سئو</title>
-        <meta name="description" content="خدمات حرفه‌ای سئو و بهینه‌سازی وب‌سایت برای رسیدن به رتبه‌های اول گوگل. تیم متخصص عصر سئو آماده همراهی شماست." />
-        <meta name="keywords" content="خدمات سئو, بهینه‌سازی وب‌سایت, سئو تکنیکال, سئو محتوا" />
-        <link rel="canonical" href="https://asreseo.com/services/seo" />
-      </Helmet>
 
       <div className="min-h-screen bg-white">
         <Header />

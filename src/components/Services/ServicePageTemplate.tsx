@@ -1,6 +1,4 @@
-
 import { ReactNode } from 'react';
-import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Layout/Header';
 import Footer from '@/components/Layout/Footer';
 import { Button } from '@/components/ui/button';
@@ -83,46 +81,7 @@ const ServicePageTemplate = ({
   };
 
   return (
-    <>
-      <Helmet>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <meta name="keywords" content={keywords} />
-        <link rel="canonical" href={canonicalUrl} />
-        
-        {/* Enhanced Open Graph */}
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:locale" content="fa_IR" />
-        <meta property="og:site_name" content="عصر سئو" />
-        
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        
-        {/* Enhanced SEO */}
-        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-        <meta name="author" content="عصر سئو" />
-        <meta name="language" content="Persian" />
-        <meta name="revisit-after" content="7 days" />
-        
-        {/* Performance hints */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-        
-        {/* Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify(structuredData)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(breadcrumbStructuredData)}
-        </script>
-      </Helmet>
-
-      <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
         <Header />
         <main>
           {/* Minimal Hero Section */}
@@ -154,7 +113,7 @@ const ServicePageTemplate = ({
                 <p className="text-xl md:text-2xl text-slate-600 mb-12 leading-relaxed max-w-3xl">
                   {heroDescription}
                 </p>
-                
+
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4 mb-16 justify-center">
                   <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 shadow-sm">
@@ -208,7 +167,7 @@ const ServicePageTemplate = ({
                     محتوای این صفحه در حال تکمیل است
                   </h2>
                   <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                    به زودی محتوای کاملی از این خدمات در اختیار شما قرار خواهد گرفت. 
+                    به زودی محتوای کاملی از این خدمات در اختیار شما قرار خواهد گرفت.
                     برای اطلاعات بیشتر و مشاوره رایگان با ما تماس بگیرید.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -255,7 +214,6 @@ const ServicePageTemplate = ({
         </main>
         <Footer />
       </div>
-    </>
   );
 };
 

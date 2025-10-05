@@ -1,5 +1,4 @@
 
-import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Layout/Header';
 import Footer from '@/components/Layout/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -32,12 +31,6 @@ const GoogleAdsService = () => {
 
   return (
     <>
-      <Helmet>
-        <title>خدمات تبلیغات گوگل ادز | عصر سئو</title>
-        <meta name="description" content="خدمات حرفه‌ای Google Ads و تبلیغات کلیکی برای افزایش فروش و جذب مشتری. کمپین‌های مؤثر و مقرون به صرفه." />
-        <meta name="keywords" content="گوگل ادز, تبلیغات گوگل, PPC, تبلیغات کلیکی" />
-        <link rel="canonical" href="https://asreseo.com/services/google-ads" />
-      </Helmet>
 
       <div className="min-h-screen bg-gradient-to-br from-background-50 to-background-100">
         <Header />
