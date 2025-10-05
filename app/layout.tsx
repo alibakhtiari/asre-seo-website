@@ -1,8 +1,20 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import localFont from 'next/font/local'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const vazirMatn = localFont({
+  src: [
+    {
+      path: './Vazirmatn-Regular.woff2',
+      weight: '400',
+    },
+    {
+      path: './Vazirmatn-Bold.woff2',
+      weight: '700',
+    },
+  ],
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'عصر سئو | بهترین خدمات دیجیتال مارکتینگ، سئو و هوش مصنوعی در ایران',
@@ -75,7 +87,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fa" dir="rtl">
-      <body className={`${inter.className} antialiased`}>
+      <body className={`${vazirMatn.className} antialiased`}>
         {children}
       </body>
     </html>
