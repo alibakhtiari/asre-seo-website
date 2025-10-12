@@ -1,73 +1,88 @@
-# Welcome to your Lovable project
+# عصر سئو - Asre SEO Website
 
-## Project info
+یک وب‌سایت بازاریابی دیجیتال حرفه‌ای برای ارائه خدمات سئو، تبلیغات گوگل، طراحی وب‌سایت و سایر خدمات دیجیتال مارکتینگ.
 
-**URL**: https://lovable.dev/projects/df68e6c2-d3a6-4d34-9b2b-87e631bbaa52
+## درباره پروژه
 
-## How can I edit this code?
+این پروژه با استفاده از Next.js، Tailwind CSS و TypeScript ساخته شده و برای استقرار روی Vercel بهینه‌سازی شده‌است.
 
-There are several ways of editing your application.
+## تکنولوژی‌های استفاده شده
 
-**Use Lovable**
+- **Next.js** - React framework for production
+- **TypeScript** - Type-safe JavaScript
+- **Tailwind CSS** - Utility-first CSS framework
+- **shadcn/ui** - Modern UI components
+- **ESLint** - Code linting
+- **Vercel** - Deployment platform
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/df68e6c2-d3a6-4d34-9b2b-87e631bbaa52) and start prompting.
+## نصب و راه‌اندازی
 
-Changes made via Lovable will be committed automatically to this repo.
+### پیش‌نیازها
 
-**Use your preferred IDE**
+- Node.js 18.x یا بالاتر
+- npm یا yarn
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+### مراحل نصب
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# کلون کردن مخزن
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# رفتن به دایرکتوری پروژه
+cd asre-seo-website
 
-# Step 3: Install the necessary dependencies.
-npm i
+# نصب وابستگی‌ها
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# اجرای سرور توسعه
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## دستورالعمل‌های استفاده
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### توسعه
 
-**Use GitHub Codespaces**
+```bash
+npm run dev          # اجرای سرور توسعه محلی
+npm run build        # ساخت پروژه برای تولید
+npm run lint         # اجرای ESLint
+npm run lint:fix     # رفع مشکلات ESLint
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### ساختار پروژه
 
-## What technologies are used for this project?
+```
+├── app/                    # Next.js App Router
+│   ├── layout.tsx         # Layout اصلی
+│   ├── page.tsx          # صفحه اصلی
+│   └── (sections)...     # صفحات مختلف
+├── components/           # کامپوننت‌های React
+├── public/               # فایل‌های استاتیک
+├── tailwind.config.ts   # تنظیمات Tailwind
+├── next.config.js       # تنظیمات Next.js
+├── vercel.json          # تنظیمات Vercel
+└── package.json         # وابستگی‌ها و اسکریپت‌ها
+```
 
-This project is built with:
+## استقرار
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+پروژه به طور خودکار روی Vercel مستقر می‌شود. هر کامیت به main branch موجب استقرار جدید خواهد شد.
 
-## How can I deploy this project?
+### تنظیمات Vercel
 
-Simply open [Lovable](https://lovable.dev/projects/df68e6c2-d3a6-4d34-9b2b-87e631bbaa52) and click on Share -> Publish.
+فایل `vercel.json` شامل تنظیمات زیر است:
+- Framework: Next.js
+- Build command: `npm run build`
+- Security headers
+- Redirects
 
-## Can I connect a custom domain to my Lovable project?
+## راهنما
 
-Yes, you can!
+برای اطلاع از نحوه استفاده از ابزارها و فرمت کد، به فایل‌های زیر مراجعه کنید:
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [shadcn/ui Documentation](https://ui.shadcn.com/)
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## لایسنس
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+این پروژه تحت لایسنس MIT منتشر شده‌است.
