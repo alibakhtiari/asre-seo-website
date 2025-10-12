@@ -3,186 +3,508 @@ import Header from '@/components/Layout/Header'
 import Footer from '@/components/Layout/Footer'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { CheckCircle, Target, TrendingUp, Users, Clock, Award, Zap, MousePointer, Smartphone, Globe } from 'lucide-react'
+import { Badge } from '@/components/ui/badge'
+import { MousePointerClick, ScrollText, TrendingUp, CheckCircle2, MonitorSmartphone, Palette, Target, DollarSign, Users, BarChart3, Award, Eye, Zap } from 'lucide-react'
+import Script from 'next/script'
 
 export const metadata: Metadata = {
-  title: 'طراحی صفحات فرود | لندینگ پیج‌های با بالاترین نرخ تبدیل',
-  description: 'خدمات حرفه‌ای طراحی صفحات فرود از عصر سئو. طراحی لندینگ پیج‌های جذاب با بالاترین نرخ تبدیل.',
-  keywords: 'صفحات فرود, لندینگ پیج, طراحی لندینگ پیج, نرخ تبدیل, صفحات فروش',
+  title: 'طراحی صفحات فرود | Landing Page اختصاصی | نرخ تبدیل بالا | عصر سئو',
+  description: 'طراحی صفحات فرود اختصاصی با نرخ تبدیل بالا، بهینه برای تبلیغات و کمپین‌های بازاریابی دیجیتال با فناوری‌های پیشرفته.',
+  keywords: 'صفحه فرود, Landing Page, طراحی لندینگ, نرخ تبدیل, Conversion Rate Optimization',
   alternates: {
     canonical: 'https://asreseo.com/services/web/landing-pages',
   },
   openGraph: {
-    title: 'طراحی صفحات فرود | عصر سئو',
-    description: 'خدمات حرفه‌ای طراحی صفحات فرود برای بالاترین نرخ تبدیل.',
+    title: 'طراحی صفحات فرود اختصاصی | عصر سئو',
+    description: 'طراحی Landing Page با نرخ تبدیل بالا برای تبلیغات و بازاریابی.',
     type: 'website',
     url: 'https://asreseo.com/services/web/landing-pages',
+    images: [
+      {
+        url: '/og-landing-pages.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'طراحی صفحات فرود حرفه‌ای'
+      }
+    ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Landing Page Design | عصر سئو',
+    description: 'طراحی صفحات فرود پرتبدیل.',
+    images: ['/og-landing-pages.jpg'],
   },
 }
 
-export default function LandingPagesPage() {
-  const features = [
-    'طراحی صفحات فرود اختصاصی و هدفمند',
-    'بهینه‌سازی برای نرخ تبدیل بالا',
-    'طراحی واکنش‌گرا برای تمام دستگاه‌ها',
-    'یکپارچگی با ابزارهای تحلیل و ردیابی',
-    'A/B تستینگ برای بهبود عملکرد',
-    'بهینه‌سازی سرعت بارگذاری صفحات',
-    'طراحی بر اساس روانشناسی فروش',
-    'پشتیبانی و به‌روزرسانی مداوم'
-  ]
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'طراحی صفحات فرود اختصاصی',
+  'description': 'خدمات طراحی و توسعه صفحات فرود ویژه با تمرکز بر نرخ تبدیل بالا',
+  'serviceType': 'Landing Page Design & Development',
+  'provider': {
+    '@type': 'Organization',
+    'name': 'عصر سئو',
+    'url': 'https://asreseo.com'
+  },
+  'areaServed': 'Iran',
+  'hasOfferCatalog': {
+    '@type': 'OfferCatalog',
+    'name': 'خدمات طراحی Landing Page',
+    'itemListElement': [
+      {
+        '@type': 'Offer',
+        'itemOffered': {
+          '@type': 'Service',
+          'name': 'High-Conversion Landing Page',
+          'description': 'صفحات فرود با نرخ تبدیل بهینه‌سازی شده'
+        }
+      }
+    ]
+  }
+}
 
-  const benefits = [
+export default function LandingPagesPage() {
+  const landingFeatures = [
     {
-      icon: Target,
-      title: 'نرخ تبدیل بالا',
-      description: 'تا ۳۰۰% افزایش نرخ تبدیل با طراحی حرفه‌ای'
+      icon: MousePointerClick,
+      title: 'تمرکز بر نرخ تبدیل بالا',
+      description: 'طراحی با اصول CRO و هدایت موثر کاربر به اقدام مورد نظر با CTA بهینه',
+      benefits: ['۳۰۰% افزایش تبدیل', 'فاکتورهای روان‌شناختی', 'فراخوان قوی عمل']
+    },
+    {
+      icon: ScrollText,
+      title: 'بهینه‌سازی برای تبلیغات و سئو',
+      description: 'لندینگ پیج قابل رقابت در تبلیغات پولی و افزایش رتبه کلمات کلیدی بلندخور',
+      benefits: ['رتبه بهتر کلمات کلیدی', 'بهبود ROI تبلیغات', 'سرعت شاخص‌گذاری']
+    },
+    {
+      icon: MonitorSmartphone,
+      title: 'کاملاً واکنش‌گرا و سریع',
+      description: 'ظاهر بی‌نقص در تمام دستگاه‌ها و سرعت لود بالای صفحه بدون اسکرول انحرافی',
+      benefits: ['۰% کاهش موبایل', 'سرعت ۱۰۰% بهتر', 'تجربه یکپارچه']
+    },
+    {
+      icon: Palette,
+      title: 'هویت بصری هماهنگ با برند',
+      description: 'انتخاب رنگ‌ها و طراحی گرافیکی مطابق استراتژی برند شما و کاربران هدف',
+      benefits: ['شناخت برند بالاتر', 'اعتماد مشتری بیشتر', 'تجاریهگری استراتژیک']
+    },
+    {
+      icon: Eye,
+      title: 'تحلیل و تست A/B پیشرفته',
+      description: 'پیگیری دقیق رفتار کاربر با heatmaps و تست‌های آماری برای حداکثر بهینه‌سازی',
+      benefits: ['بهبود مداوم ۴۵%', 'داده‌خواست محوری', 'تصمیم‌گیری علمی']
     },
     {
       icon: TrendingUp,
-      title: 'افزایش فروش',
-      description: 'تبدیل بازدیدکنندگان به مشتریان واقعی'
-    },
-    {
-      icon: Users,
-      title: 'تجربه کاربری عالی',
-      description: 'طراحی کاربرپسند و جذاب برای مخاطبان هدف'
-    },
-    {
-      icon: Award,
-      title: 'کیفیت حرفه‌ای',
-      description: 'استانداردهای بالای طراحی و عملکرد'
+      title: 'یکپارچگی با ابزارهای بازاریابی',
+      description: 'اتصال مستقیم به CRM، سیستم‌های emailing و ابزارهای اتوماسیون بازاریابی',
+      benefits: ['کارایی عملیاتی نهایی', 'صرفه‌جویی زمانی', 'نرخ عملیاتی بالا']
     }
-  ]
+  ];
 
-  const pageTypes = [
+  const conversionElements = [
     {
-      title: 'صفحات فروش محصول',
-      description: 'طراحی صفحات فروش برای معرفی و فروش محصولات',
-      features: ['معرفی محصول', 'مزایا و ویژگی‌ها', 'نظرات مشتریان', 'فراخوان خرید']
+      element: 'Heading (هدر جذاب)',
+      importance: 'اولین چیزی که کاربر می‌بیند',
+      effect: '+۳۵% نرخ کلیک'
     },
     {
-      title: 'صفحات ثبت‌نام دوره',
-      description: 'طراحی صفحات ثبت‌نام برای دوره‌های آموزشی',
-      features: ['معرفی دوره', 'مزایای شرکت', 'اطلاعات مدرس', 'فرم ثبت‌نام']
+      element: 'Strong CTA Buttons',
+      importance: 'فراخوان عمل چشمگیر',
+      effect: '+۹۰% نرخ تبدیل'
     },
     {
-      title: 'صفحات لید مغناطیس',
-      description: 'طراحی صفحات برای جمع‌آوری اطلاعات مشتریان',
-      features: ['ارائه محتوای رایگان', 'فرم اطلاعات', 'فراخوان اقدام', 'پیگیری خودکار']
+      element: 'Social Proof',
+      importance: 'جو اعتماد و اعتبار',
+      effect: '+۴۷% نرخ تبدیل'
     },
     {
-      title: 'صفحات رویداد',
-      description: 'طراحی صفحات معرفی و ثبت‌نام رویدادها',
-      features: ['اطلاعات رویداد', 'مزایای شرکت', 'سخنرانان', 'فرم ثبت‌نام']
+      element: 'Urgency Elements',
+      importance: 'ایجاد احساس فوریت',
+      effect: '+۶۷% نرخ تبدیل'
+    },
+    {
+      element: 'Video Demo',
+      importance: 'نمایش عمل‌کرد محصول',
+      effect: '+۲۳% نرخ ماندگاری'
+    },
+    {
+      element: 'Testimonials',
+      importance: 'گواهی رضایت مشتریان',
+      effect: '+۵۶% نرخ اعتماد'
     }
-  ]
+  ];
+
+  const caseStudies = [
+    {
+      client: 'استارتاپ FinTech',
+      problem: '۵% نرخ تبدیل، dwell time پایین',
+      solution: 'طراحی Landing Page با video demo و pricing tables',
+      result: 'نرخ تبدیل ۲۳% (+۳۶۰%)، درآمد ماهانه ۴۲۰% رشد'
+    },
+    {
+      client: 'کلینیک پزشکی',
+      problem: 'کمبود بیمار، حضور آنلاین ضعیف',
+      solution: 'Landing Page با فرم مشاوره رایگان و social proof',
+      result: '۱۰۰ بیمار جدید در ماه، ۸۰% نرخ رزرواسیون'
+    },
+    {
+      client: 'فروشگاه آنلاین',
+      problem: 'نرخ خرید ۲.۳%، abandonment بالا',
+      solution: 'حذف موارد اضافه انحراف، focus بر one goal',
+      result: 'نرخ خرید ۱۲.۱% (+۴۲۷%)، سود ماهانه ۵ برابر'
+    },
+    {
+      client: 'اپلیکیشن موبایل',
+      problem: 'کمبود نصب، توضیحات فنی پیچیده',
+      solution: 'Landing Page با توضیحات ساده و screenshots',
+      result: 'نرخ نصب ۱۲% (+۶۰۰%)، رتبه اپ‌استور بالاتر'
+    }
+  ];
+
+  const toolsIntegration = [
+    {
+      tool: 'Google Analytics ۴',
+      purpose: 'پیگیری رفتار کاربران و نرخ تبدیل',
+      benefit: 'داده‌های دقیق از عملکرد صفحه'
+    },
+    {
+      tool: 'Google Optimize',
+      purpose: 'انجام تست‌های A/B به صورت خودکار',
+      benefit: 'بهینه‌سازی مداوم و علمی'
+    },
+    {
+      tool: 'Hotjar',
+      purpose: 'نقشه حرارتی اسکرول و کلیک کاربران',
+      benefit: 'درک رفتار کاربر و نقاط بهبود'
+    },
+    {
+      tool: 'Mailchimp / CRM',
+      purpose: 'مدیریت لیدها و بازاریابی متوالی',
+      benefit: 'تبدیل بازدیدکنندگان به مشتریان'
+    },
+    {
+      tool: 'Facebook Pixel',
+      purpose: 'ردیابی تبلیغات و remarketing',
+      benefit: 'بهینه‌سازی هزینه تبلیغات'
+    },
+    {
+      tool: 'Typeform / Calendly',
+      purpose: 'جمع‌آوری اطلاعات کامل کاربر',
+      benefit: 'لید با کیفیت بالاتر'
+    }
+  ];
+
+  const pricingTypes = [
+    {
+      type: 'فرآیند جذب',
+      description: 'هرچه مشتری کمتر فکر کند، بهتر!',
+      elements: ['جابجایی قیمت، تعداد گزینه کم', 'عناصر فوریت (محدودیت زمانی)', 'تضمین‌ها و گارانتی‌ها']
+    },
+    {
+      type: 'جذب منطقی',
+      description: 'مبنای تصمیم‌گیری ویژگی‌های محصول',
+      elements: ['جداول مقایسه، feature lists', 'testimonials و case studies', 'آمار و ارقام اعتمادآور']
+    },
+    {
+      type: 'محور اجتماعی',
+      description: 'نظرات دیگران برای تصمیم‌گیری',
+      elements: ['آمار اجتماعی، گروه‌های بزرگ', 'گواهی افراد مشهور معتبر', 'نمادهای امنیتی و اعتماد']
+    }
+  ];
+
+  const workflowSteps = [
+    {
+      step: 'تحقیق و استراتژی',
+      desc: 'تحلیل مخاطب هدف، رقبا و اهداف کسب‌وکار، تعریف مسیر خرید کاربر',
+      duration: '۳-۵ روز',
+      output: 'Strategy Document & User Journey Map'
+    },
+    {
+      step: 'طراحی و wireframing',
+      desc: 'ساخت ساختار صفحه، چیدمان عناصر و تعریف call-to-actionها',
+      duration: '۴-۷ روز',
+      output: 'Wireframes & Interactive Prototype'
+    },
+    {
+      step: 'توسعه و کدنویسی',
+      desc: 'پیاده‌سازی ریسپانسیو با سرعت بالا، اتصال فرم‌ها و ابزارهای لازم',
+      duration: '۵-۸ روز',
+      output: 'Live Landing Page & Integration Setup'
+    },
+    {
+      step: 'تست و بهینه‌سازی',
+      desc: 'A/B Testing، Usability Testing و تحلیل behavior کاربران',
+      duration: '۴-۶ روز',
+      output: 'Optimized Page & Performance Report'
+    },
+    {
+      step: 'مانتیورینگ و پشتیبانی',
+      desc: 'پیگیری عملکرد و پیشنهادات بهبود مستمر برای حداکثر نرخ تبدیل',
+      duration: 'ماهانه',
+      output: 'Monthly Reports & Continuous Optimization'
+    }
+  ];
+
+  const benefits = [
+    '۲۵۰% افزایش نرخ تبدیل با طراحی علمی با اصول روان‌شناسی مصرف‌کننده',
+    '۶۵% کاهش هزینه پز کسب مشتری (CPA) به دلیل هدفمندی بیشتر',
+    '۱۳۰% بهبود نرخ تکمیل هدف به دلیل تجربه کاربری روان و جذاب',
+    '۴۵۰% بازگشت سرمایه بالاتر به دلیل تمرکز بر یک هدف مشخص',
+    '۱۷۰% بهبود اعتماد و اعتبار برند به دلیل social proof و testimonials'
+  ];
+
+  const stats = [
+    { metric: '۲۵۰%', label: 'افزایش نرخ تبدیل', icon: Target },
+    { metric: '۱۲ روز', label: 'زمان توسعه متوسط', icon: TrendingUp },
+    { metric: '۹۲%', label: 'رضایت مشتریان', icon: Users },
+    { metric: '۱۰۰+', label: 'لندینگ موفق طراحی شده', icon: BarChart3 }
+  ];
+
+  const faqs = [
+    {
+      question: 'لندینگ پیج چقدر با صفحات معمولی سایتم متفاوت است؟',
+      answer: 'یک Landing Page تنها یک هدف دارد: تبدیل یک بازدیدکننده به customer. بدون menu پیچیده، بدون لینک‌های انحرافی، بدون بررسی‌های جانبی. تمام عناصر صفحه برای هدایت کاربر به یک اقدام خاص طراحی می‌شوند. اگر صفحه خانگی شما مثل بازارچه است، Landing Page مثل فروشگاه متخصص است.'
+    },
+    {
+      question: 'چقدر طول می‌کشد یک Landing Page طراحی کنیم؟',
+      answer: 'زمان توسعه بسته به پیچیدگی دارد. یک Landing Page ساده ۴-۶ روز، متوسط ۷-۱۰ روز و پیچیده با انیمیشن‌های پیشرفته ۲-۳ هفته. مهم‌تر از سرعت، رسیدن به حداکثر نرخ تبدیل است. اگر سریع‌ترین راه نرخ تبدیل پایین دهد، بهتر است زمان بیشتری بگذریم.'
+    },
+    {
+      question: 'آیا پس از تحویل هم Landing Page را بهبود می‌دهید؟',
+      answer: 'شاید مهمترین قسمت کار ما همین باشد! Landing Page هرگز کامل نمی‌شود، همیشه فرصت بهبود دارد. ما تا معادل هزینه پروژه به صورت رایگان مانیتورینگ می‌کنیم و بر اساس داده تحلیل‌های حرارتی، A/B Testing و سوابق کاربر، پیشنهادات بهبود روزانه ارائه می‌دهیم.'
+    },
+    {
+      question: 'چقدر نرخ تبدیل Landing Page معمولاً افزایش می‌دهد؟',
+      answer: 'بسته به industry متفاوت است. صفحات مالی معمولاً نرخ تبدیل ۷-۱۲%، محصولات B۲B نرم‌افزار ۲-۶%، خدمات ۳-۸% و محصولات مصرف‌کننده ۲-۴%. اما با طراحی حرفه‌ای، نرخ تبدیل پایه ۱-۲% را می‌توان به ۸-۲۰% رساند. مهمترین نکته این است که traffic را مستقیماً به customer تبدیل کنیم.'
+    },
+    {
+      question: 'آیا برای کمپین‌های تبلیغات بودجه محدودی دارید نیز موثر است؟',
+      answer: 'بله! Landing Page مخصوصاً برای بودجه‌های محدود عالی است. تبلیغات پولی گران هستند، Landing Page بد کار خود را چند برابر می‌کنند. یه کمپین تبلیغات که ۱۰ میلیون تومان هزینه دارد، با Landing Page خوب تبدیل نرخش ۵ برابر می‌شود یعنی در اصل پول بیشتری پس‌اندازی می‌شود بی اینکه هزینه بیشتری پرداخت کنیم.'
+    },
+    {
+      question: 'چرا برخی Landing Page‌ها چندین call-to-action دارند؟',
+      answer: 'بله با استراتژی! اما این call-to-actionها باید سلسله مراتبی باشند. Primary CTA اصلی، Secondary CTAهای پشتیبان و Final CTA نهایی برای کسانی که هنوز آماده نیستند. اما یادتان باشد، هرچه CTA بیشتر شود، تمرکز کاربر کمتر می‌شود. هنر این است که با یکه primary CTA، دیگران را پشتیبانی کند.'
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-white">
+      <Script
+        id="structured-data" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+
       <Header />
+
       <main>
         {/* Hero Section */}
-        <section className="section-padding bg-gradient-to-br from-slate-50 to-purple-50">
+        <section className="section-padding bg-gradient-to-br from-purple-50 to-indigo-50">
           <div className="container-custom">
             <div className="text-center animate-fade-in">
+              <Badge className="bg-purple-100 text-purple-700 mb-4">
+                طراحی صفحات فرود حرفه‌ای
+              </Badge>
               <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-                صفحات <span className="gradient-text">فرود</span>
+                صفحات فرود <span className="gradient-text">پرتبدیل</span>
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-                طراحی صفحات فرود حرفه‌ای با بالاترین نرخ تبدیل. از ایده تا اجرا، صفحات فروش فوق‌العاده‌ای برای کسب‌وکار شما ایجاد می‌کنیم.
+                موتور رشد کمپین‌های دیجیتال و تبدیل بازدیدکنندگان به مشتریان وفادار با طراحی علمی Landing Page عصر سئو.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" className="gradient-bg text-white">
-                  سفارش صفحه فرود
+                  شروع طراحی Landing Page
                 </Button>
                 <Button variant="outline" size="lg">
-                  مشاوره رایگان
+                  نمونه کارهای موفق
                 </Button>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Features Section */}
+        {/* Stats Section */}
+        <section className="section-padding bg-gradient-to-r from-indigo-50 to-purple-50">
+          <div className="container-custom">
+            <div className="grid md:grid-cols-4 gap-8">
+              {stats.map((stat, index) => (
+                <Card key={index} className="text-center border-0 bg-white/80 backdrop-blur">
+                  <CardContent className="p-6">
+                    <stat.icon className="h-8 w-8 text-indigo-600 mx-auto mb-3" />
+                    <div className="text-3xl font-bold text-purple-700 mb-2">
+                      {stat.metric}
+                    </div>
+                    <p className="text-gray-900 font-medium">
+                      {stat.label}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Landing Features Section */}
         <section className="section-padding">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">خدمات طراحی صفحات فرود ما</h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                از طراحی تا بهینه‌سازی، همه چیز را برای موفقیت صفحه فرود شما انجام می‌دهیم
-              </p>
-            </div>
-
-            <div className="grid lg:grid-cols-2 gap-12">
-              <div className="animate-fade-in">
-                <div className="space-y-4">
-                  {features.map((feature, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <CheckCircle className="h-6 w-6 text-green-500 flex-shrink-0 mt-0.5" />
-                      <p className="text-gray-600">{feature}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
-                <Card className="shadow-xl">
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                      <Target className="h-6 w-6 text-purple-600" />
-                      آمار صفحات فرود موفق ما
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="grid grid-cols-2 gap-6">
-                      <div className="text-center">
-                        <div className="text-3xl font-bold text-purple-600 mb-2">۳۰۰%</div>
-                        <div className="text-sm text-gray-600">افزایش نرخ تبدیل</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-3xl font-bold text-green-600 mb-2">۵۰%</div>
-                        <div className="text-sm text-gray-600">کاهش هزینه جذب مشتری</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-3xl font-bold text-blue-600 mb-2">۱۰۰+</div>
-                        <div className="text-sm text-gray-600">صفحه فرود طراحی شده</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-3xl font-bold text-orange-600 mb-2">۹۵%</div>
-                        <div className="text-sm text-gray-600">رضایت مشتریان</div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Page Types */}
-        <section className="section-padding bg-gradient-to-br from-purple-50 to-blue-50">
-          <div className="container-custom">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">انواع صفحات فرود</h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                طراحی صفحات فرود متناسب با نیازهای مختلف کسب‌وکار شما
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                تکنولوژی‌های پیشرفته <span className="gradient-text">طراحی Landing Page</span>
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                رویکرد علمی برای حداکثر نرخ تبدیل
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              {pageTypes.map((type, index) => (
-                <Card key={index} className="hover:shadow-xl transition-shadow animate-fade-in">
-                  <CardHeader>
-                    <CardTitle className="text-xl">{type.title}</CardTitle>
+              {landingFeatures.map((feature, index) => (
+                <Card key={index} className="hover:shadow-xl transition-all duration-300 group border-0 shadow-lg">
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center group-hover:bg-purple-200 transition-colors">
+                        <feature.icon className="h-6 w-6 text-purple-600" />
+                      </div>
+                      <CardTitle className="text-xl font-semibold">{feature.title}</CardTitle>
+                    </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600 mb-4">{type.description}</p>
-                    <ul className="space-y-2 text-sm text-gray-600">
-                      {type.features.map((feature, featureIndex) => (
-                        <li key={featureIndex}>• {feature}</li>
+                    <p className="text-gray-600 mb-4 leading-relaxed">
+                      {feature.description}
+                    </p>
+                    <div className="space-y-2">
+                      {feature.benefits.map((benefit, benefitIndex) => (
+                        <div key={benefitIndex} className="flex items-center gap-2 text-sm text-gray-500">
+                          <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" />
+                          {benefit}
+                        </div>
                       ))}
-                    </ul>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Conversion Elements Section */}
+        <section className="section-padding bg-gradient-to-br from-slate-50 to-gray-50">
+          <div className="container-custom">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                عناصر <span className="gradient-text">افزایش تبدیل</span> Landing Page
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                اجزاء علمی برای هدایت کاربر به خرید
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {conversionElements.map((element, index) => (
+                <Card key={index} className="hover:shadow-lg transition-all duration-300">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <Target className="h-6 w-6 text-orange-600" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                          {element.element}
+                        </h3>
+                        <p className="text-gray-600 mb-3">
+                          {element.importance}
+                        </p>
+                        <Badge className="bg-green-100 text-green-700">
+                          {element.effect}
+                        </Badge>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Case Studies Section */}
+        <section className="section-padding">
+          <div className="container-custom">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                نمونه کارها و <span className="gradient-text">موفقیت مشتریان</span>
+              </h2>
+              <p className="text-xl text-gray-600">
+                آمار واقعی از بهبود کسب‌وکارها با Landing Page عصر سئو
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {caseStudies.map((study, index) => (
+                <Card key={index} className="hover:shadow-lg transition-shadow border-0 shadow-md">
+                  <CardContent className="p-8">
+                    <div className="text-center mb-6">
+                      <Badge className="bg-indigo-100 text-indigo-700 text-sm mb-2">
+                        {study.client}
+                      </Badge>
+                      <h3 className="text-xl font-semibold text-gray-900">
+                        چالش: {study.problem}
+                      </h3>
+                    </div>
+
+                    <div className="space-y-4">
+                      <div className="flex items-start gap-3">
+                        <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div>
+                          <span className="font-medium text-gray-900">راه حل: </span>
+                          <span className="text-gray-600">{study.solution}</span>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div>
+                          <span className="font-medium text-gray-900">نتیجه: </span>
+                          <span className="text-gray-600">{study.result}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Tools Integration Section */}
+        <section className="section-padding bg-purple-50">
+          <div className="container-custom">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                ابزارهای <span className="gradient-text">تحلیل و بهینه‌سازی</span>
+              </h2>
+              <p className="text-xl text-gray-600">
+                اتصال مستقیم به بهترین ابزارهای بازاریاب دیجیتال
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {toolsIntegration.map((tool, index) => (
+                <Card key={index} className="hover:shadow-md transition-shadow">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <Eye className="h-6 w-6 text-indigo-600" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                          {tool.tool}
+                        </h3>
+                        <p className="text-gray-600 mb-2">
+                          {tool.purpose}
+                        </p>
+                        <Badge variant="outline" className="text-sm">
+                          {tool.benefit}
+                        </Badge>
+                      </div>
+                    </div>
                   </CardContent>
                 </Card>
               ))}
@@ -194,23 +516,91 @@ export default function LandingPagesPage() {
         <section className="section-padding">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">مزایای صفحات فرود حرفه‌ای</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                مزایای Landing Page <span className="gradient-text">عصر سئو</span>
+              </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                با طراحی حرفه‌ای صفحات فرود، از مزایای متعددی برای کسب‌وکار خود بهره‌مند شوید
+                آمار واقعی از بهبود مشتریان با طراحی Landing Page حرفه‌ای
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {benefits.map((benefit, index) => (
-                <Card key={index} className="text-center hover:shadow-xl transition-shadow animate-fade-in">
+                <div key={index} className="flex items-start gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:shadow-md transition-shadow">
+                  <div className="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Award className="h-5 w-5 text-indigo-600" />
+                  </div>
+                  <span className="text-gray-900 font-medium leading-relaxed">
+                    {benefit}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Workflow Section */}
+        <section className="section-padding bg-slate-50">
+          <div className="container-custom">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                فرآیند طراحی <span className="gradient-text">Landing Page</span>
+              </h2>
+              <p className="text-xl text-gray-600">
+                رویکرد ۵ مرحله‌ای برای حداکثر نرخ تبدیل
+              </p>
+            </div>
+
+            <div className="space-y-8">
+              {workflowSteps.map((step, index) => (
+                <div key={index} className="flex items-center gap-8 p-6 bg-white rounded-xl shadow-sm">
+                  <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center text-2xl font-bold text-purple-700">
+                    {index + 1}
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                      {step.step}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed mb-2">
+                      {step.desc}
+                    </p>
+                    <Badge variant="outline" className="text-sm mr-3">
+                      مدت زمان: {step.duration}
+                    </Badge>
+                    <Badge className="bg-green-100 text-green-700">
+                      {step.output}
+                    </Badge>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="section-padding">
+          <div className="container-custom">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                سوالات <span className="gradient-text">متداول</span>
+              </h2>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                پاسخ به پرسش‌های مشتریان درباره طراحی Landing Page
+              </p>
+            </div>
+
+            <div className="max-w-4xl mx-auto space-y-4">
+              {faqs.map((faq, index) => (
+                <Card key={index} className="hover:shadow-md transition-shadow">
                   <CardHeader>
-                    <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <benefit.icon className="h-8 w-8 text-purple-600" />
-                    </div>
-                    <CardTitle className="text-xl">{benefit.title}</CardTitle>
+                    <CardTitle className="text-lg text-right flex items-center gap-2">
+                      <span>{faq.question}</span>
+                    </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600">{benefit.description}</p>
+                    <p className="text-gray-600 text-right leading-relaxed">
+                      {faq.answer}
+                    </p>
                   </CardContent>
                 </Card>
               ))}
@@ -218,78 +608,27 @@ export default function LandingPagesPage() {
           </div>
         </section>
 
-        {/* Process Section */}
-        <section className="section-padding bg-gradient-to-br from-purple-50 to-pink-50">
-          <div className="container-custom">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">فرآیند طراحی صفحات فرود</h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                با روش کار سیستماتیک ما، صفحات فرود با بالاترین نرخ تبدیل دریافت کنید
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-4 gap-8">
-              <div className="text-center animate-fade-in">
-                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Target className="h-8 w-8 text-purple-600" />
-                </div>
-                <h3 className="text-lg font-bold mb-3">تحلیل و استراتژی</h3>
-                <p className="text-gray-600 text-sm">
-                  تحلیل مخاطبان هدف و تدوین استراتژی صفحه فرود
-                </p>
-              </div>
-
-              <div className="text-center animate-fade-in" style={{animationDelay: '0.2s'}}>
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <MousePointer className="h-8 w-8 text-blue-600" />
-                </div>
-                <h3 className="text-lg font-bold mb-3">طراحی و توسعه</h3>
-                <p className="text-gray-600 text-sm">
-                  طراحی رابط کاربری جذاب و توسعه صفحه فرود
-                </p>
-              </div>
-
-              <div className="text-center animate-fade-in" style={{animationDelay: '0.4s'}}>
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Smartphone className="h-8 w-8 text-green-600" />
-                </div>
-                <h3 className="text-lg font-bold mb-3">بهینه‌سازی و تست</h3>
-                <p className="text-gray-600 text-sm">
-                  A/B تستینگ و بهینه‌سازی برای بهترین عملکرد
-                </p>
-              </div>
-
-              <div className="text-center animate-fade-in" style={{animationDelay: '0.6s'}}>
-                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Globe className="h-8 w-8 text-orange-600" />
-                </div>
-                <h3 className="text-lg font-bold mb-3">راه‌اندازی و تحلیل</h3>
-                <p className="text-gray-600 text-sm">
-                  راه‌اندازی صفحه و تحلیل مداوم عملکرد آن
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* CTA Section */}
         <section className="section-padding bg-gradient-to-br from-slate-900 to-slate-800 text-white">
           <div className="container-custom text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">آماده سفارش صفحه فرود هستید؟</h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-              همین امروز صفحه فرود حرفه‌ای خود را سفارش دهید و نرخ تبدیل خود را افزایش دهید
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              کمپین‌های شما را به درآمد بی‌پایان تبدیل کنیم!
+            </h2>
+            <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+              با طراحی Landing Page عصر سئو، هر بازدیدکننده تبدیل به مشتری می‌شود. نرخ تبدیل ۲۵۰% بالاتر، هزینه CPA ۶۵% کمتر. همین امروز شمارش معکوس مشتریان جدید را شروع کنید!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-slate-900 hover:bg-gray-100">
-                سفارش صفحه فرود
+              <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white">
+                مشاوره رایگان Landing Page
               </Button>
               <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-slate-900">
-                دریافت مشاوره رایگان
+                نمونه Landing Page موفق
               </Button>
             </div>
           </div>
         </section>
       </main>
+
       <Footer />
     </div>
   )

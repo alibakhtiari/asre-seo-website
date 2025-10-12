@@ -4,144 +4,233 @@ import Footer from '@/components/Layout/Footer'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { CheckCircle, MessageSquare, Brain, Zap, Users, Clock, Smartphone, Globe, Shield, Star, TrendingUp } from 'lucide-react'
+import { Bot, Database, FileText, BookOpen, MessageSquare, Clock, CheckCircle, Users, TrendingUp, Shield, Zap, Globe } from 'lucide-react'
+import Script from 'next/script'
 
 export const metadata: Metadata = {
-  title: 'چت‌بات فارسی هوشمند | دستیار مجازی ۲۴ ساعته برای کسب‌وکار شما',
-  description: 'چت‌بات فارسی هوشمند عصر سئو. دستیار مجازی ۲۴ ساعته برای پاسخگویی به مشتریان، افزایش فروش و بهبود تجربه کاربری.',
-  keywords: 'چت‌بات فارسی, دستیار مجازی, هوش مصنوعی, پشتیبانی ۲۴ ساعته, افزایش فروش',
+  title: 'چت‌بات RAG فارسی | Persian AI Chatbot with Knowledge Base',
+  description: 'چت‌بات هوشمند فارسی با تکنولوژی RAG، قابلیت یادگیری از اسناد PDF، کاتالوگ‌ها و صفحات سایت برای پاسخگویی دقیق ۲۴/۷. پشتیبانی از CRMs مختلف.',
+  keywords: 'چت‌بات RAG, چت‌بات فارسی, هوش مصنوعی, پایگاه دانش, Persian Chatbot, AI Bot, CRM Integration',
   alternates: {
     canonical: 'https://asreseo.com/services/ai/persian-chatbot',
   },
   openGraph: {
-    title: 'چت‌بات فارسی هوشمند | عصر سئو',
-    description: 'چت‌بات فارسی هوشمند برای پشتیبانی ۲۴ ساعته و افزایش فروش.',
+    title: 'چت‌بات RAG هوشمند فارسی | عصر سئو',
+    description: 'چت‌بات پیشرفته با قابلیت یادگیری از پایگاه دانش، اسناد PDF، کاتالوگ‌ها و صفحات سایت برای پاسخگویی ۲۴/۷.',
     type: 'website',
     url: 'https://asreseo.com/services/ai/persian-chatbot',
+    images: [
+      {
+        url: '/og-persian-chatbot.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'چت‌بات RAG هوشمند فارسی'
+      }
+    ]
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'چت‌بات RAG هوشمند فارسی | عصر سئو',
+    description: 'چت‌بات پیشرفته با قابلیت یادگیری از پایگاه دانش و پاسخگویی ۲۴/۷.',
+    images: ['/og-persian-chatbot.jpg'],
+  },
+}
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'چت‌بات RAG هوشمند فارسی',
+  'description': 'چت‌بات پیشرفته فارسی با تکنولوژی RAG برای پاسخگویی هوشمند با استفاده از پایگاه دانش سازمانی',
+  'serviceType': 'AI Chatbot Development',
+  'provider': {
+    '@type': 'Organization',
+    'name': 'عصر سئو',
+    'url': 'https://asreseo.com'
+  },
+  'areaServed': 'Iran',
+  'hasOfferCatalog': {
+    '@type': 'OfferCatalog',
+    'name': 'خدمات چت‌بات هوش مصنوعی',
+    'itemListElement': [
+      {
+        '@type': 'Offer',
+        'itemOffered': {
+          '@type': 'Service',
+          'name': 'چت‌بات RAG پیشرفته',
+          'description': 'سیستم چت‌بات هوشمند با Retrieval-Augmented Generation'
+        }
+      },
+      {
+        '@type': 'Offer',
+        'itemOffered': {
+          '@type': 'Service',
+          'name': 'یکپارچه‌سازی با CRM',
+          'description': 'اتصال چت‌بات به سیستم‌های مدیریت ارتباط با مشتری'
+        }
+      }
+    ]
+  },
+  'faqSection': {
+    '@type': 'FAQPage',
+    'mainEntity': [
+      {
+        '@type': 'Question',
+        'name': 'چت‌بات RAG چگونه کار می‌کند؟',
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': 'چت‌بات RAG ابتدا پرسش کاربر را تحلیل کرده، سپس از پایگاه دانش اطلاعات مرتبط را جستجو می‌کند و در نهایت با ترکیب این اطلاعات، پاسخ دقیق و مفصلی ارائه می‌دهد.'
+        }
+      },
+      {
+        '@type': 'Question',
+        'name': 'چه نوع فایل‌هایی قابل پردازش است؟',
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': 'سیستم قادر به پردازش فایل‌های PDF، اسناد Word، صفحات وب، کاتالوگ‌های محصولات، و انواع مختلف متن‌های فارسی است.'
+        }
+      }
+    ]
+  }
 }
 
 export default function PersianChatbotPage() {
   const features = [
-    'پاسخگویی خودکار به سوالات متداول مشتریان',
-    'پشتیبانی ۲۴ ساعته بدون نیاز به نیروی انسانی',
-    'پاسخگویی به زبان فارسی با لهجه‌های مختلف',
-    'یادگیری مداوم از مکالمات برای بهبود عملکرد',
-    'یکپارچگی با سیستم‌های CRM و فروشگاه آنلاین',
-    'ارائه پیشنهادات فروش و محصولات مرتبط',
-    'تحلیل احساسات مشتریان برای بهبود خدمات',
-    'گزارش‌گیری دقیق از عملکرد و رضایت مشتریان'
-  ]
-
-  const benefits = [
+    {
+      icon: Bot,
+      title: 'چت‌بات RAG پیشرفته',
+      description: 'استفاده از تکنولوژی Retrieval-Augmented Generation برای پاسخ‌های دقیق و مبتنی بر داده‌های شما.',
+      benefits: ['دقت بالاتر پاسخ‌ها', 'یادگیری از داده‌های واقعی', 'پاسخ‌های مرتبط و مفید']
+    },
+    {
+      icon: Database,
+      title: 'ادغام با پایگاه دانش',
+      description: 'اتصال مستقیم به پایگاه دانش، صفحات سایت و اطلاعات محصولات برای پاسخ‌های جامع.',
+      benefits: ['دسترسی به اطلاعات کامل', 'پاسخ‌های یکپارچه', 'به‌روزرسانی خودکار']
+    },
+    {
+      icon: FileText,
+      title: 'پردازش اسناد PDF',
+      description: 'خواندن و تحلیل فایل‌های PDF، کاتالوگ‌ها و مستندات برای استخراج اطلاعات مرتبط.',
+      benefits: ['تحلیل خودکار اسناد', 'استخراج اطلاعات کلیدی', 'پشتیبانی از فایل‌های چندگانه']
+    },
+    {
+      icon: BookOpen,
+      title: 'یادگیری از محتوای سایت',
+      description: 'تحلیل خودکار صفحات وب‌سایت و ایجاد پایگاه دانش جامع از محتوای موجود.',
+      benefits: ['به‌روزرسانی مداوم', 'یادگیری از محتوا', 'پوشش کامل وب‌سایت']
+    },
+    {
+      icon: MessageSquare,
+      title: 'گفتگوی طبیعی فارسی',
+      description: 'درک عمیق زبان فارسی و قابلیت گفتگوی طبیعی و روان با کاربران.',
+      benefits: ['مهارت درک بالا', 'پاسخ‌های طبیعی', 'پشتیبانی از لهجه‌های مختلف']
+    },
     {
       icon: Clock,
-      title: 'صرفه‌جویی در زمان',
-      description: 'پاسخگویی همزمان به چندین مشتری بدون محدودیت زمانی'
-    },
-    {
-      icon: Users,
-      title: 'افزایش رضایت مشتریان',
-      description: 'پاسخگویی سریع و دقیق به سوالات مشتریان'
-    },
-    {
-      icon: TrendingUp,
-      title: 'افزایش فروش',
-      description: 'ارائه پیشنهادات فروش هوشمند و مرتبط به مشتریان'
-    },
-    {
-      icon: Shield,
-      title: 'امنیت و اعتماد',
-      description: 'حفظ حریم خصوصی و امنیت اطلاعات مشتریان'
+      title: 'پشتیبانی ۲۴/۷',
+      description: 'ارائه خدمات پشتیبانی و پاسخگویی در تمام ساعات شبانه‌روز بدون وقفه.',
+      benefits: ['دسترسی شبانه‌روزی', 'پاسخ فوری', 'کاهش هزینه‌های عملیاتی']
     }
-  ]
+  ];
 
-  const useCases = [
+  const benefits = [
+    { metric: '۸۰%', label: 'کاهش بار کاری پشتیبانی', color: 'text-green-600' },
+    { metric: '۲۴/۷', label: 'پاسخگویی مداوم', color: 'text-blue-600' },
+    { metric: '۹۵%', label: 'دقت پاسخ‌ها', color: 'text-purple-600' },
+    { metric: '۶۰%', label: 'افزایش رضایت مشتری', color: 'text-orange-600' }
+  ];
+
+  const integrations = [
+    'CRM سیستم‌ها (Salesforce, HubSpot, Pipedrive)',
+    'پایگاه‌های داده (MySQL, PostgreSQL, MongoDB)',
+    'پلتفرم‌های فروش آنلاین (Shopify, WooCommerce)',
+    'سیستم‌های تیکت (Zendesk, Freshdesk)',
+    'APIهای اختصاصی',
+    'سیستم‌های مدیریت محتوا (WordPress, Drupal)'
+  ];
+
+  const processSteps = [
     {
-      title: 'فروشگاه‌های آنلاین',
-      description: 'راهنمایی مشتریان در انتخاب محصولات و نهایی کردن خرید',
-      icon: Smartphone
+      step: '۱',
+      title: 'تحلیل نیازها',
+      desc: 'بررسی ساختار سازمان، پایگاه دانش موجود و نیازهای مشتریان'
     },
     {
-      title: 'سایت‌های شرکتی',
-      description: 'پاسخگویی به سوالات متداول و هدایت به بخش‌های مختلف',
-      icon: Globe
+      step: '۲',
+      title: 'آماده‌سازی داده‌ها',
+      desc: 'جمع‌آوری و ساختارمندسازی اسناد، صفحات وب و اطلاعات سازمان'
     },
     {
-      title: 'مراکز پشتیبانی',
-      description: 'پشتیبانی اولیه و انتقال موارد پیچیده به کارشناسان',
-      icon: Users
+      step: '۳',
+      title: 'آموزش مدل AI',
+      desc: 'آموزش مدل هوش مصنوعی با داده‌های سازمانی و تنظیم پارامترها'
     },
     {
-      title: 'رستوران‌ها و خدمات',
-      description: 'رزرو آنلاین، معرفی منو و پاسخگویی به سوالات',
-      icon: Star
+      step: '۴',
+      title: 'تست و بهینه‌سازی',
+      desc: 'آزمایش چت‌بات با سناریوهای مختلف و بهبود عملکرد'
+    },
+    {
+      step: '۵',
+      title: 'راه‌اندازی و پشتیبانی',
+      desc: 'پیاده‌سازی عملیاتی و ارائه خدمات پشتیبانی مداوم'
     }
-  ]
+  ];
+
+  const faqs = [
+    {
+      question: 'چت‌بات RAG چگونه کار می‌کند؟',
+      answer: 'چت‌بات RAG ابتدا پرسش کاربر را تحلیل کرده، سپس از پایگاه دانش اطلاعات مرتبط را جستجو می‌کند و در نهایت با ترکیب این اطلاعات، پاسخ دقیق و مفصلی ارائه می‌دهد.'
+    },
+    {
+      question: 'چه نوع فایل‌هایی قابل پردازش است؟',
+      answer: 'سیستم قادر به پردازش فایل‌های PDF، اسناد Word، صفحات وب، کاتالوگ‌های محصولات، و انواع مختلف متن‌های فارسی است.'
+    },
+    {
+      question: 'آیا چت‌بات به‌روزرسانی خودکار دارد؟',
+      answer: 'بله، سیستم به‌طور خودکار محتوای جدید وب‌سایت و اسناد اضافه شده را تحلیل کرده و پایگاه دانش خود را به‌روزرسانی می‌کند.'
+    },
+    {
+      question: 'امکان یکپارچه‌سازی با سیستم‌های موجود وجود دارد؟',
+      answer: 'بله، چت‌بات قابلیت اتصال به CRM، سیستم‌های فروش، پایگاه‌های داده و سایر نرم‌افزارهای سازمانی را دارد.'
+    },
+    {
+      question: 'چقدر طول می‌کشد تا چت‌بات آماده باشد؟',
+      answer: 'بسته به حجم داده‌ها و پیچیدگی نیازها، معمولاً بین ۲ تا ۶ هفته زمان نیاز است تا چت‌بات کاملاً آموزش دیده و آماده شود.'
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-white">
+      <Script
+        id="structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+
       <Header />
+
       <main>
         {/* Hero Section */}
-        <section className="section-padding bg-gradient-to-br from-slate-50 to-indigo-50">
+        <section className="section-padding bg-gradient-to-br from-indigo-50 to-blue-50">
           <div className="container-custom">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="animate-fade-in">
-                <Badge className="bg-indigo-100 text-indigo-700 mb-4">
-                  جدیدترین تکنولوژی هوش مصنوعی
-                </Badge>
-                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                  چت‌بات <span className="gradient-text">فارسی</span> هوشمند
-                </h1>
-                <p className="text-xl text-gray-600 mb-8">
-                  دستیار مجازی ۲۴ ساعته برای پاسخگویی به مشتریان، افزایش فروش و بهبود تجربه کاربری کسب‌وکار شما.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button size="lg" className="gradient-bg text-white">
-                    سفارش چت‌بات فارسی
-                  </Button>
-                  <Button variant="outline" size="lg">
-                    دمو رایگان
-                  </Button>
-                </div>
-              </div>
-
-              <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
-                <div className="bg-white rounded-2xl shadow-2xl p-8">
-                  <div className="bg-gradient-to-br from-indigo-100 to-purple-100 rounded-xl p-6 mb-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center">
-                        <MessageSquare className="h-6 w-6 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="font-bold text-lg">چت‌بات عصر سئو</h3>
-                        <p className="text-sm text-gray-600">هوشمند و همیشه آنلاین</p>
-                      </div>
-                    </div>
-                    <div className="space-y-3 text-sm">
-                      <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                        <span>آنلاین و آماده پاسخگویی</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                        <span>پاسخگویی به زبان فارسی</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                        <span>یادگیری از تجربیات قبلی</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="text-center">
-                    <p className="text-sm text-gray-600 mb-4">نمونه چت با چت‌بات ما:</p>
-                    <div className="bg-gray-50 rounded-lg p-4 text-right">
-                      <p className="text-sm text-gray-800 mb-2">مشتری: سلام، ساعات کاری شما چیه؟</p>
-                      <p className="text-sm text-indigo-600">چت‌بات: سلام! ما ۲۴ ساعته آنلاین هستیم و آماده کمک به شما هستیم. 😊</p>
-                    </div>
-                  </div>
-                </div>
+            <div className="text-center animate-fade-in">
+              <Badge className="bg-indigo-100 text-indigo-700 mb-4">
+                تکنولوژی RAG پیشرفته
+              </Badge>
+              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                چت‌بات <span className="gradient-text">RAG</span> هوشمند
+              </h1>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                چت‌بات پیشرفته فارسی با قابلیت یادگیری از پایگاه دانش سازمانی، اسناد PDF و صفحات وب‌سایت برای پاسخگویی دقیق و هوشمند ۲۴ ساعته
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button size="lg" className="gradient-bg text-white">
+                  دمو رایگان چت‌بات
+                </Button>
+                <Button variant="outline" size="lg">
+                  مشاوره رایگان
+                </Button>
               </div>
             </div>
           </div>
@@ -151,79 +240,37 @@ export default function PersianChatbotPage() {
         <section className="section-padding">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">قابلیت‌های چت‌بات فارسی ما</h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                چت‌بات هوشمند ما با قابلیت‌های پیشرفته، تجربه‌ای منحصر به فرد برای مشتریان شما ایجاد می‌کند
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                قابلیت‌های چت‌بات RAG
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                چت‌بات هوشمند با تکنولوژی پیشرفته RAG که از داده‌های شما یاد می‌گیرد و پاسخ‌های دقیقی ارائه می‌دهد
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12">
-              <div className="animate-fade-in">
-                <div className="space-y-4">
-                  {features.map((feature, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <CheckCircle className="h-6 w-6 text-green-500 flex-shrink-0 mt-0.5" />
-                      <p className="text-gray-600">{feature}</p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {features.map((feature, index) => (
+                <Card key={index} className="hover:shadow-xl transition-all duration-300 group animate-fade-in border-0 shadow-lg">
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center group-hover:bg-indigo-200 transition-colors">
+                        <feature.icon className="h-6 w-6 text-indigo-600" />
+                      </div>
+                      <CardTitle className="text-xl font-semibold">{feature.title}</CardTitle>
                     </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
-                <Card className="shadow-xl">
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                      <Brain className="h-6 w-6 text-indigo-600" />
-                      آمار عملکرد چت‌بات‌های ما
-                    </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <div className="grid grid-cols-2 gap-6">
-                      <div className="text-center">
-                        <div className="text-3xl font-bold text-indigo-600 mb-2">۹۵%</div>
-                        <div className="text-sm text-gray-600">دقت پاسخگویی</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-3xl font-bold text-green-600 mb-2">۸۰%</div>
-                        <div className="text-sm text-gray-600">کاهش هزینه پشتیبانی</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-3xl font-bold text-purple-600 mb-2">۲۴/۷</div>
-                        <div className="text-sm text-gray-600">کارکرد بدون وقفه</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-3xl font-bold text-orange-600 mb-2">۳۰%</div>
-                        <div className="text-sm text-gray-600">افزایش فروش</div>
-                      </div>
+                    <p className="text-gray-600 mb-4 leading-relaxed">
+                      {feature.description}
+                    </p>
+                    <div className="space-y-2">
+                      {feature.benefits.map((benefit, benefitIndex) => (
+                        <div key={benefitIndex} className="flex items-center gap-2 text-sm text-gray-500">
+                          <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
+                          {benefit}
+                        </div>
+                      ))}
                     </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Benefits Section */}
-        <section className="section-padding bg-gradient-to-br from-indigo-50 to-purple-50">
-          <div className="container-custom">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">مزایای چت‌بات فارسی هوشمند</h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                با پیاده‌سازی چت‌بات فارسی، از مزایای متعددی برای کسب‌وکار خود بهره‌مند شوید
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {benefits.map((benefit, index) => (
-                <Card key={index} className="text-center hover:shadow-xl transition-shadow animate-fade-in">
-                  <CardHeader>
-                    <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <benefit.icon className="h-8 w-8 text-indigo-600" />
-                    </div>
-                    <CardTitle className="text-xl">{benefit.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-600">{benefit.description}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -231,24 +278,57 @@ export default function PersianChatbotPage() {
           </div>
         </section>
 
-        {/* Use Cases Section */}
-        <section className="section-padding">
+        {/* Benefits Section */}
+        <section className="section-padding bg-gradient-to-r from-indigo-50 to-blue-50">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">کاربردهای چت‌بات فارسی</h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                چت‌بات هوشمند ما برای انواع کسب‌وکارها و صنایع مختلف قابل استفاده است
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                نتایج <span className="gradient-text">اثبات شده</span>
+              </h2>
+              <p className="text-xl text-gray-600">
+                آمار عملکرد چت‌بات‌های RAG در سازمان‌های مختلف
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {useCases.map((useCase, index) => (
-                <div key={index} className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-indigo-50 animate-fade-in">
-                  <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <useCase.icon className="h-8 w-8 text-indigo-600" />
+              {benefits.map((benefit, index) => (
+                <Card key={index} className="text-center hover-scale">
+                  <CardContent className="p-6">
+                    <div className={`text-4xl font-bold ${benefit.color} mb-2`}>
+                      {benefit.metric}
+                    </div>
+                    <p className="text-gray-900 font-medium">
+                      {benefit.label}
+                    </p>
+                    <TrendingUp className="h-5 w-5 text-green-600 mx-auto mt-2" />
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Integration Section */}
+        <section className="section-padding">
+          <div className="container-custom">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                یکپارچه‌سازی <span className="gradient-text">جامع</span>
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                اتصال به تمام سیستم‌های سازمانی برای تجربه‌ای یکپارچه و هوشمند
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {integrations.map((integration, index) => (
+                <div key={index} className="flex items-center gap-4 p-4 bg-white border border-gray-200 rounded-xl hover:shadow-md transition-shadow">
+                  <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
+                    <Globe className="h-5 w-5 text-indigo-600" />
                   </div>
-                  <h3 className="text-lg font-bold mb-3">{useCase.title}</h3>
-                  <p className="text-gray-600 text-sm">{useCase.description}</p>
+                  <span className="text-gray-900 font-medium">
+                    {integration}
+                  </span>
                 </div>
               ))}
             </div>
@@ -256,45 +336,64 @@ export default function PersianChatbotPage() {
         </section>
 
         {/* Process Section */}
-        <section className="section-padding bg-gradient-to-br from-indigo-50 to-purple-50">
+        <section className="section-padding bg-gradient-to-br from-gray-50 to-indigo-50">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">فرآیند پیاده‌سازی چت‌بات</h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                با روش کار سیستماتیک ما، چت‌بات اختصاصی خود را در کمترین زمان دریافت کنید
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                فرآیند <span className="gradient-text">پیاده‌سازی</span>
+              </h2>
+              <p className="text-xl text-gray-600">
+                مراحل راه‌اندازی چت‌بات RAG در سازمان شما
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center animate-fade-in">
-                <div className="w-20 h-20 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-2xl font-bold text-indigo-600">۱</span>
+            <div className="space-y-8">
+              {processSteps.map((step, index) => (
+                <div key={index} className="flex items-center gap-8 p-6 bg-white/80 rounded-xl shadow-sm">
+                  <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center text-2xl font-bold text-indigo-700">
+                    {step.step}
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                      {step.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      {step.desc}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold mb-4">تحلیل نیازها</h3>
-                <p className="text-gray-600">
-                  بررسی کسب‌وکار شما و شناسایی نیازهای مشتریان برای طراحی سناریوهای مناسب
-                </p>
-              </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
-              <div className="text-center animate-fade-in" style={{animationDelay: '0.2s'}}>
-                <div className="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-2xl font-bold text-purple-600">۲</span>
-                </div>
-                <h3 className="text-xl font-bold mb-4">آموزش و تنظیم</h3>
-                <p className="text-gray-600">
-                  آموزش چت‌بات با اطلاعات کسب‌وکار شما و تنظیم سناریوهای پاسخگویی
-                </p>
-              </div>
+        {/* FAQ Section */}
+        <section className="section-padding">
+          <div className="container-custom">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                سوالات <span className="gradient-text">متداول</span>
+              </h2>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                پاسخ به رایج‌ترین سوالات درباره چت‌بات RAG فارسی
+              </p>
+            </div>
 
-              <div className="text-center animate-fade-in" style={{animationDelay: '0.4s'}}>
-                <div className="w-20 h-20 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-2xl font-bold text-pink-600">۳</span>
-                </div>
-                <h3 className="text-xl font-bold mb-4">پیاده‌سازی و پشتیبانی</h3>
-                <p className="text-gray-600">
-                  راه‌اندازی چت‌بات روی وب‌سایت شما و ارائه پشتیبانی مداوم برای بهبود عملکرد
-                </p>
-              </div>
+            <div className="max-w-4xl mx-auto space-y-4">
+              {faqs.map((faq, index) => (
+                <Card key={index} className="hover:shadow-md transition-shadow">
+                  <CardHeader>
+                    <CardTitle className="text-lg text-right flex items-center gap-2">
+                      <span>{faq.question}</span>
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-600 text-right leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </section>
@@ -302,21 +401,24 @@ export default function PersianChatbotPage() {
         {/* CTA Section */}
         <section className="section-padding bg-gradient-to-br from-slate-900 to-slate-800 text-white">
           <div className="container-custom text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">آماده سفارش چت‌بات فارسی هستید؟</h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-              همین امروز چت‌بات اختصاصی خود را سفارش دهید و از مزایای آن بهره‌مند شوید
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              آماده هوشمندسازی پشتیبانی سازمانتان هستید؟
+            </h2>
+            <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+              چت‌بات RAG هوشمند فارسی را پیاده‌سازی کنید و تجربه پشتیبانی بی‌نظیری برای مشتریان خود فراهم آورید
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-slate-900 hover:bg-gray-100">
-                سفارش چت‌بات فارسی
+              <Button size="lg" className="bg-indigo-600 hover:bg-indigo-700 text-white">
+                شروع پیاده‌سازی چت‌بات
               </Button>
               <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-slate-900">
-                مشاهده دمو
+                دریافت مشاوره رایگان
               </Button>
             </div>
           </div>
         </section>
       </main>
+
       <Footer />
     </div>
   )

@@ -1,93 +1,122 @@
 import { Metadata } from 'next'
 import Header from '@/components/Layout/Header'
 import Footer from '@/components/Layout/Footer'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { Search, TrendingUp, Target, BarChart } from 'lucide-react'
+import ServicesHero from '@/components/Services/ServicesHero'
+import ServicesList from '@/components/Services/ServicesList'
+import WhyChooseUs from '@/components/Services/WhyChooseUs'
+import PricingSection from '@/components/Services/PricingSection'
+import ProcessSection from '@/components/Services/ProcessSection'
+import TestimonialsSection from '@/components/Services/TestimonialsSection'
+import ContactCTA from '@/components/Services/ContactCTA'
+import Script from 'next/script'
 
 export const metadata: Metadata = {
-  title: 'خدمات سئو و بهینه‌سازی وب‌سایت | عصر سئو',
-  description: 'خدمات حرفه‌ای سئو و بهینه‌سازی وب‌سایت برای رسیدن به رتبه‌های اول گوگل. تیم متخصص عصر سئو آماده همراهی شماست.',
-  keywords: 'خدمات سئو, بهینه‌سازی وب‌سایت, سئو تکنیکال, سئو محتوا',
+  title: 'خدمات دیجیتال مارکتینگ | سئو، تبلیغات گوگل، هوش مصنوعی | عصر سئو',
+  description: 'تمام خدمات دیجیتال مارکتینگ شامل سئو، تبلیغات گوگل ادز، طراحی وب‌سایت، هوش مصنوعی، چت‌بات فارسی و اتوماسیون بازاریابی توسط تیم متخصص عصر سئو.',
+  keywords: 'خدمات دیجیتال مارکتینگ, سئو, تبلیغات گوگل, طراحی وب‌سایت, هوش مصنوعی, چت‌بات فارسی',
   alternates: {
-    canonical: 'https://asreseo.com/services/seo',
+    canonical: 'https://asreseo.com/services',
   },
   openGraph: {
-    title: 'خدمات سئو و بهینه‌سازی وب‌سایت | عصر سئو',
-    description: 'خدمات حرفه‌ای سئو و بهینه‌سازی وب‌سایت برای رسیدن به رتبه‌های اول گوگل.',
+    title: 'خدمات دیجیتال مارکتینگ | عصر سئو',
+    description: 'تمام خدمات دیجیتال مارکتینگ از سئو تا هوش مصنوعی.',
     type: 'website',
-    url: 'https://asreseo.com/services/seo',
+    url: 'https://asreseo.com/services',
+    images: [
+      {
+        url: '/og-services.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'خدمات دیجیتال مارکتینگ عصر سئو'
+      }
+    ]
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'خدمات دیجیتال مارکتینگ | عصر سئو',
+    description: 'تمام خدمات دیجیتال مارکتینگ از سئو تا هوش مصنوعی.',
+    images: ['/og-services.jpg'],
+  },
+}
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "عصر سئو",
+  "alternateName": "AsreSEO",
+  "url": "https://asreseo.com",
+  "logo": "https://asreseo.com/logo.png",
+  "description": "ارائه‌دهنده خدمات حرفه‌ای سئو، تبلیغات گوگل، دیجیتال مارکتینگ و طراحی وب‌سایت در ایران",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "IR"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+98-21-12345678",
+    "contactType": "customer service",
+    "availableLanguage": ["Persian", "English"]
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "خدمات دیجیتال مارکتینگ عصر سئو",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "خدمات سئو",
+          "description": "بهینه‌سازی وب‌سایت برای موتورهای جستجو"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "تبلیغات گوگل ادز",
+          "description": "مدیریت کمپین‌های تبلیغاتی در گوگل"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "طراحی وب‌سایت",
+          "description": "طراحی وب‌سایت‌های سئو محور و واکنش‌گرا"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "خدمات هوش مصنوعی",
+          "description": "پیاده‌سازی راهکارهای هوش مصنوعی برای بازاریابی"
+        }
+      }
+    ]
+  },
+  "sameAs": [
+    "https://instagram.com/asreseo",
+    "https://linkedin.com/company/asreseo",
+    "https://twitter.com/asreseo"
+  ]
 }
 
 export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-white">
+      <Script
+        id="structured-data" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+
       <Header />
       <main>
-        {/* Hero Section */}
-        <section className="section-padding bg-gradient-to-br from-slate-50 to-blue-50">
-          <div className="container-custom">
-            <div className="text-center animate-fade-in">
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-                خدمات <span className="gradient-text">سئو</span> حرفه‌ای
-              </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-                با خدمات جامع سئو عصر سئو، وب‌سایت خود را به رتبه‌های اول گوگل برسانید و ترافیک ارگانیک خود را چندین برابر افزایش دهید.
-              </p>
-              <Button size="lg" className="gradient-bg text-white px-8">
-                دریافت مشاوره رایگان
-              </Button>
-            </div>
-          </div>
-        </section>
-
-        {/* Services Grid */}
-        <section className="section-padding">
-          <div className="container-custom">
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card className="hover:shadow-xl transition-shadow">
-                <CardHeader>
-                  <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
-                    <Search className="h-7 w-7 text-blue-600" />
-                  </div>
-                  <CardTitle>سئو تکنیکال</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 mb-4">
-                    بهینه‌سازی تکنیکال کامل وب‌سایت شما برای موتورهای جستجو
-                  </p>
-                  <ul className="space-y-2 text-sm text-gray-600">
-                    <li>• بهبود سرعت وب‌سایت</li>
-                    <li>• بهینه‌سازی ساختار URL</li>
-                    <li>• تنظیم Schema Markup</li>
-                    <li>• رفع خطاهای کرال</li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <Card className="hover:shadow-xl transition-shadow">
-                <CardHeader>
-                  <div className="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-4">
-                    <TrendingUp className="h-7 w-7 text-green-600" />
-                  </div>
-                  <CardTitle>سئو محتوا</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 mb-4">
-                    تولید و بهینه‌سازی محتوای با کیفیت برای جذب مخاطبان هدف
-                  </p>
-                  <ul className="space-y-2 text-sm text-gray-600">
-                    <li>• تحقیق و انتخاب کلمات کلیدی</li>
-                    <li>• تولید محتوای متنوع</li>
-                    <li>• بهینه‌سازی متا تگ‌ها</li>
-                    <li>• استراتژی لینک‌سازی داخلی</li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
+        <ServicesHero />
+        <ServicesList />
+        <WhyChooseUs />
+        <ProcessSection />
+        <PricingSection />
+        <TestimonialsSection />
+        <ContactCTA />
       </main>
       <Footer />
     </div>

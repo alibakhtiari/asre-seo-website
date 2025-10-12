@@ -11,9 +11,23 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'درباره ما | عصر سئو',
-    description: 'آشنایی با تیم متخصص عصر سئو و تجربه چندین ساله ما در زمینه دیجیتال مارکتینگ، سئو و طراحی وب‌سایت.',
+    description: 'آشنایی با تیم متخصص عصر سئو',
     type: 'website',
     url: 'https://asreseo.com/about',
+    images: [
+      {
+        url: '/og-about.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'درباره عصر سئو'
+      }
+    ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'درباره عصر سئو',
+    description: 'آشنایی با تیم متخصص عصر سئو',
+    images: ['/og-about.jpg'],
   },
 }
 
