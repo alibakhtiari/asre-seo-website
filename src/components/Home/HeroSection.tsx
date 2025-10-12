@@ -20,7 +20,7 @@ const HeroSection = () => {
         <div className="absolute bottom-40 right-40 w-5 h-5 bg-purple-400 rounded-full animate-bounce" style={{animationDelay: '3s'}}></div>
       </div>
 
-      <div className="container-custom relative z-10">
+      <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <div className="text-center">
           {/* Trust indicators */}
           <div className="flex items-center justify-center gap-6 mb-8 animate-fade-in">
@@ -76,9 +76,9 @@ const HeroSection = () => {
 
           {/* Enhanced CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 sm:space-x-reverse mb-8 animate-slide-in-up" style={{animationDelay: '0.5s'}}>
-            <Button 
-              size="lg" 
-              className="gradient-bg text-white px-8 py-4 text-lg hover:opacity-90 transition-all duration-300 transform hover:scale-105 animate-pulse-glow shadow-xl"
+            <Button
+              size="lg"
+              className="gradient-bg text-white px-8 py-4 text-lg hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl group"
             >
               مشاوره رایگان دریافت کنید
             </Button>

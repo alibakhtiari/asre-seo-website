@@ -12,7 +12,7 @@ const CTASection = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" style={{animationDelay: '6s'}}></div>
       </div>
 
-      <div className="container-custom relative z-10">
+  <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
             آماده شروع <span className="text-yellow-400">همکاری</span> هستید؟

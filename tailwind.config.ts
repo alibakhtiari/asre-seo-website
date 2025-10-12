@@ -182,6 +182,42 @@ export default {
 						transform: 'translateX(0)'
 					}
 				},
+				'slide-in-up': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(30px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'zoom-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'scale(0.8)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'scale(1)'
+					}
+				},
+				'pulse-glow': {
+					'0%, 100%': {
+						boxShadow: '0 0 20px rgba(var(--primary-500), 0.3)'
+					},
+					'50%': {
+						boxShadow: '0 0 40px rgba(var(--primary-500), 0.6)'
+					}
+				},
+				'hover-lift': {
+					'0%': {
+						transform: 'translateY(0)'
+					},
+					'100%': {
+						transform: 'translateY(-4px)'
+					}
+				},
 				'float': {
 					'0%, 100%': {
 						transform: 'translateY(0px)'
@@ -205,7 +241,12 @@ export default {
 				'fade-in': 'fade-in 0.6s ease-out',
 				'slide-in-right': 'slide-in-right 0.6s ease-out',
 				'float': 'float 6s ease-in-out infinite',
-				'glow': 'glow 2s ease-in-out infinite'
+				'glow': 'glow 2s ease-in-out infinite',
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+				'hover-lift': 'hover-lift 0.3s ease-out',
+				'animate-delay-4s': 'float 6s ease-in-out 4s infinite',
+				'slide-in-up': 'slide-in-up 0.6s ease-out',
+				'zoom-in': 'zoom-in 0.6s ease-out'
 			}
 		}
 	},

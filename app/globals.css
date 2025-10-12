@@ -83,3 +83,65 @@ body {
 [dir="ltr"] {
   text-align: left;
 }
+
+/* Container max width utilities */
+.container-custom {
+  @apply w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12;
+}
+
+/* Section padding utilities */
+.section-padding {
+  @apply py-16 lg:py-24;
+}
+
+/* Enhanced contrast utilities */
+.gradient-bg {
+  background: linear-gradient(135deg, #3B82F6 0%, #7C3AED 100%);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #3B82F6 0%, #7C3AED 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glass effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Service card styles */
+.service-card {
+  @apply bg-white/80 backdrop-blur-sm hover:bg-white/90 transition-all duration-300 shadow-xl hover:shadow-2xl border border-white/20;
+}
+
+/* Floating animations */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Animation keyframes */
+@keyframes animate-pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+  }
+}

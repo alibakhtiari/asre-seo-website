@@ -29,8 +29,8 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section className="section-padding bg-white">
-      <div className="container-custom">
+    <section className="py-16 lg:py-24 bg-white">
+      <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
@@ -46,7 +46,7 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <Card 
               key={index}
-              className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-0 shadow-lg overflow-hidden animate-slide-in-right"
+              className="group hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 border-0 shadow-lg overflow-hidden animate-slide-in-right bg-gradient-to-br hover:from-white hover:to-gray-50"
               style={{animationDelay: `${index * 0.2}s`}}
             >
               <CardHeader className="text-center pb-4">

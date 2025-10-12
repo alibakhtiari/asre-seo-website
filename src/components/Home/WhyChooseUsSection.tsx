@@ -70,7 +70,7 @@ const WhyChooseUsSection = () => {
         <div className="absolute bottom-0 left-0 w-72 h-72 bg-gradient-to-br from-blue-200 to-indigo-200 rounded-full mix-blend-multiply filter blur-xl"></div>
       </div>
 
-      <div className="container-custom relative z-10">
+  <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
