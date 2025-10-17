@@ -9,6 +9,8 @@ import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import useBlogPosts, { BlogPost } from '@/hooks/useBlogPosts'
 
+export const runtime = 'edge';
+
 export default function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const [slug, setSlug] = useState<string>('')
 
