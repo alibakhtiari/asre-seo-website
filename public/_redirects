@@ -1,0 +1,9 @@
+# Cloudflare Pages configuration for redirects
+# /home -> / (redirect old React Router routes)
+/home / 301!
+
+# Blog post redirects for old React Router structure
+/blog/post/:slug /blog/:slug 301!
+
+# API redirects (if any)
+# /api/old-endpoint /api/new-endpoint 301!

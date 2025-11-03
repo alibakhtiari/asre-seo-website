@@ -445,7 +445,7 @@ export default function GoogleAdsPage() {
                       {step.title}
                     </h3>
                     <p className="text-gray-600 leading-relaxed">
-                      {step.description}
+                      {step.desc}
                     </p>
                   </div>
                 </div>

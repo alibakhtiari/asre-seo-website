@@ -1,3 +1,5 @@
+'use client'
+
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
@@ -12,6 +14,30 @@ interface BlogPostProps {
 }
 
 const BlogPostComponent = ({ post }: BlogPostProps) => {
+  const handleShare = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: post.title,
+          text: post.excerpt,
+          url: window.location.href
+        });
+      } catch (err) {
+        // User cancelled sharing
+        console.log('Share cancelled');
+      }
+    } else {
+      // Fallback to clipboard
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        // You could add a toast notification here
+        console.log('Link copied to clipboard!');
+      } catch (err) {
+        console.error('Failed to copy link');
+      }
+    }
+  };
+
   const jsonLdFAQ = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -83,18 +109,7 @@ const BlogPostComponent = ({ post }: BlogPostProps) => {
               <Button 
                 variant="outline" 
                 size="sm"
-                onClick={() => {
-                  if (navigator.share) {
-                    navigator.share({
-                      title: post.title,
-                      text: post.excerpt,
-                      url: window.location.href
-                    });
-                  } else {
-                    navigator.clipboard.writeText(window.location.href);
-                    // You could add a toast notification here
-                  }
-                }}
+                onClick={handleShare}
               >
                 <Share2 className="h-4 w-4 ml-2" />
                 اشتراک‌گذاری

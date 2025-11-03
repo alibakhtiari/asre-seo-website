@@ -1,2 +1,41 @@
 name = "asre-seo-website"
 compatibility_flags = ["nodejs_compat"]
+
+# Cloudflare Pages configuration
+[build]
+command = "npm run build"
+publish = "./out"
+
+[build.environment]
+NODE_VERSION = "18"
+
+# Pages Functions configuration (optional, for serverless functions)
+# [functions]
+# directory = "./functions"
+
+# Environment variables
+[env.production.vars]
+NODE_ENV = "production"
+SITE_URL = "https://asreseo.com"
+
+[env.staging.vars]
+NODE_ENV = "staging"
+SITE_URL = "https://staging.asreseo.com"
+
+# Custom domains
+# [[env.production.domains]]
+# domain = "asreseo.com"
+# zone_id = "your_zone_id"
+
+# [[env.production.domains]]
+# domain = "www.asreseo.com"
+# zone_id = "your_zone_id"
+
+# Cron jobs (if needed in the future)
+# [[env.production.crons]]
+# schedule = "0 0 * * *"
+# path = "/api/backup"
+
+# Redirects and headers are global for Cloudflare Pages
+# Redirects can be defined in a _redirects file in the public folder
+# Headers can be defined in a _headers file in the public folder
