@@ -38,10 +38,6 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://asreseo.com'),
   alternates: {
     canonical: '/',
-    languages: {
-      'fa': '/',
-      'en': '/en',
-    },
   },
   openGraph: {
     title: 'عصر سئو | بهترین خدمات دیجیتال مارکتینگ در ایران',
@@ -99,6 +95,7 @@ export default function RootLayout({
           {children}
           <FloatingActions />
         </Providers>
+        {/* TODO: Replace G-XXXXXXXXXX with actual Google Analytics Measurement ID */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
           strategy="afterInteractive"
