@@ -1,5 +1,6 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
+import Script from 'next/script'
 import './globals.css'
 import FloatingActions from '@/components/FloatingActions'
 import { Providers } from './providers'
@@ -17,6 +18,10 @@ const vazirMatn = localFont({
   ],
   display: 'swap',
 })
+
+export const viewport: Viewport = {
+  themeColor: '#3b82f6',
+}
 
 export const metadata: Metadata = {
   title: 'عصر سئو | بهترین خدمات دیجیتال مارکتینگ، سئو و هوش مصنوعی در ایران',
@@ -94,6 +99,19 @@ export default function RootLayout({
           {children}
           <FloatingActions />
         </Providers>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-XXXXXXXXXX');
+          `}
+        </Script>
       </body>
     </html>
   )

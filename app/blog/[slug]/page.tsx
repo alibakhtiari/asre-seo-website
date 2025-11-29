@@ -28,25 +28,28 @@ export function generateStaticParams() {
 // Generate metadata for each blog post
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
-  
+
   // Sample blog posts data - in a real app, fetch from your data source
   const blogPosts = {
     'seo-guide-2024': {
       title: 'راهنمای کامل سئو تکنیکال 2024',
-      description: 'آموزش جامع سئو تکنیکال برای بهبود رتبه‌بندی وب‌سایت در گوگل'
+      description: 'آموزش جامع سئو تکنیکال برای بهبود رتبه‌بندی وب‌سایت در گوگل',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2015&q=80'
     },
     'google-ads-guide-2024': {
       title: 'راهنمای گوگل ادز 2024',
-      description: 'نحوه راه‌اندازی و بهینه‌سازی کمپین‌های تبلیغاتی گوگل ادز'
+      description: 'نحوه راه‌اندازی و بهینه‌سازی کمپین‌های تبلیغاتی گوگل ادز',
+      image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2039&q=80'
     },
     'digital-marketing-trends-2024': {
       title: 'ترندهای دیجیتال مارکتینگ 2024',
-      description: 'جدیدترین روندها و تکنیک‌های دیجیتال مارکتینگ در سال 2024'
+      description: 'جدیدترین روندها و تکنیک‌های دیجیتال مارکتینگ در سال 2024',
+      image: 'https://images.unsplash.com/photo-1553895501-af9e282e7fc1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
     }
   }
 
   const post = blogPosts[slug as keyof typeof blogPosts]
-  
+
   if (!post) {
     return {
       title: 'مقاله یافت نشد',
@@ -56,12 +59,24 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${post.title} | عصر سئو`,
     description: post.description,
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      images: [
+        {
+          url: post.image,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
   }
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  
+
   // Sample blog posts data - in a real app, fetch from your data source
   const blogPosts = {
     'seo-guide-2024': {
@@ -107,7 +122,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   }
 
   const post = blogPosts[slug as keyof typeof blogPosts]
-  
+
   if (!post) {
     notFound()
   }
