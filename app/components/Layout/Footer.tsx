@@ -34,7 +34,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3 space-x-reverse">
-              <div className="w-10 h-10 bg-gradient-to-br from-asre-blue-500 to-asre-green-500 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-green-500 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">ع</span>
               </div>
               <div>

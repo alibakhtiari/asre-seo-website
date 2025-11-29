@@ -14,13 +14,13 @@ const BlogHero = () => {
           <p className="text-xl text-gray-600 mb-8 leading-relaxed">
             آخرین مقالات و راهنماهای دیجیتال مارکتینگ، سئو و بازاریابی آنلاین
           </p>
-          
+
           <div className="max-w-2xl mx-auto">
             <div className="relative">
-              <Input 
-                type="text" 
-                placeholder="جستجو در مقالات..." 
-                className="pl-12 pr-4 py-4 text-lg rounded-xl border-2 border-gray-200 focus:border-asre-blue-500"
+              <Input
+                type="text"
+                placeholder="جستجو در مقالات..."
+                className="pl-12 pr-4 py-4 text-lg rounded-xl border-2 border-gray-200 focus:border-blue-500"
               />
               <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
             </div>

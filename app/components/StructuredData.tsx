@@ -72,7 +72,9 @@ export function HomepageStructuredData() {
       'تبلیغات گوگل',
       'طراحی وب‌سایت',
       'هوش مصنوعی',
-      'اتوماسیون بازاریابی'
+      'اتوماسیون بازاریابی',
+      'تولید محتوا با AI',
+      'چت‌بات هوشمند'
     ],
     aggregateRating: {
       '@type': 'AggregateRating',
@@ -97,6 +99,14 @@ export function HomepageStructuredData() {
             '@type': 'Service',
             name: 'تبلیغات گوگل ادز',
             description: 'مدیریت و بهینه‌سازی کمپین‌های تبلیغاتی'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'خدمات هوش مصنوعی',
+            description: 'راهکارهای نوین AI برای رشد کسب‌وکار و اتوماسیون'
           }
         }
       ]

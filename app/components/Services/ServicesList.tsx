@@ -107,10 +107,10 @@ const ServicesList = () => {
                       <service.icon className="h-8 w-8 text-white" />
                     </div>
                     <div>
-                      <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-asre-blue-600 transition-colors">
+                      <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
                         {service.title}
                       </CardTitle>
-                      <div className="text-lg font-semibold text-asre-green-600 mt-1">
+                      <div className="text-lg font-semibold text-green-600 mt-1">
                         {service.price}
                       </div>
                     </div>
@@ -120,19 +120,19 @@ const ServicesList = () => {
                   {service.description}
                 </CardDescription>
               </CardHeader>
-              
+
               <CardContent className="pt-0">
                 <ul className="space-y-3 mb-6">
                   {service.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center text-gray-700">
-                      <div className="w-5 h-5 rounded-full bg-asre-green-100 flex items-center justify-center ml-3">
-                        <div className="w-2 h-2 rounded-full bg-asre-green-500"></div>
+                      <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center ml-3">
+                        <div className="w-2 h-2 rounded-full bg-green-500"></div>
                       </div>
                       {feature}
                     </li>
                   ))}
                 </ul>
-                
+
                 <Button className="w-full gradient-bg text-white hover:opacity-90 transition-opacity">
                   درخواست مشاوره رایگان
                 </Button>

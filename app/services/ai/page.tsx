@@ -24,84 +24,31 @@ export const metadata: Metadata = {
 export default function AIPage() {
   const aiServices = [
     {
-      title: 'اتوماسیون بازاریابی',
-      description: 'خودکارسازی فرآیندهای بازاریابی با استفاده از هوش مصنوعی',
-      icon: Bot,
-      features: ['ارسال ایمیل خودکار', 'مدیریت شبکه‌های اجتماعی', 'لید اسکورینگ', 'پاسخ به مشتریان'],
-      isNew: false,
-      gradient: 'from-blue-500 to-blue-700'
-    },
-    {
-      title: 'تولید محتوا با AI',
-      description: 'تولید محتوای متنی، تصویری و ویدیویی با هوش مصنوعی',
+      title: 'تولید محتوای هوشمند',
+      description: 'تولید محتوای متنی و ویدیویی با هوش مصنوعی',
       icon: Sparkles,
-      features: ['مقالات وبلاگ', 'پست‌های شبکه‌های اجتماعی', 'توضیحات محصولات', 'محتوای سئو شده'],
+      features: ['تولید مقاله و متن', 'ساخت ویدیو با AI', 'سناریونویسی هوشمند', 'محتوای شبکه‌های اجتماعی'],
       isNew: true,
-      gradient: 'from-purple-500 to-purple-700'
+      gradient: 'from-purple-500 to-purple-700',
+      href: '/services/ai/content-creation'
     },
     {
-      title: 'تحلیل رفتار کاربران',
-      description: 'بررسی و تحلیل رفتار کاربران برای بهبود تجربه کاربری',
-      icon: Users,
-      features: ['نقشه حرارتی', 'تحلیل مسیر کاربر', 'پیش‌بینی رفتار', 'بهینه‌سازی UX'],
-      isNew: false,
-      gradient: 'from-green-500 to-green-700'
-    },
-    {
-      title: 'سئو هوشمند',
-      description: 'بهینه‌سازی وب‌سایت با استفاده از الگوریتم‌های هوش مصنوعی',
-      icon: Brain,
-      features: ['تحلیل کلمات کلیدی', 'پیشنهاد محتوا', 'لینک‌سازی هوشمند', 'گزارش خودکار'],
-      isNew: false,
-      gradient: 'from-orange-500 to-orange-700'
-    },
-    {
-      title: 'چت‌بات فارسی',
-      description: 'طراحی و پیاده‌سازی چت‌بات‌های هوشمند فارسی زبان',
-      icon: MessageSquare,
-      features: ['پاسخ به سوالات متداول', 'پشتیبانی ۲۴ ساعته', 'یکپارچگی با CRM', 'یادگیری مداوم'],
-      isNew: false,
-      gradient: 'from-indigo-500 to-indigo-700'
-    },
-    {
-      title: 'بهینه‌سازی نرخ تبدیل',
-      description: 'افزایش نرخ تبدیل با استفاده از هوش مصنوعی',
-      icon: Target,
-      features: ['A/B تستینگ خودکار', 'شخصی‌سازی محتوا', 'پیش‌بینی رفتار خرید', 'بهینه‌سازی فرم‌ها'],
-      isNew: false,
-      gradient: 'from-pink-500 to-pink-700'
-    },
-    {
-      title: 'شخصی‌سازی محتوا',
-      description: 'ارائه محتوای شخصی‌سازی شده بر اساس رفتار کاربر',
-      icon: Users,
-      features: ['توصیه محصولات', 'محتوای داینامیک', 'ایمیل‌های شخصی', 'صفحات فرود اختصاصی'],
-      isNew: false,
-      gradient: 'from-teal-500 to-teal-700'
-    },
-    {
-      title: 'مانیتورینگ برند',
-      description: 'نظارت هوشمند بر برند و شهرت آنلاین شما',
-      icon: Shield,
-      features: ['نظارت شبکه‌های اجتماعی', 'تحلیل احساسات', 'گزارش لحظه‌ای', 'هشدارهای هوشمند'],
-      isNew: false,
-      gradient: 'from-red-500 to-red-700'
-    },
-    {
-      title: 'تولید ویدیو با AI',
-      description: 'ایجاد ویدیوهای حرفه‌ای با استفاده از هوش مصنوعی',
-      icon: Video,
-      features: ['ویدیوهای تبلیغاتی', 'توضیحات محصولات', 'ویدیوهای آموزشی', 'محتوای شبکه‌های اجتماعی'],
+      title: 'بازاریابی و تعامل AI',
+      description: 'اتوماسیون بازاریابی، چت‌بات و شخصی‌سازی تجربه مشتری',
+      icon: Bot,
+      features: ['اتوماسیون بازاریابی', 'چت‌بات هوشمند فارسی', 'شخصی‌سازی محتوا', 'تعامل خودکار با مشتری'],
       isNew: true,
-      gradient: 'from-violet-500 to-violet-700'
+      gradient: 'from-blue-500 to-blue-700',
+      href: '/services/ai/marketing-engagement'
     },
     {
-      title: 'مشاوره AI',
-      description: 'مشاوره تخصصی برای پیاده‌سازی راه‌حل‌های هوش مصنوعی',
+      title: 'تحلیل و استراتژی',
+      description: 'سئو هوشمند، بهینه‌سازی نرخ تبدیل و تحلیل رفتار کاربران',
       icon: Brain,
-      features: ['ارزیابی نیازها', 'تدوین استراتژی AI', 'انتخاب ابزارها', 'پیاده‌سازی و آموزش'],
-      isNew: false,
-      gradient: 'from-cyan-500 to-cyan-700'
+      features: ['سئو و تحلیل رقبا', 'بهینه‌سازی نرخ تبدیل (CRO)', 'تحلیل رفتار کاربر', 'مانیتورینگ برند'],
+      isNew: true,
+      gradient: 'from-orange-500 to-orange-700',
+      href: '/services/ai/analysis-strategy'
     }
   ]
 

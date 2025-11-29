@@ -28,7 +28,7 @@ const BlogSidebar = () => {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <TrendingUp className="h-5 w-5 text-asre-blue-600" />
+            <TrendingUp className="h-5 w-5 text-blue-600" />
             محبوب‌ترین مقالات
           </CardTitle>
         </CardHeader>
@@ -36,7 +36,7 @@ const BlogSidebar = () => {
           <ul className="space-y-3">
             {popularPosts.map((post, index) => (
               <li key={index}>
-                <a href="#" className="text-gray-700 hover:text-asre-blue-600 transition-colors text-sm leading-relaxed">
+                <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors text-sm leading-relaxed">
                   {post}
                 </a>
               </li>
@@ -49,7 +49,7 @@ const BlogSidebar = () => {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Calendar className="h-5 w-5 text-asre-green-600" />
+            <Calendar className="h-5 w-5 text-green-600" />
             دسته‌بندی‌ها
           </CardTitle>
         </CardHeader>
@@ -57,7 +57,7 @@ const BlogSidebar = () => {
           <ul className="space-y-2">
             {categories.map((category, index) => (
               <li key={index} className="flex items-center justify-between">
-                <a href="#" className="text-gray-700 hover:text-asre-blue-600 transition-colors">
+                <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors">
                   {category.name}
                 </a>
                 <Badge variant="outline">{category.count}</Badge>
@@ -71,14 +71,14 @@ const BlogSidebar = () => {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Tag className="h-5 w-5 text-asre-green-600" />
+            <Tag className="h-5 w-5 text-green-600" />
             برچسب‌ها
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="flex flex-wrap gap-2">
             {tags.map((tag, index) => (
-              <Badge key={index} variant="outline" className="cursor-pointer hover:bg-asre-blue-50">
+              <Badge key={index} variant="outline" className="cursor-pointer hover:bg-blue-50">
                 {tag}
               </Badge>
             ))}
@@ -87,7 +87,7 @@ const BlogSidebar = () => {
       </Card>
 
       {/* Newsletter */}
-      <Card className="bg-gradient-to-br from-asre-blue-50 to-asre-green-50">
+      <Card className="bg-gradient-to-br from-blue-50 to-green-50">
         <CardHeader>
           <CardTitle>خبرنامه عصر سئو</CardTitle>
         </CardHeader>

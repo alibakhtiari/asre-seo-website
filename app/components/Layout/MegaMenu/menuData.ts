@@ -7,11 +7,9 @@ export const menuCategories: MenuCategory[] = [
     icon: '🔍',
     color: 'text-blue-600',
     items: [
-      { title: 'سئو سایت', href: '/services/seo/website-seo', isPopular: true },
-      { title: 'سئو تکنیکال', href: '/services/seo/technical-seo' },
-      { title: 'سئو محتوا', href: '/services/seo/content-seo' },
-      { title: 'لینک‌سازی', href: '/services/seo/link-building' },
-      { title: 'آنالیز سئو', href: '/services/seo/analysis' }
+      { title: 'سئو تکنیکال و داخلی', href: '/services/seo/technical-onpage' },
+      { title: 'سئو محتوا و اعتبار', href: '/services/seo/content-authority' },
+      { title: 'سئو محلی', href: '/services/seo/local-seo' }
     ]
   },
   {
@@ -33,7 +31,8 @@ export const menuCategories: MenuCategory[] = [
       { title: 'تبلیغات گوگل', href: '/services/marketing/google-ads' },
       { title: 'بازاریابی ایمیلی', href: '/services/marketing/email-marketing' },
       { title: 'شبکه‌های اجتماعی', href: '/services/marketing/social-media' },
-      { title: 'قیف فروش', href: '/services/marketing/sales-funnel' }
+      { title: 'قیف فروش', href: '/services/marketing/sales-funnel' },
+      { title: 'کمپین یکپارچه', href: '/services/marketing/integrated-campaigns' }
     ]
   },
   {
@@ -41,16 +40,9 @@ export const menuCategories: MenuCategory[] = [
     icon: '🤖',
     color: 'text-violet-600',
     items: [
-      { title: 'اتوماسیون بازاریابی', href: '/services/ai/marketing-automation', isNew: true },
-      { title: 'تولید محتوا با AI', href: '/services/ai/auto-content-generation', isNew: true },
-      { title: 'تحلیل رفتار کاربران', href: '/services/ai/user-behavior-analysis' },
-      { title: 'سئو هوشمند', href: '/services/ai/smart-seo' },
-      { title: 'چت‌بات فارسی', href: '/services/ai/persian-chatbot' },
-      { title: 'بهینه‌سازی نرخ تبدیل', href: '/services/ai/conversion-optimization' },
-      { title: 'شخصی‌سازی محتوا', href: '/services/ai/content-personalization' },
-      { title: 'مانیتورینگ برند', href: '/services/ai/brand-monitoring' },
-      { title: 'تولید ویدیو با AI', href: '/services/ai/ai-video-generation', isNew: true },
-      { title: 'مشاوره AI', href: '/services/ai/ai-consulting' }
+      { title: 'تولید محتوای هوشمند', href: '/services/ai/content-creation' },
+      { title: 'بازاریابی و تعامل AI', href: '/services/ai/marketing-engagement' },
+      { title: 'تحلیل و استراتژی', href: '/services/ai/analysis-strategy' }
     ]
   }
 ];
