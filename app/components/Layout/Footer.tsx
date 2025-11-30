@@ -1,6 +1,7 @@
 
 import Link from 'next/link';
 import { Mail } from 'lucide-react';
+import Logo from '@/components/Logo';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -8,9 +9,9 @@ const Footer = () => {
   const footerLinks = {
     services: [
       { title: 'سئو و بهینه‌سازی', href: '/services/seo' },
-      { title: 'تبلیغات گوگل', href: '/services/google-ads' },
-      { title: 'دیجیتال مارکتینگ', href: '/services/digital-marketing' },
-      { title: 'طراحی وب‌سایت', href: '/services/web-design' }
+      { title: 'بازاریابی دیجیتال', href: '/services/marketing' },
+      { title: 'طراحی وب‌سایت', href: '/services/web' },
+      { title: 'هوش مصنوعی', href: '/services/ai' }
     ],
     company: [
       { title: 'درباره ما', href: '/about' },
@@ -34,8 +35,8 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3 space-x-reverse">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-green-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">ع</span>
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-green-500 rounded-lg flex items-center justify-center text-white">
+                <Logo className="w-6 h-6" />
               </div>
               <div>
                 <h3 className="text-xl font-bold">عصر سئو</h3>

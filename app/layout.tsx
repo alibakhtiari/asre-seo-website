@@ -39,6 +39,15 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png' },
+    ],
+  },
   openGraph: {
     title: 'عصر سئو | بهترین خدمات دیجیتال مارکتینگ در ایران',
     description: 'با خدمات حرفه‌ای سئو، طراحی وب‌سایت و هوش مصنوعی، رشد ۳۰۰٪ کسب‌وکار خود را تضمین کنید',

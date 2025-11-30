@@ -21,11 +21,11 @@ const FloatingActions = () => {
   };
 
   const handleCall = () => {
-    window.open('tel:+989123456789', '_self');
+    window.open('tel:+989125811880', '_self');
   };
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/989123456789?text=سلام، برای مشاوره رایگان تماس گرفتم', '_blank');
+    window.open('https://wa.me/989125811880?text=سلام، برای مشاوره رایگان تماس گرفتم', '_blank');
   };
 
   return (
