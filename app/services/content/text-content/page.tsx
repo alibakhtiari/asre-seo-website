@@ -4,6 +4,7 @@ import Footer from '@/components/Layout/Footer'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import Image from 'next/image'
 import { ScrollText, BookOpen, Star, Sparkles, BadgeCheck, FileText, RotateCcw, Lightbulb, Users, TrendingUp, Award, CheckCircle } from 'lucide-react'
 import Script from 'next/script'
 
@@ -240,25 +241,42 @@ export default function TextContentPage() {
 
       <main>
         {/* Hero Section */}
-        <section className="section-padding bg-linear-to-br from-green-50 to-emerald-50">
-          <div className="container-custom">
-            <div className="text-center animate-fade-in">
-              <Badge className="bg-green-100 text-green-700 mb-4">
-                تخصصی در تولید محتوای متنی
-              </Badge>
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-                تولید محتوای <span className="gradient-text">متنی</span>
-              </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-                محتوای جذاب، سئومحور و منحصربه‌فرد توسط کارشناسان حرفه‌ای سلامت دیجیتال. مقالات وبلاگ، توضیحات محصول و متن‌های وب‌سایت با کیفیت عالی.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="gradient-bg text-white">
-                  سفارش تولید محتوا
-                </Button>
-                <Button variant="outline" size="lg">
-                  نمونه کارها
-                </Button>
+        <section className="section-padding bg-linear-to-br from-green-50 to-emerald-50 overflow-hidden relative">
+          <div className="absolute top-0 right-0 w-1/3 h-full bg-green-100/50 blur-3xl -z-10 rounded-full mix-blend-multiply opacity-70 animate-blob"></div>
+          <div className="absolute bottom-0 left-0 w-1/3 h-full bg-emerald-100/50 blur-3xl -z-10 rounded-full mix-blend-multiply opacity-70 animate-blob animation-delay-2000"></div>
+
+          <div className="container-custom relative z-10">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="text-right animate-fade-in order-2 lg:order-1">
+                <Badge className="bg-green-100 text-green-700 mb-4 px-4 py-1 text-sm border-green-200">
+                  تخصصی در تولید محتوای متنی
+                </Badge>
+                <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                  تولید محتوای <span className="gradient-text">متنی</span>
+                </h1>
+                <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                  محتوای جذاب، سئومحور و منحصربه‌فرد توسط کارشناسان حرفه‌ای سلامت دیجیتال. مقالات وبلاگ، توضیحات محصول و متن‌های وب‌سایت با کیفیت عالی.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-start">
+                  <Button size="lg" className="gradient-bg text-white px-8 shadow-lg shadow-green-500/20 hover:shadow-green-500/40 transition-all duration-300">
+                    سفارش تولید محتوا
+                  </Button>
+                  <Button variant="outline" size="lg" className="border-green-200 text-green-700 hover:bg-green-50">
+                    نمونه کارها
+                  </Button>
+                </div>
+              </div>
+
+              <div className="relative h-[350px] md:h-[450px] w-full rounded-2xl overflow-hidden shadow-2xl animate-fade-in order-1 lg:order-2 ring-1 ring-gray-200/50 group">
+                <div className="absolute inset-0 bg-linear-to-tr from-green-600/10 to-transparent z-10" />
+                <Image
+                  src="/images/content-creation-hero.png"
+                  alt="تولید محتوای متنی"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  priority
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
               </div>
             </div>
           </div>
@@ -482,7 +500,7 @@ export default function TextContentPage() {
           <div className="container-custom text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               محتوای خود را حرفه‌ای کنید!
-          </h2>
+            </h2>
             <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
               با تولید محتوای متنی حرفه‌ای و بهینه‌سازی شده، رتبه گوگل خود را بهبود دهید و ترافیک ارگانیک بیشتری کسب کنید. محتوای خوب، پایه هر بازاریابی موفقی است.
             </p>
