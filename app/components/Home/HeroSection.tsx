@@ -43,7 +43,6 @@ const HeroSection = () => {
             به{' '}
             <span className="relative">
               <span className="gradient-text animate-gradient">عصر سئو</span>
-              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-linear-to-r from-blue-500 to-purple-500 rounded animate-slide-in-left" style={{ animationDelay: '0.5s' }}></div>
             </span>
             {' '}خوش آمدید
           </h1>
@@ -75,7 +74,7 @@ const HeroSection = () => {
           </div>
 
           {/* Enhanced CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 sm:space-x-reverse mb-8 animate-slide-in-up" style={{ animationDelay: '0.5s' }}>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 animate-slide-in-up" style={{ animationDelay: '0.5s' }}>
             <Button
               size="lg"
               className="gradient-bg text-white px-8 py-4 text-lg hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl group"

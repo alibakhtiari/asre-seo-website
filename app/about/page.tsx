@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Image from 'next/image'
 import Header from '@/components/Layout/Header'
 import Footer from '@/components/Layout/Footer'
 
@@ -35,17 +36,32 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <main className="section-padding">
+      <main>
         {/* Hero Section */}
-        <div className="container-custom">
-          <div className="text-center animate-fade-in mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-              درباره <span className="gradient-text">عصر سئو</span>
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              ما تیمی از متخصصان باتجربه در حوزه دیجیتال مارکتینگ هستیم که با بهره‌گیری از جدیدترین تکنولوژی‌ها و هوش مصنوعی، کسب‌وکارها را به موفقیت می‌رسانیم.
-            </p>
+        <section className="relative py-24 md:py-32 overflow-hidden bg-gray-900">
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/images/about-hero.png"
+              alt="تیم عصر سئو"
+              fill
+              className="object-cover opacity-40 blur-xs"
+              priority
+            />
+            <div className="absolute inset-0 bg-linear-to-b from-gray-900/60 via-gray-900/80 to-white" />
           </div>
+          <div className="container-custom relative z-10">
+            <div className="text-center animate-fade-in mb-8">
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+                درباره <span className="text-primary-400">عصر سئو</span>
+              </h1>
+              <p className="text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
+                ما تیمی از متخصصان باتجربه در حوزه دیجیتال مارکتینگ هستیم که با بهره‌گیری از جدیدترین تکنولوژی‌ها و هوش مصنوعی، کسب‌وکارها را به موفقیت می‌رسانیم.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <div className="section-padding pt-0">
 
           {/* Mission & Vision */}
           <div className="grid md:grid-cols-2 gap-12 mb-20">

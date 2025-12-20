@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import Header from '@/components/Layout/Header'
 import Footer from '@/components/Layout/Footer'
 import { Button } from '@/components/ui/button'
@@ -110,16 +111,31 @@ export default function ContactPage() {
       <Header />
       <main className="section-padding">
         {/* Hero Section */}
-        <div className="container-custom">
-          <div className="text-center animate-fade-in mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold text-primary mb-6">
-              تماس با <span className="gradient-text">ما</span>
-            </h1>
-            <p className="text-xl text-primary-800 max-w-3xl mx-auto leading-relaxed">
-              آماده همکاری با شما هستیم. مشاوره رایگان دریافت کنید و پروژه دیجیتال مارکتینگ خود را همین امروز شروع کنید.
-            </p>
+        <section className="relative py-24 md:py-32 overflow-hidden bg-gray-900 mb-16 rounded-3xl mx-4 md:mx-0">
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/images/contact-hero.png"
+              alt="تماس با عصر سئو"
+              fill
+              className="object-cover opacity-30 blur-xs"
+              priority
+            />
+            <div className="absolute inset-0 bg-linear-to-b from-gray-900/40 via-gray-900/80 to-background-50/10" />
+            <div className="absolute inset-0 bg-linear-to-t from-background-100 to-transparent" />
           </div>
+          <div className="container-custom relative z-10">
+            <div className="text-center animate-fade-in">
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+                تماس با <span className="text-primary-400">ما</span>
+              </h1>
+              <p className="text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed drop-shadow-md font-medium">
+                آماده همکاری با شما هستیم. مشاوره رایگان دریافت کنید و پروژه دیجیتال مارکتینگ خود را همین امروز شروع کنید.
+              </p>
+            </div>
+          </div>
+        </section>
 
+        <div className="container-custom">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Contact Form */}
             <div className="lg:col-span-2">
