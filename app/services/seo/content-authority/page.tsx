@@ -4,7 +4,8 @@ import Footer from '@/components/Layout/Footer'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import Image from 'next/image'
+import OptimizedImage from '@/components/ui/OptimizedImage'
+import imagesMap from '../../../../src/generated/images-map.json'
 import { CheckCircle, Edit3, BookOpen, AlignJustify, Search, TrendingUp, FileText, Target, Shield, Users, Link, Globe, Star, Award, Zap } from 'lucide-react'
 import Script from 'next/script'
 
@@ -250,10 +251,11 @@ export default function ContentAuthoritySEO() {
 
                             <div className="relative h-[350px] md:h-[450px] w-full rounded-2xl overflow-hidden shadow-2xl animate-fade-in order-1 lg:order-2 ring-1 ring-gray-200/50 group">
                                 <div className="absolute inset-0 bg-linear-to-tr from-amber-600/10 to-transparent z-10" />
-                                <Image
-                                    src="/images/content-authority-hero.png"
+                                <OptimizedImage
+                                    src="/images/content-authority-hero.webp"
                                     alt="سئو محتوا و لینک‌سازی"
                                     fill
+                                    imageData={imagesMap['/images/content-authority-hero.webp']}
                                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                                     priority
                                     sizes="(max-width: 768px) 100vw, 50vw"
