@@ -4,6 +4,7 @@ import Footer from '@/components/Layout/Footer'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import Image from 'next/image'
 import { Zap, Mail, Users, Target, Bot, MessageSquare, HeartHandshake, Sparkles, TrendingUp, CheckCircle, Database, Globe, Brain, User } from 'lucide-react'
 import Script from 'next/script'
 
@@ -172,25 +173,42 @@ export default function AIMarketingEngagementPage() {
 
             <main>
                 {/* Hero Section */}
-                <section className="section-padding bg-linear-to-br from-orange-50 to-indigo-50">
-                    <div className="container-custom">
-                        <div className="text-center animate-fade-in">
-                            <Badge className="bg-orange-100 text-orange-700 mb-4">
-                                پلتفرم جامع تعامل با مشتری
-                            </Badge>
-                            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-                                بازاریابی و تعامل <span className="gradient-text">هوشمند</span>
-                            </h1>
-                            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-                                ترکیب قدرت اتوماسیون، چت‌بات‌های هوشمند و شخصی‌سازی محتوا برای خلق تجربه‌ای بی‌نظیر برای مشتریان و افزایش فروش.
-                            </p>
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                <Button size="lg" className="gradient-bg text-white">
-                                    شروع هوشمندسازی
-                                </Button>
-                                <Button variant="outline" size="lg">
-                                    دریافت مشاوره
-                                </Button>
+                <section className="section-padding bg-linear-to-br from-orange-50 to-indigo-50 overflow-hidden relative">
+                    <div className="absolute top-0 right-0 w-1/3 h-full bg-orange-100/50 blur-3xl -z-10 rounded-full mix-blend-multiply opacity-70 animate-blob"></div>
+                    <div className="absolute bottom-0 left-0 w-1/3 h-full bg-indigo-100/50 blur-3xl -z-10 rounded-full mix-blend-multiply opacity-70 animate-blob animation-delay-2000"></div>
+
+                    <div className="container-custom relative z-10">
+                        <div className="grid lg:grid-cols-2 gap-12 items-center">
+                            <div className="text-right animate-fade-in order-2 lg:order-1">
+                                <Badge className="bg-orange-100 text-orange-700 mb-4 px-4 py-1 text-sm border-orange-200">
+                                    پلتفرم جامع تعامل با مشتری
+                                </Badge>
+                                <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                                    بازاریابی و تعامل <span className="gradient-text">هوشمند</span>
+                                </h1>
+                                <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                                    ترکیب قدرت اتوماسیون، چت‌بات‌های هوشمند و شخصی‌سازی محتوا برای خلق تجربه‌ای بی‌نظیر برای مشتریان و افزایش فروش.
+                                </p>
+                                <div className="flex flex-col sm:flex-row gap-4 justify-start">
+                                    <Button size="lg" className="gradient-bg text-white px-8 hover:shadow-lg hover:shadow-orange-500/30 transition-all duration-300">
+                                        شروع هوشمندسازی
+                                    </Button>
+                                    <Button variant="outline" size="lg" className="border-orange-200 text-orange-700 hover:bg-orange-50">
+                                        دریافت مشاوره
+                                    </Button>
+                                </div>
+                            </div>
+
+                            <div className="relative h-[350px] md:h-[450px] w-full rounded-2xl overflow-hidden shadow-2xl animate-fade-in order-1 lg:order-2 ring-1 ring-gray-200/50 group">
+                                <div className="absolute inset-0 bg-linear-to-tr from-orange-600/10 to-transparent z-10" />
+                                <Image
+                                    src="/images/marketing-engagement-hero.png"
+                                    alt="بازاریابی و تعامل هوشمند با هوش مصنوعی"
+                                    fill
+                                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                    priority
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                />
                             </div>
                         </div>
                     </div>
