@@ -1,7 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
+import OptimizedImage from '@/components/ui/OptimizedImage'
+import imagesMap from '../../src/generated/images-map.json'
 import Header from '@/components/Layout/Header'
 import Footer from '@/components/Layout/Footer'
 import { Button } from '@/components/ui/button'
@@ -113,10 +114,11 @@ export default function ContactPage() {
         {/* Hero Section */}
         <section className="relative py-24 md:py-32 overflow-hidden bg-gray-900 mb-16 rounded-3xl mx-4 md:mx-0">
           <div className="absolute inset-0 z-0">
-            <Image
-              src="/images/contact-hero.png"
+            <OptimizedImage
+              src="/images/contact-hero.webp"
               alt="تماس با عصر سئو"
               fill
+              imageData={imagesMap['/images/contact-hero.webp']}
               className="object-cover opacity-30 blur-xs"
               priority
             />

@@ -1,6 +1,7 @@
 
 import { Search } from 'lucide-react';
-import Image from 'next/image';
+import OptimizedImage from '@/components/ui/OptimizedImage'
+import imagesMap from '../../../src/generated/images-map.json';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
@@ -8,10 +9,11 @@ const BlogHero = () => {
   return (
     <section className="section-padding bg-gray-900 relative overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/blog-hero.png"
+        <OptimizedImage
+          src="/images/blog-hero.webp"
           alt="وبلاگ عصر سئو"
           fill
+          imageData={imagesMap['/images/blog-hero.webp']}
           className="object-cover opacity-30 blur-xs"
           priority
         />

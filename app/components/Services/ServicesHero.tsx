@@ -1,7 +1,8 @@
 
 import { Search, Target, TrendingUp, Users, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import Image from 'next/image';
+import OptimizedImage from '@/components/ui/OptimizedImage'
+import imagesMap from '../../../src/generated/images-map.json';
 
 const ServicesHero = () => {
   return (
@@ -36,10 +37,11 @@ const ServicesHero = () => {
 
           <div className="relative h-[400px] md:h-[500px] w-full animate-fade-in order-1 lg:order-2 group">
             <div className="absolute inset-0 bg-linear-to-tr from-primary-500/10 to-transparent z-0 rounded-3xl" />
-            <Image
-              src="/images/services-hero.png"
+            <OptimizedImage
+              src="/images/services-hero.webp"
               alt="خدمات عصر سئو"
               fill
+              imageData={imagesMap['/images/services-hero.webp']}
               className="object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-700"
               priority
             />

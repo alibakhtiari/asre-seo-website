@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
-import Image from 'next/image'
+import OptimizedImage from '@/components/ui/OptimizedImage'
+import imagesMap from '../../src/generated/images-map.json'
 import Header from '@/components/Layout/Header'
 import Footer from '@/components/Layout/Footer'
 
@@ -40,10 +41,11 @@ export default function AboutPage() {
         {/* Hero Section */}
         <section className="relative py-24 md:py-32 overflow-hidden bg-gray-900">
           <div className="absolute inset-0 z-0">
-            <Image
-              src="/images/about-hero.png"
+            <OptimizedImage
+              src="/images/about-hero.webp"
               alt="تیم عصر سئو"
               fill
+              imageData={imagesMap['/images/about-hero.webp']}
               className="object-cover opacity-40 blur-xs"
               priority
             />
