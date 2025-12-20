@@ -35,7 +35,7 @@ const TestimonialsSection = () => {
 
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-white p-8 rounded-xl shadow-sm border hover:shadow-md transition-shadow animate-fade-in">
+            <div key={index} className="bg-white p-8 rounded-xl shadow-xs border hover:shadow-md transition-shadow animate-fade-in">
               <div className="flex items-center mb-6">
                 <div className="text-4xl ml-4">
                   {testimonial.avatar}

@@ -20,7 +20,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-white/95 backdrop-blur-md border-b border-primary-100 sticky top-0 z-50 shadow-sm">
+    <header className="bg-white/95 backdrop-blur-md border-b border-primary-100 sticky top-0 z-50 shadow-xs">
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
           {/* Enhanced Logo */}
@@ -60,7 +60,7 @@ const Header = () => {
           {/* Enhanced CTA Button */}
           <div className="hidden lg:flex items-center space-x-4 space-x-reverse">
             <Link href="/contact">
-              <Button className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white hover:opacity-90 transition-opacity duration-200 px-6 py-2 font-semibold shadow-md hover:shadow-lg">
+              <Button className="bg-linear-to-r from-primary-500 to-secondary-500 text-white hover:opacity-90 transition-opacity duration-200 px-6 py-2 font-semibold shadow-md hover:shadow-lg">
                 مشاوره رایگان
               </Button>
             </Link>
@@ -96,7 +96,7 @@ const Header = () => {
               ))}
               <div className="pt-2">
                 <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
-                  <Button className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white w-full font-semibold">
+                  <Button className="bg-linear-to-r from-primary-500 to-secondary-500 text-white w-full font-semibold">
                     مشاوره رایگان
                   </Button>
                 </Link>

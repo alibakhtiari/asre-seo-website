@@ -160,7 +160,7 @@ const BlogPostComponent = ({ post }: BlogPostProps) => {
 
         {/* Key Takeaways */}
         {post.keyTakeaways && post.keyTakeaways.length > 0 && (
-          <Card className="mb-8 bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
+          <Card className="mb-8 bg-linear-to-br from-primary/5 to-primary/10 border-primary/20">
             <CardHeader>
               <h3 className="font-bold text-xl text-primary flex items-center gap-2">
                 <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
@@ -173,7 +173,7 @@ const BlogPostComponent = ({ post }: BlogPostProps) => {
               <div className="grid md:grid-cols-2 gap-4">
                 {post.keyTakeaways.map((takeaway, index) => (
                   <div key={index} className="flex items-start gap-3 p-3 bg-white/50 rounded-lg">
-                    <div className="w-3 h-3 bg-primary rounded-full mt-1 flex-shrink-0" />
+                    <div className="w-3 h-3 bg-primary rounded-full mt-1 shrink-0" />
                     <p className="text-sm leading-relaxed font-medium">{takeaway}</p>
                   </div>
                 ))}
@@ -235,7 +235,7 @@ const BlogPostComponent = ({ post }: BlogPostProps) => {
           </div>
 
           {/* CTA */}
-          <Card className="bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
+          <Card className="bg-linear-to-br from-primary/5 to-primary/10 border-primary/20">
             <CardContent className="text-center py-8">
               <h3 className="text-xl font-bold mb-4">نیاز به مشاوره تخصصی دارید؟</h3>
               <p className="text-gray-600 mb-6">

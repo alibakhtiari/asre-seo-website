@@ -103,7 +103,7 @@ const ServicesList = () => {
               <CardHeader className="pb-4">
                 <div className="flex items-start justify-between">
                   <div className="flex items-center space-x-4 space-x-reverse">
-                    <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${service.gradient} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                    <div className={`w-16 h-16 rounded-xl bg-linear-to-r ${service.gradient} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                       <service.icon className="h-8 w-8 text-white" />
                     </div>
                     <div>

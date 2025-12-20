@@ -102,7 +102,7 @@ const ServicePageTemplate = ({
                   <li className="text-slate-900 font-medium">{heroTitle}</li>
                 </ol>
               </nav>
-          <section className="flex justify-center relative bg-gradient-to-br from-slate-50 to-blue-50/30 border-b border-slate-100">
+          <section className="flex justify-center relative bg-linear-to-br from-slate-50 to-blue-50/30 border-b border-slate-100">
             <div className="container-custom py-8 md:py-12">
               {/* Breadcrumb */}
 
@@ -116,7 +116,7 @@ const ServicePageTemplate = ({
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4 mb-16 justify-center">
-                  <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 shadow-sm">
+                  <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 shadow-xs">
                     <Phone className="ml-2 h-5 w-5" />
                     مشاوره رایگان
                   </Button>
@@ -160,7 +160,7 @@ const ServicePageTemplate = ({
             <section className="py-20 bg-white">
               <div className="container-custom">
                 <div className="text-center max-w-3xl mx-auto">
-                  <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-8">
+                  <div className="w-20 h-20 bg-linear-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-8">
                     <span className="text-2xl">🚀</span>
                   </div>
                   <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">

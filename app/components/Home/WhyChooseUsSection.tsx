@@ -66,8 +66,8 @@ const WhyChooseUsSection = () => {
     <section className="section-padding bg-white relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-0 right-0 w-72 h-72 bg-gradient-to-br from-purple-200 to-pink-200 rounded-full mix-blend-multiply filter blur-xl"></div>
-        <div className="absolute bottom-0 left-0 w-72 h-72 bg-gradient-to-br from-blue-200 to-indigo-200 rounded-full mix-blend-multiply filter blur-xl"></div>
+        <div className="absolute top-0 right-0 w-72 h-72 bg-linear-to-br from-purple-200 to-pink-200 rounded-full mix-blend-multiply filter blur-xl"></div>
+        <div className="absolute bottom-0 left-0 w-72 h-72 bg-linear-to-br from-blue-200 to-indigo-200 rounded-full mix-blend-multiply filter blur-xl"></div>
       </div>
 
   <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
@@ -90,10 +90,10 @@ const WhyChooseUsSection = () => {
               style={{animationDelay: `${index * 0.1}s`}}
             >
               {/* Gradient overlay on hover */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${reason.color} opacity-0 group-hover:opacity-10 transition-all duration-300`}></div>
+              <div className={`absolute inset-0 bg-linear-to-br ${reason.color} opacity-0 group-hover:opacity-10 transition-all duration-300`}></div>
               
               <CardHeader className="text-center pb-4 relative z-10">
-                <div className={`inline-flex p-4 rounded-full bg-gradient-to-r ${reason.color} mb-4 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                <div className={`inline-flex p-4 rounded-full bg-linear-to-r ${reason.color} mb-4 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                   <reason.icon className="h-6 w-6 text-white" />
                 </div>
                 <CardTitle className="text-lg font-bold text-gray-900 mb-2 group-hover:gradient-text transition-all duration-300">
@@ -122,7 +122,7 @@ const WhyChooseUsSection = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
             {/* Timeline line */}
-            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500 -z-10"></div>
+            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-linear-to-r from-blue-500 to-purple-500 -z-10"></div>
             
             {[
               { step: '۱', title: 'مشاوره رایگان', desc: 'بررسی نیازها و اهداف' },
@@ -132,7 +132,7 @@ const WhyChooseUsSection = () => {
             ].map((item, index) => (
               <div key={index} className="text-center animate-zoom-in" style={{animationDelay: `${index * 0.2}s`}}>
                 <div className="relative mb-4">
-                  <div className="w-16 h-16 mx-auto bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                  <div className="w-16 h-16 mx-auto bg-linear-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
                     {item.step}
                   </div>
                 </div>

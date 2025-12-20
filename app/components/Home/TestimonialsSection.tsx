@@ -48,11 +48,11 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="section-padding bg-gradient-to-br from-blue-50 to-purple-50 relative overflow-hidden">
+    <section className="section-padding bg-linear-to-br from-blue-50 to-purple-50 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-blue-300 to-purple-300 rounded-full mix-blend-multiply filter blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-purple-300 to-pink-300 rounded-full mix-blend-multiply filter blur-3xl animate-float" style={{animationDelay: '4s'}}></div>
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-linear-to-r from-blue-300 to-purple-300 rounded-full mix-blend-multiply filter blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-linear-to-r from-purple-300 to-pink-300 rounded-full mix-blend-multiply filter blur-3xl animate-float" style={{animationDelay: '4s'}}></div>
       </div>
 
   <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">

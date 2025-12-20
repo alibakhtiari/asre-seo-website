@@ -6,13 +6,13 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Enhanced Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-indigo-50"></div>
+      <div className="absolute inset-0 bg-linear-to-br from-blue-50 via-purple-50 to-indigo-50"></div>
 
       {/* Advanced Animated Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-blue-300 to-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-float"></div>
-        <div className="absolute top-1/3 left-1/4 w-80 h-80 bg-gradient-to-r from-purple-300 to-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute bottom-1/4 right-1/3 w-72 h-72 bg-gradient-to-r from-indigo-300 to-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-float" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-linear-to-r from-blue-300 to-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-float"></div>
+        <div className="absolute top-1/3 left-1/4 w-80 h-80 bg-linear-to-r from-purple-300 to-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-1/4 right-1/3 w-72 h-72 bg-linear-to-r from-indigo-300 to-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-float" style={{ animationDelay: '4s' }}></div>
 
         {/* Floating particles */}
         <div className="absolute top-20 right-20 w-4 h-4 bg-yellow-400 rounded-full animate-bounce" style={{ animationDelay: '1s' }}></div>
@@ -43,7 +43,7 @@ const HeroSection = () => {
             به{' '}
             <span className="relative">
               <span className="gradient-text animate-gradient">عصر سئو</span>
-              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded animate-slide-in-left" style={{ animationDelay: '0.5s' }}></div>
+              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-linear-to-r from-blue-500 to-purple-500 rounded animate-slide-in-left" style={{ animationDelay: '0.5s' }}></div>
             </span>
             {' '}خوش آمدید
           </h1>
@@ -56,19 +56,19 @@ const HeroSection = () => {
 
           {/* Enhanced Statistics with icons */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 max-w-5xl mx-auto">
-            <div className="text-center animate-zoom-in hover-lift p-4 rounded-lg bg-white/50 backdrop-blur-sm" style={{ animationDelay: '0.2s' }}>
+            <div className="text-center animate-zoom-in hover-lift p-4 rounded-lg bg-white/50 backdrop-blur-xs" style={{ animationDelay: '0.2s' }}>
               <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">۵۰۰+</div>
               <div className="text-gray-600 font-medium">پروژه موفق</div>
             </div>
-            <div className="text-center animate-zoom-in hover-lift p-4 rounded-lg bg-white/50 backdrop-blur-sm" style={{ animationDelay: '0.4s' }}>
+            <div className="text-center animate-zoom-in hover-lift p-4 rounded-lg bg-white/50 backdrop-blur-xs" style={{ animationDelay: '0.4s' }}>
               <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">۹۸%</div>
               <div className="text-gray-600 font-medium">رضایت مشتریان</div>
             </div>
-            <div className="text-center animate-zoom-in hover-lift p-4 rounded-lg bg-white/50 backdrop-blur-sm" style={{ animationDelay: '0.6s' }}>
+            <div className="text-center animate-zoom-in hover-lift p-4 rounded-lg bg-white/50 backdrop-blur-xs" style={{ animationDelay: '0.6s' }}>
               <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">۵+</div>
               <div className="text-gray-600 font-medium">سال تجربه</div>
             </div>
-            <div className="text-center animate-zoom-in hover-lift p-4 rounded-lg bg-white/50 backdrop-blur-sm" style={{ animationDelay: '0.8s' }}>
+            <div className="text-center animate-zoom-in hover-lift p-4 rounded-lg bg-white/50 backdrop-blur-xs" style={{ animationDelay: '0.8s' }}>
               <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">۲۴/۷</div>
               <div className="text-gray-600 font-medium">پشتیبانی</div>
             </div>

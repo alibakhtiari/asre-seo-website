@@ -74,7 +74,7 @@ const PricingSection = () => {
             <Card key={index} className={`relative overflow-hidden ${plan.isPopular ? 'border-blue-500 border-2 shadow-xl scale-105' : 'border-gray-200 shadow-md'} hover:shadow-xl transition-all duration-300 animate-fade-in`}>
               {plan.isPopular && (
                 <div className="absolute top-0 right-0 left-0">
-                  <div className="bg-gradient-to-r from-blue-500 to-green-500 text-white text-center py-2 text-sm font-medium">
+                  <div className="bg-linear-to-r from-blue-500 to-green-500 text-white text-center py-2 text-sm font-medium">
                     محبوب‌ترین انتخاب
                   </div>
                 </div>

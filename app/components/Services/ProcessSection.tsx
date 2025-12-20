@@ -42,7 +42,7 @@ const ProcessSection = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step, index) => (
             <div key={index} className="text-center group animate-fade-in">
-              <div className={`w-20 h-20 bg-gradient-to-r ${step.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
+              <div className={`w-20 h-20 bg-linear-to-r ${step.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
                 <span className="text-2xl font-bold text-white">{step.number}</span>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">
@@ -54,7 +54,7 @@ const ProcessSection = () => {
               
               {/* Connector Line */}
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-10 left-1/2 w-full h-0.5 bg-gradient-to-r from-gray-200 to-gray-300 transform translate-x-1/2"></div>
+                <div className="hidden lg:block absolute top-10 left-1/2 w-full h-0.5 bg-linear-to-r from-gray-200 to-gray-300 transform translate-x-1/2"></div>
               )}
             </div>
           ))}

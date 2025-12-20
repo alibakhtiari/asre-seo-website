@@ -50,11 +50,11 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <Card
               key={index}
-              className="group hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 border-0 shadow-lg overflow-hidden animate-slide-in-right bg-gradient-to-br hover:from-white hover:to-gray-50"
+              className="group hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 border-0 shadow-lg overflow-hidden animate-slide-in-right bg-linear-to-br hover:from-white hover:to-gray-50"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               <CardHeader className="text-center pb-4">
-                <div className={`inline-flex p-4 rounded-full bg-gradient-to-r ${service.color} mb-4 mx-auto group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`inline-flex p-4 rounded-full bg-linear-to-r ${service.color} mb-4 mx-auto group-hover:scale-110 transition-transform duration-300`}>
                   <service.icon className="h-8 w-8 text-white" />
                 </div>
                 <CardTitle className="text-xl font-bold text-gray-900 mb-2">
@@ -68,7 +68,7 @@ const ServicesSection = () => {
                 <ul className="space-y-3 mb-6">
                   {service.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center text-gray-800">
-                      <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-green-500 rounded-full ml-3"></div>
+                      <div className="w-2 h-2 bg-linear-to-r from-blue-500 to-green-500 rounded-full ml-3"></div>
                       {feature}
                     </li>
                   ))}
@@ -76,7 +76,7 @@ const ServicesSection = () => {
                 <Link href={service.href} className="w-full">
                   <Button
                     variant="outline"
-                    className="w-full border-2 hover:bg-gradient-to-r hover:from-blue-500 hover:to-green-500 hover:text-white hover:border-transparent transition-all duration-300"
+                    className="w-full border-2 hover:bg-linear-to-r hover:from-blue-500 hover:to-green-500 hover:text-white hover:border-transparent transition-all duration-300"
                   >
                     اطلاعات بیشتر
                   </Button>
@@ -88,7 +88,7 @@ const ServicesSection = () => {
 
         {/* CTA Section */}
         <div className="text-center">
-          <div className="bg-gradient-to-r from-blue-600 to-green-600 rounded-2xl p-8 md:p-12 text-white animate-fade-in">
+          <div className="bg-linear-to-r from-blue-600 to-green-600 rounded-2xl p-8 md:p-12 text-white animate-fade-in">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">
               آماده شروع هستید؟
             </h3>

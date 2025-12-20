@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 
 const BlogHero = () => {
   return (
-    <section className="section-padding bg-gradient-to-br from-slate-50 to-blue-50">
+    <section className="section-padding bg-linear-to-br from-slate-50 to-blue-50">
       <div className="container-custom">
         <div className="text-center max-w-4xl mx-auto animate-fade-in">
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">

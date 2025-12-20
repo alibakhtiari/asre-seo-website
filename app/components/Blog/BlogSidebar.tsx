@@ -87,7 +87,7 @@ const BlogSidebar = () => {
       </Card>
 
       {/* Newsletter */}
-      <Card className="bg-gradient-to-br from-blue-50 to-green-50">
+      <Card className="bg-linear-to-br from-blue-50 to-green-50">
         <CardHeader>
           <CardTitle>خبرنامه عصر سئو</CardTitle>
         </CardHeader>

@@ -5,7 +5,7 @@ import { Phone, Mail, MessageCircle } from 'lucide-react';
 
 const ContactCTA = () => {
   return (
-    <section className="section-padding bg-gradient-to-br from-blue-600 to-green-600">
+    <section className="section-padding bg-linear-to-br from-blue-600 to-green-600">
       <div className="container-custom">
         <Card className="bg-white/10 backdrop-blur-md border-white/20 text-white">
           <CardContent className="text-center p-12">
@@ -18,19 +18,19 @@ const ContactCTA = () => {
             </p>
 
             <div className="grid md:grid-cols-3 gap-6 mb-8">
-              <div className="flex flex-col items-center p-6 bg-white/10 rounded-xl backdrop-blur-sm">
+              <div className="flex flex-col items-center p-6 bg-white/10 rounded-xl backdrop-blur-xs">
                 <Phone className="h-8 w-8 mb-3" />
                 <h3 className="font-semibold mb-2">تماس تلفنی</h3>
                 <p className="text-white/80">۰۲۱-۱۲۳۴۵۶۷۸</p>
               </div>
 
-              <div className="flex flex-col items-center p-6 bg-white/10 rounded-xl backdrop-blur-sm">
+              <div className="flex flex-col items-center p-6 bg-white/10 rounded-xl backdrop-blur-xs">
                 <Mail className="h-8 w-8 mb-3" />
                 <h3 className="font-semibold mb-2">ایمیل</h3>
                 <p className="text-white/80">info@asreseo.com</p>
               </div>
 
-              <div className="flex flex-col items-center p-6 bg-white/10 rounded-xl backdrop-blur-sm">
+              <div className="flex flex-col items-center p-6 bg-white/10 rounded-xl backdrop-blur-xs">
                 <MessageCircle className="h-8 w-8 mb-3" />
                 <h3 className="font-semibold mb-2">پشتیبانی آنلاین</h3>
                 <p className="text-white/80">۲۴ ساعته</p>

@@ -86,7 +86,7 @@ const AllServicesSection = () => {
   ];
 
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden" aria-label="تمام خدمات">
+    <section className="py-16 lg:py-24 bg-linear-to-br from-gray-50 to-white relative overflow-hidden" aria-label="تمام خدمات">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-30 pointer-events-none">
         <div className="absolute top-20 right-20 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl animate-float"></div>
@@ -110,7 +110,7 @@ const AllServicesSection = () => {
             <div key={categoryIndex} className="animate-slide-in-up" style={{ animationDelay: `${categoryIndex * 0.2}s` }}>
               {/* Category Header */}
               <div className="flex items-center justify-center mb-8">
-                <div className={`inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r ${category.color} text-white shadow-lg`}>
+                <div className={`inline-flex items-center gap-3 px-6 py-3 rounded-full bg-linear-to-r ${category.color} text-white shadow-lg`}>
                   <category.icon className="h-6 w-6" aria-hidden="true" />
                   <h3 className="text-xl font-bold">{category.title}</h3>
                 </div>
@@ -123,21 +123,21 @@ const AllServicesSection = () => {
                     <Card className="service-card hover-lift hover-glow h-full relative overflow-hidden flex flex-col border-transparent hover:border-blue-200 transition-all duration-300">
                       {/* New/Popular Badge */}
                       {(service.isNew || service.isPopular) && (
-                        <div className={`absolute top-3 left-3 px-2 py-1 rounded-full text-xs font-bold text-white z-10 shadow-sm ${service.isNew ? 'bg-gradient-to-r from-green-500 to-green-600' : 'bg-gradient-to-r from-orange-500 to-orange-600'
+                        <div className={`absolute top-3 left-3 px-2 py-1 rounded-full text-xs font-bold text-white z-10 shadow-xs ${service.isNew ? 'bg-linear-to-r from-green-500 to-green-600' : 'bg-linear-to-r from-orange-500 to-orange-600'
                           }`}>
                           {service.isNew ? 'جدید' : 'محبوب'}
                         </div>
                       )}
 
                       <CardHeader className="text-center pb-2 pt-6">
-                        <div className={`inline-flex p-3 rounded-2xl bg-gradient-to-r ${category.color} mb-4 mx-auto group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 shadow-md`}>
+                        <div className={`inline-flex p-3 rounded-2xl bg-linear-to-r ${category.color} mb-4 mx-auto group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 shadow-md`}>
                           <service.icon className="h-6 w-6 text-white" aria-hidden="true" />
                         </div>
                         <CardTitle className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
                           {service.title}
                         </CardTitle>
                       </CardHeader>
-                      <CardContent className="pt-0 flex-grow flex flex-col justify-between text-center">
+                      <CardContent className="pt-0 grow flex flex-col justify-between text-center">
                         <p className="text-sm text-gray-500 mb-4 leading-relaxed line-clamp-3">
                           {service.description}
                         </p>
