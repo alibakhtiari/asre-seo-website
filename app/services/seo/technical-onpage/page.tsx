@@ -4,6 +4,7 @@ import Footer from '@/components/Layout/Footer'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import Image from 'next/image'
 import { CheckCircle, Search, TrendingUp, Zap, Shield, Smartphone, Code, Database, Globe, Gauge, Activity, Monitor, AlertTriangle, Target, Settings, BarChart3 } from 'lucide-react'
 import Script from 'next/script'
 
@@ -244,25 +245,42 @@ export default function TechnicalOnPageSEO() {
 
             <main>
                 {/* Hero Section */}
-                <section className="section-padding bg-linear-to-br from-cyan-50 to-blue-50">
-                    <div className="container-custom">
-                        <div className="text-center animate-fade-in">
-                            <Badge className="bg-cyan-100 text-cyan-700 mb-4">
-                                بهینه‌سازی جامع تکنیکال و داخلی
-                            </Badge>
-                            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-                                سئو <span className="gradient-text">تکنیکال و داخلی</span>
-                            </h1>
-                            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-                                زیربنای فنی قدرتمند و محتوای بهینه‌سازی شده؛ دو بال پرواز وب‌سایت شما به صفحه اول گوگل. سرعت بالا، ساختار استاندارد و کلمات کلیدی هدفمند.
-                            </p>
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                <Button size="lg" className="gradient-bg text-white">
-                                    شروع بهینه‌سازی سایت
-                                </Button>
-                                <Button variant="outline" size="lg">
-                                    آنالیز رایگان فنی
-                                </Button>
+                <section className="section-padding bg-linear-to-br from-cyan-50 to-blue-50 overflow-hidden relative">
+                    <div className="absolute top-0 right-0 w-1/3 h-full bg-cyan-100/50 blur-3xl -z-10 rounded-full mix-blend-multiply opacity-70 animate-blob"></div>
+                    <div className="absolute bottom-0 left-0 w-1/3 h-full bg-blue-100/50 blur-3xl -z-10 rounded-full mix-blend-multiply opacity-70 animate-blob animation-delay-2000"></div>
+
+                    <div className="container-custom relative z-10">
+                        <div className="grid lg:grid-cols-2 gap-12 items-center">
+                            <div className="text-right animate-fade-in order-2 lg:order-1">
+                                <Badge className="bg-cyan-100 text-cyan-700 mb-4 px-4 py-1 text-sm border-cyan-200">
+                                    بهینه‌سازی جامع تکنیکال و داخلی
+                                </Badge>
+                                <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                                    سئو <span className="gradient-text">تکنیکال و داخلی</span>
+                                </h1>
+                                <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                                    زیربنای فنی قدرتمند و محتوای بهینه‌سازی شده؛ دو بال پرواز وب‌سایت شما به صفحه اول گوگل. سرعت بالا، ساختار استاندارد و کلمات کلیدی هدفمند.
+                                </p>
+                                <div className="flex flex-col sm:flex-row gap-4 justify-start">
+                                    <Button size="lg" className="gradient-bg text-white px-8 hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300">
+                                        شروع بهینه‌سازی سایت
+                                    </Button>
+                                    <Button variant="outline" size="lg" className="border-cyan-200 text-cyan-700 hover:bg-cyan-50">
+                                        آنالیز رایگان فنی
+                                    </Button>
+                                </div>
+                            </div>
+
+                            <div className="relative h-[350px] md:h-[450px] w-full rounded-2xl overflow-hidden shadow-2xl animate-fade-in order-1 lg:order-2 ring-1 ring-gray-200/50 group">
+                                <div className="absolute inset-0 bg-linear-to-tr from-cyan-600/10 to-transparent z-10" />
+                                <Image
+                                    src="/images/technical-onpage-hero.png"
+                                    alt="سئو تکنیکال و داخلی"
+                                    fill
+                                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                    priority
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                />
                             </div>
                         </div>
                     </div>

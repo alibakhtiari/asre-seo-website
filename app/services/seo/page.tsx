@@ -3,6 +3,7 @@ import Header from '@/components/Layout/Header'
 import Footer from '@/components/Layout/Footer'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
+import Image from 'next/image'
 import { Search, TrendingUp, Target, BarChart, Globe, Zap, FileText, BookOpen } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -47,18 +48,45 @@ export default function SEOPage() {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="section-padding bg-linear-to-br from-slate-50 to-blue-50">
-          <div className="container-custom">
-            <div className="text-center animate-fade-in">
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-                خدمات <span className="gradient-text">سئو</span> حرفه‌ای
-              </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-                با خدمات جامع سئو عصر سئو، وب‌سایت خود را به رتبه‌های اول گوگل برسانید و ترافیک ارگانیک خود را چندین برابر افزایش دهید.
-              </p>
-              <Button size="lg" className="gradient-bg text-white px-8">
-                دریافت مشاوره رایگان
-              </Button>
+        {/* Hero Section */}
+        <section className="section-padding bg-linear-to-br from-slate-50 to-blue-50 overflow-hidden relative">
+          <div className="absolute top-0 right-0 w-1/3 h-full bg-blue-100/50 blur-3xl -z-10 rounded-full mix-blend-multiply opacity-70 animate-blob"></div>
+          <div className="absolute bottom-0 left-0 w-1/3 h-full bg-purple-100/50 blur-3xl -z-10 rounded-full mix-blend-multiply opacity-70 animate-blob animation-delay-2000"></div>
+
+          <div className="container-custom relative z-10">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="text-right animate-fade-in order-2 lg:order-1">
+                <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-medium mb-6">
+                  <TrendingUp className="w-4 h-4 ml-2" />
+                  رتبه اول گوگل را تسخیر کنید
+                </div>
+                <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                  خدمات <span className="gradient-text">سئو</span> حرفه‌ای
+                </h1>
+                <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                  با خدمات جامع سئو عصر سئو، وب‌سایت خود را به رتبه‌های اول گوگل برسانید و ترافیک ارگانیک خود را چندین برابر افزایش دهید. استراتژی دقیق، اجرای فنی و محتوای باکیفیت.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-start">
+                  <Button size="lg" className="gradient-bg text-white px-8 hover:shadow-lg hover:bg-blue-700 transition-all duration-300">
+                    دریافت مشاوره رایگان
+                  </Button>
+                  <Button variant="outline" size="lg" className="border-blue-200 hover:bg-blue-50 text-blue-700">
+                    آنالیز رایگان سایت
+                  </Button>
+                </div>
+              </div>
+
+              <div className="relative h-[350px] md:h-[450px] w-full rounded-2xl overflow-hidden shadow-2xl animate-fade-in order-1 lg:order-2 ring-1 ring-gray-200/50">
+                <div className="absolute inset-0 bg-linear-to-tr from-blue-600/10 to-transparent z-10" />
+                <Image
+                  src="/images/seo-service-hero.png"
+                  alt="خدمات سئو حرفه‌ای"
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-700"
+                  priority
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
             </div>
           </div>
         </section>
