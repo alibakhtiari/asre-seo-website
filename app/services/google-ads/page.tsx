@@ -3,6 +3,7 @@ import Header from '@/components/Layout/Header'
 import Footer from '@/components/Layout/Footer'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import Image from 'next/image'
 import { CheckCircle, Target, TrendingUp, DollarSign, Users, Clock, Award, Zap } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -83,22 +84,43 @@ export default function GoogleAdsPage() {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="section-padding bg-linear-to-br from-slate-50 to-green-50">
-          <div className="container-custom">
-            <div className="text-center animate-fade-in">
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-                خدمات <span className="gradient-text">گوگل ادز</span>
-              </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-                کمپین‌های تبلیغاتی گوگل با بالاترین نرخ تبدیل و کمترین هزینه. تیم متخصص ما آماده کمک به شما برای موفقیت در تبلیغات آنلاین است.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="gradient-bg text-white">
-                  شروع کمپین گوگل ادز
-                </Button>
-                <Button variant="outline" size="lg">
-                  مشاوره رایگان
-                </Button>
+        <section className="section-padding bg-linear-to-br from-green-50 to-blue-50 overflow-hidden relative">
+          <div className="absolute top-0 right-0 w-1/3 h-full bg-green-100/50 blur-3xl -z-10 rounded-full mix-blend-multiply opacity-70 animate-blob"></div>
+          <div className="absolute bottom-0 left-0 w-1/3 h-full bg-blue-100/50 blur-3xl -z-10 rounded-full mix-blend-multiply opacity-70 animate-blob animation-delay-2000"></div>
+
+          <div className="container-custom relative z-10">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="text-right animate-fade-in order-2 lg:order-1">
+                <div className="inline-flex items-center px-3 py-1 rounded-full bg-green-100 text-green-700 text-sm font-medium mb-6">
+                  <Target className="w-4 h-4 ml-2" />
+                  هدف‌گذاری دقیق مشتریان
+                </div>
+                <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                  خدمات <span className="gradient-text">گوگل ادز</span>
+                </h1>
+                <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                  کمپین‌های تبلیغاتی گوگل با بالاترین نرخ تبدیل و کمترین هزینه. تیم متخصص ما آماده کمک به شما برای موفقیت در تبلیغات آنلاین است.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-start">
+                  <Button size="lg" className="gradient-bg text-white px-8 hover:shadow-lg hover:from-green-600 hover:to-blue-600 transition-all duration-300">
+                    شروع کمپین گوگل ادز
+                  </Button>
+                  <Button variant="outline" size="lg" className="border-green-200 text-green-700 hover:bg-green-50">
+                    مشاوره رایگان
+                  </Button>
+                </div>
+              </div>
+
+              <div className="relative h-[350px] md:h-[450px] w-full rounded-2xl overflow-hidden shadow-2xl animate-fade-in order-1 lg:order-2 ring-1 ring-gray-200/50 group">
+                <div className="absolute inset-0 bg-linear-to-tr from-green-600/10 to-transparent z-10" />
+                <Image
+                  src="/images/google-ads-hero.png"
+                  alt="تبلیغات گوگل ادز"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  priority
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
               </div>
             </div>
           </div>
@@ -150,7 +172,7 @@ export default function GoogleAdsPage() {
                 </div>
               </div>
 
-              <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
+              <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
                 <Card className="shadow-xl">
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
