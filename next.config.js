@@ -14,6 +14,8 @@ const nextConfig = {
   generateEtags: false,
   experimental: {
     optimizeCss: true,
+    viewTransition: true,
+    inlineCss: true,
   },
 }
 
