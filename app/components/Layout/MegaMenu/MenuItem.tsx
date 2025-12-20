@@ -33,7 +33,7 @@ const MenuItem = ({ item, onClose }: MenuItemProps) => {
             )}
           </div>
         </div>
-        <ArrowRight className="h-3 w-3 text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+        <ArrowRight className="h-3 w-3 text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity rotate-180" />
       </Link>
     </li>
   );
