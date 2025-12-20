@@ -221,7 +221,7 @@ export default function ContentAuthoritySEO() {
 
             <main>
                 {/* Hero Section */}
-                <section className="section-padding bg-gradient-to-br from-amber-50 to-purple-50">
+                <section className="section-padding bg-linear-to-br from-amber-50 to-purple-50">
                     <div className="container-custom">
                         <div className="text-center animate-fade-in">
                             <Badge className="bg-amber-100 text-amber-700 mb-4">
@@ -246,11 +246,11 @@ export default function ContentAuthoritySEO() {
                 </section>
 
                 {/* Stats Section */}
-                <section className="section-padding bg-gradient-to-r from-purple-50 to-amber-50">
+                <section className="section-padding bg-linear-to-r from-purple-50 to-amber-50">
                     <div className="container-custom">
                         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                             {stats.map((stat, index) => (
-                                <Card key={index} className="text-center border-0 bg-white/80 backdrop-blur">
+                                <Card key={index} className="text-center border-0 bg-white/80 backdrop-blur-sm">
                                     <CardContent className="p-6">
                                         <stat.icon className="h-8 w-8 text-amber-600 mx-auto mb-3" />
                                         <div className="text-3xl font-bold text-amber-700 mb-2">
@@ -296,7 +296,7 @@ export default function ContentAuthoritySEO() {
                                         <div className="space-y-2">
                                             {service.benefits.map((benefit, benefitIndex) => (
                                                 <div key={benefitIndex} className="flex items-center gap-2 text-sm text-gray-500">
-                                                    <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
+                                                    <CheckCircle className="h-4 w-4 text-green-500 shrink-0" />
                                                     {benefit}
                                                 </div>
                                             ))}
@@ -338,7 +338,7 @@ export default function ContentAuthoritySEO() {
                                         <div className="space-y-2">
                                             {service.benefits.map((benefit, benefitIndex) => (
                                                 <div key={benefitIndex} className="flex items-center gap-2 text-sm text-gray-500">
-                                                    <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
+                                                    <CheckCircle className="h-4 w-4 text-green-500 shrink-0" />
                                                     {benefit}
                                                 </div>
                                             ))}
@@ -351,7 +351,7 @@ export default function ContentAuthoritySEO() {
                 </section>
 
                 {/* Content Types Section */}
-                <section className="section-padding bg-gradient-to-br from-slate-50 to-indigo-50">
+                <section className="section-padding bg-linear-to-br from-slate-50 to-indigo-50">
                     <div className="container-custom">
                         <div className="text-center mb-12">
                             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -378,7 +378,7 @@ export default function ContentAuthoritySEO() {
                                         <div className="space-y-1">
                                             {type.features.map((feature, featureIndex) => (
                                                 <div key={featureIndex} className="flex items-center gap-2 text-sm text-gray-500">
-                                                    <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
+                                                    <CheckCircle className="h-4 w-4 text-green-500 shrink-0" />
                                                     {feature}
                                                 </div>
                                             ))}
@@ -422,7 +422,7 @@ export default function ContentAuthoritySEO() {
                 </section>
 
                 {/* CTA Section */}
-                <section className="section-padding bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+                <section className="section-padding bg-linear-to-br from-slate-900 to-slate-800 text-white">
                     <div className="container-custom text-center">
                         <h2 className="text-3xl md:text-4xl font-bold mb-6">
                             صدای برند خود را به گوش همه برسانید!

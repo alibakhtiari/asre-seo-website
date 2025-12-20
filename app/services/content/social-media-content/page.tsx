@@ -264,7 +264,7 @@ export default function SocialMediaContentPage() {
 
       <main>
         {/* Hero Section */}
-        <section className="section-padding bg-gradient-to-br from-pink-50 to-purple-50">
+        <section className="section-padding bg-linear-to-br from-pink-50 to-purple-50">
           <div className="container-custom">
             <div className="text-center animate-fade-in">
               <Badge className="bg-pink-100 text-pink-700 mb-4">
@@ -289,11 +289,11 @@ export default function SocialMediaContentPage() {
         </section>
 
         {/* Stats Section */}
-        <section className="section-padding bg-gradient-to-r from-purple-50 to-pink-50">
+        <section className="section-padding bg-linear-to-r from-purple-50 to-pink-50">
           <div className="container-custom">
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
-                <Card key={index} className="text-center border-0 bg-white/80 backdrop-blur">
+                <Card key={index} className="text-center border-0 bg-white/80 backdrop-blur-sm">
                   <CardContent className="p-6">
                     <stat.icon className="h-8 w-8 text-pink-600 mx-auto mb-3" />
                     <div className="text-3xl font-bold text-purple-700 mb-2">
@@ -350,7 +350,7 @@ export default function SocialMediaContentPage() {
         </section>
 
         {/* Content Strategies Section */}
-        <section className="section-padding bg-gradient-to-br from-slate-50 to-indigo-50">
+        <section className="section-padding bg-linear-to-br from-slate-50 to-indigo-50">
           <div className="container-custom">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -377,7 +377,7 @@ export default function SocialMediaContentPage() {
                     <div className="space-y-1">
                       {strategy.examples.map((example, exampleIndex) => (
                         <div key={exampleIndex} className="flex items-center gap-2 text-sm text-gray-500">
-                          <BadgeCheck className="h-4 w-4 text-green-500 flex-shrink-0" />
+                          <BadgeCheck className="h-4 w-4 text-green-500 shrink-0" />
                           {example}
                         </div>
                       ))}
@@ -419,7 +419,7 @@ export default function SocialMediaContentPage() {
                     <div className="space-y-2">
                       {feature.benefits.map((benefit, benefitIndex) => (
                         <div key={benefitIndex} className="flex items-center gap-2 text-sm text-gray-500">
-                          <BadgeCheck className="h-4 w-4 text-green-500 flex-shrink-0" />
+                          <BadgeCheck className="h-4 w-4 text-green-500 shrink-0" />
                           {benefit}
                         </div>
                       ))}
@@ -446,7 +446,7 @@ export default function SocialMediaContentPage() {
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex items-start gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:shadow-md transition-shadow">
-                  <div className="w-8 h-8 bg-pink-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 bg-pink-100 rounded-lg flex items-center justify-center shrink-0">
                     <Award className="h-5 w-5 text-pink-600" />
                   </div>
                   <span className="text-gray-900 font-medium leading-relaxed">
@@ -459,7 +459,7 @@ export default function SocialMediaContentPage() {
         </section>
 
         {/* Workflow Section */}
-        <section className="section-padding bg-gradient-to-br from-purple-50 to-pink-50">
+        <section className="section-padding bg-linear-to-br from-purple-50 to-pink-50">
           <div className="container-custom">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
@@ -472,7 +472,7 @@ export default function SocialMediaContentPage() {
 
             <div className="space-y-8">
               {workflowSteps.map((step, index) => (
-                <div key={index} className="flex items-center gap-8 p-6 bg-white/80 rounded-xl shadow-sm">
+                <div key={index} className="flex items-center gap-8 p-6 bg-white/80 rounded-xl shadow-xs">
                   <div className="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center text-2xl font-bold text-pink-700">
                     {step.step}
                   </div>
@@ -522,7 +522,7 @@ export default function SocialMediaContentPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="section-padding bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+        <section className="section-padding bg-linear-to-br from-slate-900 to-slate-800 text-white">
           <div className="container-custom text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               پیج شما همین امروز پر از ایده خلاقانه شود!

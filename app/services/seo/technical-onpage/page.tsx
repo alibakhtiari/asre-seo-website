@@ -244,7 +244,7 @@ export default function TechnicalOnPageSEO() {
 
             <main>
                 {/* Hero Section */}
-                <section className="section-padding bg-gradient-to-br from-cyan-50 to-blue-50">
+                <section className="section-padding bg-linear-to-br from-cyan-50 to-blue-50">
                     <div className="container-custom">
                         <div className="text-center animate-fade-in">
                             <Badge className="bg-cyan-100 text-cyan-700 mb-4">
@@ -269,11 +269,11 @@ export default function TechnicalOnPageSEO() {
                 </section>
 
                 {/* Stats Section */}
-                <section className="section-padding bg-gradient-to-r from-blue-50 to-cyan-50">
+                <section className="section-padding bg-linear-to-r from-blue-50 to-cyan-50">
                     <div className="container-custom">
                         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                             {stats.map((stat, index) => (
-                                <Card key={index} className="text-center border-0 bg-white/80 backdrop-blur">
+                                <Card key={index} className="text-center border-0 bg-white/80 backdrop-blur-sm">
                                     <CardContent className="p-6">
                                         <stat.icon className="h-8 w-8 text-cyan-600 mx-auto mb-3" />
                                         <div className="text-3xl font-bold text-cyan-700 mb-2">
@@ -319,7 +319,7 @@ export default function TechnicalOnPageSEO() {
                                         <div className="space-y-2">
                                             {service.benefits.map((benefit, benefitIndex) => (
                                                 <div key={benefitIndex} className="flex items-center gap-2 text-sm text-gray-500">
-                                                    <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
+                                                    <CheckCircle className="h-4 w-4 text-green-500 shrink-0" />
                                                     {benefit}
                                                 </div>
                                             ))}
@@ -361,7 +361,7 @@ export default function TechnicalOnPageSEO() {
                                         <div className="space-y-2">
                                             {service.benefits.map((benefit, benefitIndex) => (
                                                 <div key={benefitIndex} className="flex items-center gap-2 text-sm text-gray-500">
-                                                    <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
+                                                    <CheckCircle className="h-4 w-4 text-green-500 shrink-0" />
                                                     {benefit}
                                                 </div>
                                             ))}
@@ -374,7 +374,7 @@ export default function TechnicalOnPageSEO() {
                 </section>
 
                 {/* Core Web Vitals Section */}
-                <section className="section-padding bg-gradient-to-br from-slate-50 to-indigo-50">
+                <section className="section-padding bg-linear-to-br from-slate-50 to-indigo-50">
                     <div className="container-custom">
                         <div className="text-center mb-12">
                             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -429,7 +429,7 @@ export default function TechnicalOnPageSEO() {
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                             {technicalIssues.map((issue, index) => (
                                 <div key={index} className="flex items-start gap-3 p-3 bg-red-50 rounded-lg border border-red-200">
-                                    <AlertTriangle className="h-5 w-5 text-red-600 flex-shrink-0 mt-0.5" />
+                                    <AlertTriangle className="h-5 w-5 text-red-600 shrink-0 mt-0.5" />
                                     <span className="text-gray-900 font-medium leading-relaxed text-sm">
                                         {issue}
                                     </span>
@@ -471,7 +471,7 @@ export default function TechnicalOnPageSEO() {
                 </section>
 
                 {/* CTA Section */}
-                <section className="section-padding bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+                <section className="section-padding bg-linear-to-br from-slate-900 to-slate-800 text-white">
                     <div className="container-custom text-center">
                         <h2 className="text-3xl md:text-4xl font-bold mb-6">
                             سایت خود را برای موفقیت آماده کنید!

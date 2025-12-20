@@ -47,7 +47,7 @@ export default function SEOPage() {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="section-padding bg-gradient-to-br from-slate-50 to-blue-50">
+        <section className="section-padding bg-linear-to-br from-slate-50 to-blue-50">
           <div className="container-custom">
             <div className="text-center animate-fade-in">
               <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
@@ -92,7 +92,7 @@ export default function SEOPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="section-padding bg-gradient-to-br from-blue-50 to-purple-50">
+        <section className="section-padding bg-linear-to-br from-blue-50 to-purple-50">
           <div className="container-custom text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">آماده شروع هستید؟</h2>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">

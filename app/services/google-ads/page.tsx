@@ -83,7 +83,7 @@ export default function GoogleAdsPage() {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="section-padding bg-gradient-to-br from-slate-50 to-green-50">
+        <section className="section-padding bg-linear-to-br from-slate-50 to-green-50">
           <div className="container-custom">
             <div className="text-center animate-fade-in">
               <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
@@ -129,7 +129,7 @@ export default function GoogleAdsPage() {
         </section>
 
         {/* Features Section */}
-        <section className="section-padding bg-gradient-to-br from-green-50 to-blue-50">
+        <section className="section-padding bg-linear-to-br from-green-50 to-blue-50">
           <div className="container-custom">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">خدمات گوگل ادز ما</h2>
@@ -143,7 +143,7 @@ export default function GoogleAdsPage() {
                 <div className="space-y-4">
                   {features.map((feature, index) => (
                     <div key={index} className="flex items-start gap-3">
-                      <CheckCircle className="h-6 w-6 text-green-500 flex-shrink-0 mt-0.5" />
+                      <CheckCircle className="h-6 w-6 text-green-500 shrink-0 mt-0.5" />
                       <p className="text-gray-600">{feature}</p>
                     </div>
                   ))}
@@ -162,7 +162,7 @@ export default function GoogleAdsPage() {
                     <div className="space-y-4">
                       {benefits.map((benefit, index) => (
                         <div key={index} className="flex items-start gap-3">
-                          <benefit.icon className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
+                          <benefit.icon className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
                           <div>
                             <h4 className="font-semibold">{benefit.title}</h4>
                             <p className="text-sm text-gray-600">{benefit.description}</p>
@@ -202,7 +202,7 @@ export default function GoogleAdsPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="section-padding bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+        <section className="section-padding bg-linear-to-br from-slate-900 to-slate-800 text-white">
           <div className="container-custom text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">آماده شروع کمپین گوگل ادز هستید؟</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">

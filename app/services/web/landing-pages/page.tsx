@@ -299,7 +299,7 @@ export default function LandingPagesPage() {
 
       <main>
         {/* Hero Section */}
-        <section className="section-padding bg-gradient-to-br from-purple-50 to-indigo-50">
+        <section className="section-padding bg-linear-to-br from-purple-50 to-indigo-50">
           <div className="container-custom">
             <div className="text-center animate-fade-in">
               <Badge className="bg-purple-100 text-purple-700 mb-4">
@@ -324,11 +324,11 @@ export default function LandingPagesPage() {
         </section>
 
         {/* Stats Section */}
-        <section className="section-padding bg-gradient-to-r from-indigo-50 to-purple-50">
+        <section className="section-padding bg-linear-to-r from-indigo-50 to-purple-50">
           <div className="container-custom">
             <div className="grid md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
-                <Card key={index} className="text-center border-0 bg-white/80 backdrop-blur">
+                <Card key={index} className="text-center border-0 bg-white/80 backdrop-blur-sm">
                   <CardContent className="p-6">
                     <stat.icon className="h-8 w-8 text-indigo-600 mx-auto mb-3" />
                     <div className="text-3xl font-bold text-purple-700 mb-2">
@@ -374,7 +374,7 @@ export default function LandingPagesPage() {
                     <div className="space-y-2">
                       {feature.benefits.map((benefit, benefitIndex) => (
                         <div key={benefitIndex} className="flex items-center gap-2 text-sm text-gray-500">
-                          <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" />
+                          <CheckCircle2 className="h-4 w-4 text-green-500 shrink-0" />
                           {benefit}
                         </div>
                       ))}
@@ -387,7 +387,7 @@ export default function LandingPagesPage() {
         </section>
 
         {/* Conversion Elements Section */}
-        <section className="section-padding bg-gradient-to-br from-slate-50 to-gray-50">
+        <section className="section-padding bg-linear-to-br from-slate-50 to-gray-50">
           <div className="container-custom">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -403,7 +403,7 @@ export default function LandingPagesPage() {
                 <Card key={index} className="hover:shadow-lg transition-all duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center shrink-0">
                         <Target className="h-6 w-6 text-orange-600" />
                       </div>
                       <div className="flex-1">
@@ -452,14 +452,14 @@ export default function LandingPagesPage() {
 
                     <div className="space-y-4">
                       <div className="flex items-start gap-3">
-                        <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-green-500 rounded-full mt-2 shrink-0"></div>
                         <div>
                           <span className="font-medium text-gray-900">راه حل: </span>
                           <span className="text-gray-600">{study.solution}</span>
                         </div>
                       </div>
                       <div className="flex items-start gap-3">
-                        <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 shrink-0"></div>
                         <div>
                           <span className="font-medium text-gray-900">نتیجه: </span>
                           <span className="text-gray-600">{study.result}</span>
@@ -490,7 +490,7 @@ export default function LandingPagesPage() {
                 <Card key={index} className="hover:shadow-md transition-shadow">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center shrink-0">
                         <Eye className="h-6 w-6 text-indigo-600" />
                       </div>
                       <div className="flex-1">
@@ -527,7 +527,7 @@ export default function LandingPagesPage() {
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex items-start gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:shadow-md transition-shadow">
-                  <div className="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center shrink-0">
                     <Award className="h-5 w-5 text-indigo-600" />
                   </div>
                   <span className="text-gray-900 font-medium leading-relaxed">
@@ -553,7 +553,7 @@ export default function LandingPagesPage() {
 
             <div className="space-y-8">
               {workflowSteps.map((step, index) => (
-                <div key={index} className="flex items-center gap-8 p-6 bg-white rounded-xl shadow-sm">
+                <div key={index} className="flex items-center gap-8 p-6 bg-white rounded-xl shadow-xs">
                   <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center text-2xl font-bold text-purple-700">
                     {index + 1}
                   </div>
@@ -609,7 +609,7 @@ export default function LandingPagesPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="section-padding bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+        <section className="section-padding bg-linear-to-br from-slate-900 to-slate-800 text-white">
           <div className="container-custom text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               کمپین‌های شما را به درآمد بی‌پایان تبدیل کنیم!

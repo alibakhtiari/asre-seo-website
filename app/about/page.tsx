@@ -79,10 +79,10 @@ export default function AboutPage() {
           <div className="mb-20 animate-fade-in">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">داستان ما</h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+              <div className="w-24 h-1 bg-linear-to-r from-primary to-secondary mx-auto rounded-full"></div>
             </div>
 
-            <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-3xl p-8 md:p-12">
+            <div className="bg-linear-to-br from-primary/5 to-secondary/5 rounded-3xl p-8 md:p-12">
               <div className="max-w-4xl mx-auto">
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                   عصر سئو در سال ۱۳۹۸ با هدف ارائه خدمات تخصصی سئو و دیجیتال مارکتینگ به کسب‌وکارهای ایرانی شروع به فعالیت کرد. از همان ابتدا، تمرکز ما بر کیفیت، نوآوری و نتیجه‌محوری بوده است.
@@ -121,7 +121,7 @@ export default function AboutPage() {
           <div className="animate-fade-in">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">ارزش‌های ما</h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+              <div className="w-24 h-1 bg-linear-to-r from-primary to-secondary mx-auto rounded-full"></div>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">

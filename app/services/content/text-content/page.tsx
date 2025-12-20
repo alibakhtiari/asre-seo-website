@@ -240,7 +240,7 @@ export default function TextContentPage() {
 
       <main>
         {/* Hero Section */}
-        <section className="section-padding bg-gradient-to-br from-green-50 to-emerald-50">
+        <section className="section-padding bg-linear-to-br from-green-50 to-emerald-50">
           <div className="container-custom">
             <div className="text-center animate-fade-in">
               <Badge className="bg-green-100 text-green-700 mb-4">
@@ -265,11 +265,11 @@ export default function TextContentPage() {
         </section>
 
         {/* Stats Section */}
-        <section className="section-padding bg-gradient-to-r from-emerald-50 to-green-50">
+        <section className="section-padding bg-linear-to-r from-emerald-50 to-green-50">
           <div className="container-custom">
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
-                <Card key={index} className="text-center border-0 bg-white/80 backdrop-blur">
+                <Card key={index} className="text-center border-0 bg-white/80 backdrop-blur-sm">
                   <CardContent className="p-6">
                     <div className={`text-4xl font-bold ${stat.color} mb-2`}>
                       {stat.metric}
@@ -319,7 +319,7 @@ export default function TextContentPage() {
         </section>
 
         {/* Features Section */}
-        <section className="section-padding bg-gradient-to-br from-slate-50 to-indigo-50">
+        <section className="section-padding bg-linear-to-br from-slate-50 to-indigo-50">
           <div className="container-custom">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -348,7 +348,7 @@ export default function TextContentPage() {
                     <div className="space-y-2">
                       {feature.benefits.map((benefit, benefitIndex) => (
                         <div key={benefitIndex} className="flex items-center gap-2 text-sm text-gray-500">
-                          <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
+                          <CheckCircle className="h-4 w-4 text-green-500 shrink-0" />
                           {benefit}
                         </div>
                       ))}
@@ -374,8 +374,8 @@ export default function TextContentPage() {
 
             <div className="grid md:grid-cols-2 gap-6">
               {qualityGuarantees.map((guarantee, index) => (
-                <div key={index} className="flex items-center gap-4 p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border border-green-100">
-                  <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div key={index} className="flex items-center gap-4 p-4 bg-linear-to-r from-green-50 to-emerald-50 rounded-xl border border-green-100">
+                  <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center shrink-0">
                     <Award className="h-4 w-4 text-green-600" />
                   </div>
                   <span className="text-gray-900 font-medium">
@@ -402,7 +402,7 @@ export default function TextContentPage() {
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex items-start gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:shadow-md transition-shadow">
-                  <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center shrink-0">
                     <BadgeCheck className="h-5 w-5 text-green-600" />
                   </div>
                   <span className="text-gray-900 font-medium leading-relaxed">
@@ -415,7 +415,7 @@ export default function TextContentPage() {
         </section>
 
         {/* Process Section */}
-        <section className="section-padding bg-gradient-to-br from-emerald-50 to-green-50">
+        <section className="section-padding bg-linear-to-br from-emerald-50 to-green-50">
           <div className="container-custom">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
@@ -428,7 +428,7 @@ export default function TextContentPage() {
 
             <div className="space-y-8">
               {process.map((step, index) => (
-                <div key={index} className="flex items-center gap-8 p-6 bg-white/80 rounded-xl shadow-sm">
+                <div key={index} className="flex items-center gap-8 p-6 bg-white/80 rounded-xl shadow-xs">
                   <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-2xl font-bold text-green-700">
                     {step.step}
                   </div>
@@ -478,7 +478,7 @@ export default function TextContentPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="section-padding bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+        <section className="section-padding bg-linear-to-br from-slate-900 to-slate-800 text-white">
           <div className="container-custom text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               محتوای خود را حرفه‌ای کنید!

@@ -64,7 +64,7 @@ export default function AIPage() {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="section-padding bg-gradient-to-br from-slate-50 to-purple-50">
+        <section className="section-padding bg-linear-to-br from-slate-50 to-purple-50">
           <div className="container-custom">
             <div className="text-center animate-fade-in">
               <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
@@ -104,7 +104,7 @@ export default function AIPage() {
         </section>
 
         {/* Services Grid */}
-        <section className="section-padding bg-gradient-to-br from-purple-50 to-blue-50">
+        <section className="section-padding bg-linear-to-br from-purple-50 to-blue-50">
           <div className="container-custom">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">راه‌حل‌های هوش مصنوعی ما</h2>
@@ -123,7 +123,7 @@ export default function AIPage() {
                   )}
 
                   <CardHeader>
-                    <div className={`w-14 h-14 bg-gradient-to-r ${service.gradient} rounded-xl flex items-center justify-center mb-4`}>
+                    <div className={`w-14 h-14 bg-linear-to-r ${service.gradient} rounded-xl flex items-center justify-center mb-4`}>
                       <service.icon className="h-7 w-7 text-white" />
                     </div>
                     <CardTitle className="group-hover:text-purple-600 transition-colors">
@@ -157,7 +157,7 @@ export default function AIPage() {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-purple-50 animate-fade-in">
+              <div className="text-center p-6 rounded-2xl bg-linear-to-br from-blue-50 to-purple-50 animate-fade-in">
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Zap className="h-8 w-8 text-blue-600" />
                 </div>
@@ -167,7 +167,7 @@ export default function AIPage() {
                 </p>
               </div>
 
-              <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-green-50 to-blue-50 animate-fade-in">
+              <div className="text-center p-6 rounded-2xl bg-linear-to-br from-green-50 to-blue-50 animate-fade-in">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <TrendingUp className="h-8 w-8 text-green-600" />
                 </div>
@@ -177,7 +177,7 @@ export default function AIPage() {
                 </p>
               </div>
 
-              <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-purple-50 to-pink-50 animate-fade-in">
+              <div className="text-center p-6 rounded-2xl bg-linear-to-br from-purple-50 to-pink-50 animate-fade-in">
                 <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Users className="h-8 w-8 text-purple-600" />
                 </div>
@@ -191,7 +191,7 @@ export default function AIPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="section-padding bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+        <section className="section-padding bg-linear-to-br from-slate-900 to-slate-800 text-white">
           <div className="container-custom text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">آماده ورود به عصر هوش مصنوعی هستید؟</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">

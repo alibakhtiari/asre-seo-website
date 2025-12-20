@@ -273,7 +273,7 @@ export default function UXArchitecturePage() {
 
       <main>
         {/* Hero Section */}
-        <section className="section-padding bg-gradient-to-br from-indigo-50 to-purple-50">
+        <section className="section-padding bg-linear-to-br from-indigo-50 to-purple-50">
           <div className="container-custom">
             <div className="text-center animate-fade-in">
               <Badge className="bg-indigo-100 text-indigo-700 mb-4">
@@ -298,7 +298,7 @@ export default function UXArchitecturePage() {
         </section>
 
         {/* Stats Section */}
-        <section className="section-padding bg-gradient-to-r from-purple-50 to-indigo-50">
+        <section className="section-padding bg-linear-to-r from-purple-50 to-indigo-50">
           <div className="container-custom">
             <div className="grid md:grid-cols-4 gap-8">
               <div className="text-center">
@@ -347,7 +347,7 @@ export default function UXArchitecturePage() {
                     <div className="space-y-2">
                       {principle.benefits.map((benefit, benefitIndex) => (
                         <div key={benefitIndex} className="flex items-center gap-2 text-sm text-gray-500">
-                          <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" />
+                          <CheckCircle2 className="h-4 w-4 text-green-500 shrink-0" />
                           {benefit}
                         </div>
                       ))}
@@ -360,7 +360,7 @@ export default function UXArchitecturePage() {
         </section>
 
         {/* Methodologies Section */}
-        <section className="section-padding bg-gradient-to-br from-slate-50 to-indigo-50">
+        <section className="section-padding bg-linear-to-br from-slate-50 to-indigo-50">
           <div className="container-custom">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -387,7 +387,7 @@ export default function UXArchitecturePage() {
                         <ul className="space-y-1">
                           {method.steps.map((step, stepIndex) => (
                             <li key={stepIndex} className="flex items-center gap-2 text-sm text-gray-600">
-                              <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" />
+                              <CheckCircle2 className="h-4 w-4 text-green-500 shrink-0" />
                               {step}
                             </li>
                           ))}
@@ -421,7 +421,7 @@ export default function UXArchitecturePage() {
                 <Card key={index} className="hover:shadow-lg transition-all duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center shrink-0">
                         <Zap className="h-6 w-6 text-green-600" />
                       </div>
                       <div className="flex-1">
@@ -486,7 +486,7 @@ export default function UXArchitecturePage() {
             <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               {deliverables.map((deliverable, index) => (
                 <div key={index} className="flex items-center gap-4 p-4 bg-white rounded-xl border border-gray-200 hover:shadow-md transition-shadow">
-                  <div className="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center shrink-0">
                     <Eye className="h-5 w-5 text-indigo-600" />
                   </div>
                   <span className="text-gray-900 font-medium text-sm">
@@ -499,7 +499,7 @@ export default function UXArchitecturePage() {
         </section>
 
         {/* Benefits Section */}
-        <section className="section-padding bg-gradient-to-br from-purple-50 to-indigo-50">
+        <section className="section-padding bg-linear-to-br from-purple-50 to-indigo-50">
           <div className="container-custom">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -513,7 +513,7 @@ export default function UXArchitecturePage() {
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex items-start gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:shadow-md transition-shadow">
-                  <div className="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center shrink-0">
                     <Award className="h-5 w-5 text-indigo-600" />
                   </div>
                   <span className="text-gray-900 font-medium leading-relaxed">
@@ -539,7 +539,7 @@ export default function UXArchitecturePage() {
 
             <div className="space-y-8">
               {workflowSteps.map((step, index) => (
-                <div key={index} className="flex items-center gap-8 p-6 bg-white rounded-xl shadow-sm">
+                <div key={index} className="flex items-center gap-8 p-6 bg-white rounded-xl shadow-xs">
                   <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center text-2xl font-bold text-indigo-700">
                     {index + 1}
                   </div>
@@ -592,7 +592,7 @@ export default function UXArchitecturePage() {
         </section>
 
         {/* CTA Section */}
-        <section className="section-padding bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+        <section className="section-padding bg-linear-to-br from-slate-900 to-slate-800 text-white">
           <div className="container-custom text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               تجربه کاربری برتر، فروش بی‌رقیب!

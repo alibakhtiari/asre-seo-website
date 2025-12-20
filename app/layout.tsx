@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
-import Script from 'next/script'
 import './globals.css'
 import FloatingActions from '@/components/FloatingActions'
 import { Providers } from './providers'
@@ -82,14 +81,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'google-site-verification-code',
-    yandex: 'yandex-verification-code',
-    yahoo: 'yahoo-site-verification-code',
-    other: {
-      'msvalidate.01': 'bing-site-verification-code',
-    },
-  },
 }
 
 export default function RootLayout({
@@ -104,20 +95,6 @@ export default function RootLayout({
           {children}
           <FloatingActions />
         </Providers>
-        {/* TODO: Replace G-XXXXXXXXXX with actual Google Analytics Measurement ID */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-XXXXXXXXXX');
-          `}
-        </Script>
       </body>
     </html>
   )

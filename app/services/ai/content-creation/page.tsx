@@ -182,7 +182,7 @@ export default function AIContentCreationPage() {
 
             <main>
                 {/* Hero Section */}
-                <section className="section-padding bg-gradient-to-br from-purple-50 to-pink-50">
+                <section className="section-padding bg-linear-to-br from-purple-50 to-pink-50">
                     <div className="container-custom">
                         <div className="text-center animate-fade-in">
                             <Badge className="bg-purple-100 text-purple-700 mb-4">
@@ -207,11 +207,11 @@ export default function AIContentCreationPage() {
                 </section>
 
                 {/* Stats Section */}
-                <section className="section-padding bg-gradient-to-r from-pink-50 to-purple-50">
+                <section className="section-padding bg-linear-to-r from-pink-50 to-purple-50">
                     <div className="container-custom">
                         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                             {stats.map((stat, index) => (
-                                <Card key={index} className="text-center border-0 bg-white/80 backdrop-blur">
+                                <Card key={index} className="text-center border-0 bg-white/80 backdrop-blur-sm">
                                     <CardContent className="p-6">
                                         <div className={`text-4xl font-bold ${stat.color} mb-2`}>
                                             {stat.metric}
@@ -258,7 +258,7 @@ export default function AIContentCreationPage() {
                                         <div className="space-y-2">
                                             {feature.benefits.map((benefit, benefitIndex) => (
                                                 <div key={benefitIndex} className="flex items-center gap-2 text-sm text-gray-500">
-                                                    <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
+                                                    <CheckCircle className="h-4 w-4 text-green-500 shrink-0" />
                                                     {benefit}
                                                 </div>
                                             ))}
@@ -301,7 +301,7 @@ export default function AIContentCreationPage() {
                                         <div className="space-y-2">
                                             {feature.benefits.map((benefit, benefitIndex) => (
                                                 <div key={benefitIndex} className="flex items-center gap-2 text-sm text-gray-500">
-                                                    <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
+                                                    <CheckCircle className="h-4 w-4 text-green-500 shrink-0" />
                                                     {benefit}
                                                 </div>
                                             ))}
@@ -327,7 +327,7 @@ export default function AIContentCreationPage() {
 
                         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                             {contentTypes.map((type, index) => (
-                                <Card key={index} className="hover:shadow-md transition-shadow border-0 bg-gradient-to-br from-gray-50 to-white border border-gray-100">
+                                <Card key={index} className="hover:shadow-md transition-shadow border-0 bg-linear-to-br from-gray-50 to-white border border-gray-100">
                                     <CardContent className="p-6">
                                         <div className="flex items-center gap-3 mb-3">
                                             <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600">
@@ -349,7 +349,7 @@ export default function AIContentCreationPage() {
                 </section>
 
                 {/* Benefits Section */}
-                <section className="section-padding bg-gradient-to-br from-indigo-50 to-purple-50">
+                <section className="section-padding bg-linear-to-br from-indigo-50 to-purple-50">
                     <div className="container-custom">
                         <div className="text-center mb-12">
                             <h2 className="text-3xl font-bold text-gray-900 mb-6">
@@ -362,8 +362,8 @@ export default function AIContentCreationPage() {
 
                         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                             {benefits.map((benefit, index) => (
-                                <div key={index} className="flex items-start gap-4 p-6 bg-white/80 backdrop-blur rounded-xl border border-white/50 hover:shadow-md transition-shadow">
-                                    <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <div key={index} className="flex items-start gap-4 p-6 bg-white/80 backdrop-blur-sm rounded-xl border border-white/50 hover:shadow-md transition-shadow">
+                                    <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center shrink-0">
                                         <CheckCircle className="h-5 w-5 text-purple-600" />
                                     </div>
                                     <span className="text-gray-900 font-medium leading-relaxed">
@@ -376,7 +376,7 @@ export default function AIContentCreationPage() {
                 </section>
 
                 {/* CTA Section */}
-                <section className="section-padding bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+                <section className="section-padding bg-linear-to-br from-slate-900 to-slate-800 text-white">
                     <div className="container-custom text-center">
                         <h2 className="text-3xl md:text-4xl font-bold mb-6">
                             محتوای حرفه‌ای خود را همین امروز بسازید!
