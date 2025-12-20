@@ -4,6 +4,7 @@ import Footer from '@/components/Layout/Footer'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import Image from 'next/image'
 import { Megaphone, BarChart3, Users, Layers, Link2, Target, TrendingUp, DollarSign, PieChart, Flag, CheckCircle, Award, Globe, Smartphone } from 'lucide-react'
 import Script from 'next/script'
 
@@ -264,25 +265,42 @@ export default function IntegratedCampaignsPage() {
 
       <main>
         {/* Hero Section */}
-        <section className="section-padding bg-linear-to-br from-indigo-50 to-purple-50">
-          <div className="container-custom">
-            <div className="text-center animate-fade-in">
-              <Badge className="bg-indigo-100 text-indigo-700 mb-4">
-                بازاریابی یکپارچه و چندکاناله
-              </Badge>
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-                کمپین‌های تبلیغاتی <span className="gradient-text">ترکیبی</span>
-              </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-                استراتژی‌های تبلیغاتی یکپارچه در چندین کانال برای حداکثر تأثیرگذاری. افزایش آگاهی برند تا ۴۰۰% با کمپین‌های هماهنگ سوشال مدیا، گوگل ادز و ایمیل مارکتینگ.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="gradient-bg text-white">
-                  شروع کمپین یکپارچه
-                </Button>
-                <Button variant="outline" size="lg">
-                  مشاوره استراتژیک
-                </Button>
+        <section className="section-padding bg-linear-to-br from-indigo-50 to-purple-50 overflow-hidden relative">
+          <div className="absolute top-0 right-0 w-1/3 h-full bg-indigo-100/50 blur-3xl -z-10 rounded-full mix-blend-multiply opacity-70 animate-blob"></div>
+          <div className="absolute bottom-0 left-0 w-1/3 h-full bg-purple-100/50 blur-3xl -z-10 rounded-full mix-blend-multiply opacity-70 animate-blob animation-delay-2000"></div>
+
+          <div className="container-custom relative z-10">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="text-right animate-fade-in order-2 lg:order-1">
+                <Badge className="bg-indigo-100 text-indigo-700 mb-4 px-4 py-1 text-sm border-indigo-200">
+                  بازاریابی یکپارچه و چندکاناله
+                </Badge>
+                <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                  کمپین‌های تبلیغاتی <span className="gradient-text">ترکیبی</span>
+                </h1>
+                <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                  استراتژی‌های تبلیغاتی یکپارچه در چندین کانال برای حداکثر تأثیرگذاری. افزایش آگاهی برند تا ۴۰۰% با کمپین‌های هماهنگ سوشال مدیا، گوگل ادز و ایمیل مارکتینگ.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-start">
+                  <Button size="lg" className="gradient-bg text-white px-8 hover:shadow-lg hover:shadow-indigo-500/30 transition-all duration-300">
+                    شروع کمپین یکپارچه
+                  </Button>
+                  <Button variant="outline" size="lg" className="border-indigo-200 text-indigo-700 hover:bg-indigo-50">
+                    مشاوره استراتژیک
+                  </Button>
+                </div>
+              </div>
+
+              <div className="relative h-[350px] md:h-[450px] w-full rounded-2xl overflow-hidden shadow-2xl animate-fade-in order-1 lg:order-2 ring-1 ring-gray-200/50 group">
+                <div className="absolute inset-0 bg-linear-to-tr from-indigo-600/10 to-transparent z-10" />
+                <Image
+                  src="/images/integrated-campaigns-hero.png"
+                  alt="کمپین‌های تبلیغاتی ترکیبی"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  priority
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
               </div>
             </div>
           </div>
