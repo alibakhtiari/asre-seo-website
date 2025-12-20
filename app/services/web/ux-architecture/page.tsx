@@ -4,6 +4,8 @@ import Footer from '@/components/Layout/Footer'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import OptimizedImage from '@/components/ui/OptimizedImage'
+import imagesMap from '../../../../src/generated/images-map.json'
 import { Spline, UserCheck, CheckCircle2, Layers3, WandSparkles, ListChecks, Target, Users, Zap, TrendingUp, Award, Brain, Eye } from 'lucide-react'
 import Script from 'next/script'
 
@@ -12,13 +14,13 @@ export const metadata: Metadata = {
   description: 'طراحی UX پیشرفته و معماری اطلاعات بهینه برای وب‌سایت با افزایش نرخ تبدیل تا ۲۵۰% و بهبود تجربه کاربری.',
   keywords: 'تجربه کاربری UX, معماری اطلاعات, Information Architecture, UI/UX Design, نرخ تبدیل',
   alternates: {
-    canonical: 'https://asreseo.com/ux-architecture',
+    canonical: 'https://asreseo.com/services/web/ux-architecture',
   },
   openGraph: {
     title: 'طراحی تجربه کاربری و معماری اطلاعات | عصر سئو',
     description: 'طراحی UX پیشرفته برای وب‌سایت شما.',
     type: 'website',
-    url: 'https://asreseo.com/ux-architecture',
+    url: 'https://asreseo.com/services/web/ux-architecture',
     images: [
       {
         url: '/og-ux-architecture.jpg',
@@ -273,25 +275,43 @@ export default function UXArchitecturePage() {
 
       <main>
         {/* Hero Section */}
-        <section className="section-padding bg-linear-to-br from-indigo-50 to-purple-50">
-          <div className="container-custom">
-            <div className="text-center animate-fade-in">
-              <Badge className="bg-indigo-100 text-indigo-700 mb-4">
-                طراحی تجربه کاربری پیشرفته
-              </Badge>
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-                معماری اطلاعات و <span className="gradient-text">تجربه کاربری UX</span>
-              </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-                راز ماندگاری کاربران و موفقیت دیجیتال! طراحی UX علمی با روانشناسی کاربران و معماری اطلاعات هوشمند برای نرخ تبدیل ۲۵۰% افزایش در عصر سئو.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="gradient-bg text-white">
-                  شروع طراحی UX
-                </Button>
-                <Button variant="outline" size="lg">
-                  نمونه کارها UX
-                </Button>
+        <section className="section-padding bg-linear-to-br from-indigo-50 to-purple-50 overflow-hidden relative">
+          <div className="absolute top-0 right-0 w-1/3 h-full bg-indigo-100/50 blur-3xl -z-10 rounded-full mix-blend-multiply opacity-70 animate-blob"></div>
+          <div className="absolute bottom-0 left-0 w-1/3 h-full bg-purple-100/50 blur-3xl -z-10 rounded-full mix-blend-multiply opacity-70 animate-blob animation-delay-2000"></div>
+
+          <div className="container-custom relative z-10">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="text-right animate-fade-in order-2 lg:order-1">
+                <Badge className="bg-indigo-100 text-indigo-700 mb-4 px-4 py-1 text-sm border-indigo-200">
+                  طراحی تجربه کاربری پیشرفته
+                </Badge>
+                <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                  معماری اطلاعات و <span className="gradient-text">تجربه کاربری UX</span>
+                </h1>
+                <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                  راز ماندگاری کاربران و موفقیت دیجیتال! طراحی UX علمی با روانشناسی کاربران و معماری اطلاعات هوشمند برای نرخ تبدیل ۲۵۰% افزایش در عصر سئو.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-start">
+                  <Button size="lg" className="gradient-bg text-white px-8 hover:shadow-lg hover:shadow-indigo-500/30 transition-all duration-300">
+                    شروع طراحی UX
+                  </Button>
+                  <Button variant="outline" size="lg" className="border-indigo-200 text-indigo-700 hover:bg-indigo-50">
+                    مشاهده نمونه کارها
+                  </Button>
+                </div>
+              </div>
+
+              <div className="relative h-[350px] md:h-[450px] w-full rounded-2xl overflow-hidden shadow-2xl animate-fade-in order-1 lg:order-2 ring-1 ring-gray-200/50 group">
+                <div className="absolute inset-0 bg-linear-to-tr from-indigo-600/10 to-transparent z-10" />
+                <OptimizedImage
+                  src="/images/ux-architecture-hero.webp"
+                  alt="طراحی تجربه کاربری و معماری اطلاعات"
+                  fill
+                  imageData={imagesMap['/images/ux-architecture-hero.webp' as keyof typeof imagesMap]}
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  priority
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
               </div>
             </div>
           </div>

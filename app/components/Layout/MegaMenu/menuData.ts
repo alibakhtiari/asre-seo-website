@@ -31,7 +31,7 @@ export const menuCategories: MenuCategory[] = [
       { title: 'تبلیغات گوگل', href: '/services/marketing/google-ads' },
       { title: 'بازاریابی ایمیلی', href: '/services/marketing/email-marketing' },
       { title: 'شبکه‌های اجتماعی', href: '/services/marketing/social-media' },
-      { title: 'قیف فروش', href: '/services/marketing/sales-funnel' },
+      { title: 'قیف فروش', href: '/services/marketing/sales-funnel-management' },
       { title: 'کمپین یکپارچه', href: '/services/marketing/integrated-campaigns' }
     ]
   },

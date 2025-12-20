@@ -57,7 +57,7 @@ const AllServicesSection = () => {
         { title: 'تبلیغات گوگل', description: 'تبلیغات هدفمند در نتایج جستجوی گوگل با بازدهی بالا', href: '/services/marketing/google-ads', icon: Target },
         { title: 'بازاریابی ایمیلی', description: 'ارتباط موثر با مشتریان و افزایش وفاداری', href: '/services/marketing/email-marketing', icon: Mail },
         { title: 'شبکه‌های اجتماعی', description: 'مدیریت حرفه‌ای شبکه‌های اجتماعی و جذب مخاطب', href: '/services/marketing/social-media', icon: Share2 },
-        { title: 'قیف فروش', description: 'طراحی مسیر تبدیل بازدیدکننده به مشتری وفادار', href: '/services/marketing/sales-funnel', icon: TrendingUp },
+        { title: 'قیف فروش', description: 'طراحی مسیر تبدیل بازدیدکننده به مشتری وفادار', href: '/services/marketing/sales-funnel-management', icon: TrendingUp },
         { title: 'کمپین یکپارچه', description: 'اجرای کمپین‌های 360 درجه برای حداکثر تاثیرگذاری', href: '/services/marketing/integrated-campaigns', icon: BarChart3 }
       ]
     },
