@@ -7,15 +7,18 @@ import { Providers } from './providers'
 const vazirMatn = localFont({
   src: [
     {
-      path: './Vazirmatn-Regular.woff2',
+      path: '../public/regular.woff2',
       weight: '400',
+      style: 'normal',
     },
     {
-      path: './Vazirmatn-Bold.woff2',
+      path: '../public/bold.woff2',
       weight: '700',
+      style: 'normal',
     },
   ],
   display: 'swap',
+  variable: '--font-vazir',
 })
 
 export const viewport: Viewport = {
