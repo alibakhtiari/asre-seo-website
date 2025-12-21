@@ -78,7 +78,7 @@ const ServicesSection = () => {
                     variant="outline"
                     className="w-full border-2 hover:bg-linear-to-r hover:from-blue-500 hover:to-green-500 hover:text-white hover:border-transparent transition-all duration-300"
                   >
-                    اطلاعات بیشتر
+                    اطلاعات بیشتر درباره {service.title}
                   </Button>
                 </Link>
               </CardContent>

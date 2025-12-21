@@ -8,11 +8,18 @@ const FloatingActions = () => {
   const [showBackToTop, setShowBackToTop] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setShowBackToTop(window.scrollY > 300);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setShowBackToTop(window.scrollY > 300);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
