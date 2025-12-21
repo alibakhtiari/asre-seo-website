@@ -52,10 +52,10 @@ const TestimonialsSection = () => {
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-linear-to-r from-blue-300 to-purple-300 rounded-full mix-blend-multiply filter blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-linear-to-r from-purple-300 to-pink-300 rounded-full mix-blend-multiply filter blur-3xl animate-float" style={{animationDelay: '4s'}}></div>
+        <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-linear-to-r from-purple-300 to-pink-300 rounded-full mix-blend-multiply filter blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
       </div>
 
-  <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+      <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
@@ -69,10 +69,10 @@ const TestimonialsSection = () => {
         {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <Card 
+            <Card
               key={index}
               className="floating-card hover-lift p-6 animate-slide-in-up relative overflow-hidden"
-              style={{animationDelay: `${index * 0.1}s`}}
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Quote Icon */}
               <div className="absolute top-4 right-4 opacity-20">
@@ -96,7 +96,7 @@ const TestimonialsSection = () => {
                 <div className="flex items-center gap-4">
                   <div className="text-3xl">{testimonial.avatar}</div>
                   <div className="text-right">
-                    <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
+                    <h3 className="font-bold text-gray-900">{testimonial.name}</h3>
                     <p className="text-sm text-gray-600">{testimonial.company}</p>
                   </div>
                 </div>
@@ -107,19 +107,19 @@ const TestimonialsSection = () => {
 
         {/* Statistics */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div className="text-center animate-zoom-in" style={{animationDelay: '0.2s'}}>
+          <div className="text-center animate-zoom-in" style={{ animationDelay: '0.2s' }}>
             <div className="text-4xl md:text-5xl font-bold gradient-text mb-2">۵۰۰+</div>
             <div className="text-gray-600">مشتری راضی</div>
           </div>
-          <div className="text-center animate-zoom-in" style={{animationDelay: '0.4s'}}>
+          <div className="text-center animate-zoom-in" style={{ animationDelay: '0.4s' }}>
             <div className="text-4xl md:text-5xl font-bold gradient-text mb-2">۹۸%</div>
             <div className="text-gray-600">میزان رضایت</div>
           </div>
-          <div className="text-center animate-zoom-in" style={{animationDelay: '0.6s'}}>
+          <div className="text-center animate-zoom-in" style={{ animationDelay: '0.6s' }}>
             <div className="text-4xl md:text-5xl font-bold gradient-text mb-2">۵۰۰%</div>
             <div className="text-gray-600">متوسط رشد فروش</div>
           </div>
-          <div className="text-center animate-zoom-in" style={{animationDelay: '0.8s'}}>
+          <div className="text-center animate-zoom-in" style={{ animationDelay: '0.8s' }}>
             <div className="text-4xl md:text-5xl font-bold gradient-text mb-2">۲۴/۷</div>
             <div className="text-gray-600">پشتیبانی</div>
           </div>
