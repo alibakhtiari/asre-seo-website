@@ -29,10 +29,10 @@ const Header = () => {
 
   const menuItems = [
     { title: 'صفحه اصلی', href: '/' },
-    { title: 'نمونه کارها', href: '/portfolio' },
-    { title: 'درباره ما', href: '/about' },
-    { title: 'وبلاگ', href: '/blog' },
-    { title: 'تماس با ما', href: '/contact' }
+    { title: 'نمونه کارها', href: '/portfolio/' },
+    { title: 'درباره ما', href: '/about/' },
+    { title: 'وبلاگ', href: '/blog/' },
+    { title: 'تماس با ما', href: '/contact/' }
   ];
 
   return (
@@ -82,7 +82,7 @@ const Header = () => {
 
           {/* Enhanced CTA Button */}
           <div className="hidden lg:flex items-center gap-4">
-            <Link href="/contact">
+            <Link href="/contact/">
               <Button className="bg-linear-to-r from-primary-500 to-secondary-500 text-white hover:opacity-90 transition-opacity duration-200 px-6 py-2 font-semibold shadow-md hover:shadow-lg">
                 مشاوره رایگان
               </Button>
@@ -118,7 +118,7 @@ const Header = () => {
                 </Link>
               ))}
               <div className="pt-2">
-                <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
+                <Link href="/contact/" onClick={() => setIsMenuOpen(false)}>
                   <Button className="bg-linear-to-r from-primary-500 to-secondary-500 text-white w-full font-semibold">
                     مشاوره رایگان
                   </Button>

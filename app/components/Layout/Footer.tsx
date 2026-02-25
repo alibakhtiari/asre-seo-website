@@ -8,22 +8,22 @@ const Footer = () => {
 
   const footerLinks = {
     services: [
-      { title: 'سئو و بهینه‌سازی', href: '/services/seo' },
-      { title: 'بازاریابی دیجیتال', href: '/services/marketing' },
-      { title: 'طراحی وب‌سایت', href: '/services/web' },
-      { title: 'هوش مصنوعی', href: '/services/ai' }
+      { title: 'سئو و بهینه‌سازی', href: '/services/seo/' },
+      { title: 'بازاریابی دیجیتال', href: '/services/marketing/' },
+      { title: 'طراحی وب‌سایت', href: '/services/web/' },
+      { title: 'هوش مصنوعی', href: '/services/ai/' }
     ],
     company: [
-      { title: 'درباره ما', href: '/about' },
-      { title: 'نمونه کارها', href: '/portfolio' },
-      { title: 'وبلاگ', href: '/blog' },
-      { title: 'تماس با ما', href: '/contact' }
+      { title: 'درباره ما', href: '/about/' },
+      { title: 'نمونه کارها', href: '/portfolio/' },
+      { title: 'وبلاگ', href: '/blog/' },
+      { title: 'تماس با ما', href: '/contact/' }
     ],
     support: [
-      { title: 'سوالات متداول', href: '/faq' },
-      { title: 'پشتیبانی', href: '/support' },
-      { title: 'مشاوره رایگان', href: '/consultation' },
-      { title: 'قوانین و مقررات', href: '/terms' }
+      { title: 'سوالات متداول', href: '/faq/' },
+      { title: 'پشتیبانی', href: '/support/' },
+      { title: 'مشاوره رایگان', href: '/consultation/' },
+      { title: 'قوانین و مقررات', href: '/terms/' }
     ]
   };
 
@@ -113,13 +113,13 @@ const Footer = () => {
               © {currentYear} عصر سئو. تمامی حقوق محفوظ است.
             </p>
             <div className="flex items-center space-x-6 space-x-reverse text-sm text-gray-400">
-              <Link href="/privacy" className="hover:text-white transition-colors">
+              <Link href="/privacy/" className="hover:text-white transition-colors">
                 حریم خصوصی
               </Link>
-              <Link href="/terms" className="hover:text-white transition-colors">
+              <Link href="/terms/" className="hover:text-white transition-colors">
                 قوانین و مقررات
               </Link>
-              <Link href="/sitemap" className="hover:text-white transition-colors">
+              <Link href="/sitemap/" className="hover:text-white transition-colors">
                 نقشه سایت
               </Link>
             </div>
