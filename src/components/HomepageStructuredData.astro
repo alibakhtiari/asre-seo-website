@@ -1,0 +1,92 @@
+---
+const data = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'عصر سئو',
+    description: 'شرکت پیشرو در ارائه خدمات دیجیتال مارکتینگ، سئو، هوش مصنوعی و تبلیغات گوگل',
+    url: 'https://asreseo.com',
+    logo: 'https://asreseo.com/logo.png',
+    image: 'https://asreseo.com/og-image.jpg',
+    telephone: '+98-xxx-xxx-xxxx',
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'IR',
+      addressRegion: 'Tehran',
+      addressLocality: 'Tehran'
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 35.6892,
+      longitude: 51.3890
+    },
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: [
+          'Monday',
+          'Tuesday',
+          'Wednesday',
+          'Thursday',
+          'Saturday'
+        ],
+        opens: '09:00',
+        closes: '18:00'
+      }
+    ],
+    serviceArea: {
+      '@type': 'GeoCircle',
+      geoMidpoint: {
+        '@type': 'GeoCoordinates',
+        latitude: 35.6892,
+        longitude: 51.3890
+      },
+      geoRadius: '50000'
+    },
+    services: [
+      'خدمات سئو',
+      'دیجیتال مارکتینگ',
+      'تبلیغات گوگل',
+      'طراحی وب‌سایت',
+      'هوش مصنوعی',
+      'اتوماسیون بازاریابی',
+      'تولید محتوا با AI',
+      'چت‌بات هوشمند'
+    ],
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '127'
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'خدمات دیجیتال مارکتینگ',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'خدمات سئو حرفه‌ای',
+            description: 'بهینه‌سازی موتور جستجو و افزایش رتبه سایت'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'تبلیغات گوگل ادز',
+            description: 'مدیریت و بهینه‌سازی کمپین‌های تبلیغاتی'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'خدمات هوش مصنوعی',
+            description: 'راهکارهای نوین AI برای رشد کسب‌وکار و اتوماسیون'
+          }
+        }
+      ]
+    }
+  };
+---
+<script type="application/ld+json" set:html={JSON.stringify(data)}></script>

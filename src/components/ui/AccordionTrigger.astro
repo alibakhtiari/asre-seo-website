@@ -1,0 +1,9 @@
+---
+export interface Props {
+  class?: string;
+}
+const { class: className }: any = Astro.props;
+---
+<button type="button" data-acc-trigger class={className}>
+  <slot />
+</button>

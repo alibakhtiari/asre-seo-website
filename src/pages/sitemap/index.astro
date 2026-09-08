@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Layout/Header.astro';
+import Footer from '../../components/Layout/Footer.astro';
+
+
+
+
+
+
+
+    const links = [
+        { title: 'صفحه اصلی', href: '/' },
+        { title: 'خدمات سئو', href: '/services/seo/' },
+        { title: 'خدمات بازاریابی', href: '/services/marketing/' },
+        { title: 'خدمات وب', href: '/services/web/' },
+        { title: 'خدمات هوش مصنوعی', href: '/services/ai/' },
+        { title: 'وبلاگ', href: '/blog/' },
+        { title: 'نمونه کارها', href: '/portfolio/' },
+        { title: 'درباره ما', href: '/about/' },
+        { title: 'تماس با ما', href: '/contact/' },
+        { title: 'سوالات متداول', href: '/faq/' },
+        { title: 'حریم خصوصی', href: '/privacy/' },
+        { title: 'قوانین و مقررات', href: '/terms/' }
+    ]
+
+    
+---
+<BaseLayout title='نقشه سایت | عصر سئو' description='لیست تمامی صفحات وب‌سایت عصر سئو برای دسترسی آسان‌تر کاربران.' canonical='https://asreseo.com/sitemap/' ogType='website' twitterCard='summary_large_image'>
+<div class="min-h-screen bg-white">
+            <Header />
+            <main class="section-padding pt-32">
+                <div class="container-custom max-w-4xl">
+                    <h1 class="text-4xl font-bold mb-12 text-right">نقشه سایت</h1>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-right" dir="rtl">
+                        {links.map((link, index) => (
+                            <a href={link.href} class="p-4 rounded-xl border border-gray-100 hover:border-blue-500 hover:text-blue-600 transition-all">
+                                {link.title}
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            </main>
+            <Footer />
+        </div>
+</BaseLayout>

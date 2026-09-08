@@ -1,6 +1,7 @@
 import { Resend } from 'resend';
 
-export const onRequestPost = async (context: any) => {
+interface EmailEnv { RESEND_API_KEY: string }
+export const onRequestPost = async (context: { request: Request; env: EmailEnv }) => {
     const { request, env } = context;
 
     try {
@@ -55,8 +56,8 @@ export const onRequestPost = async (context: any) => {
             headers: { 'Content-Type': 'application/json' }
         });
 
-    } catch (error: any) {
-        return new Response(JSON.stringify({ error: error.message || 'Something went wrong' }), {
+    } catch (error) {
+        return new Response(JSON.stringify({ error: (error instanceof Error ? error.message : String(error)) || 'Something went wrong' }), {
             status: 500,
             headers: { 'Content-Type': 'application/json' }
         });

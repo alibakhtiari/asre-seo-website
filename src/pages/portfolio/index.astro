@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Layout/Header.astro';
+import Footer from '../../components/Layout/Footer.astro';
+import Card from '../../components/ui/card/Card.astro';
+import CardHeader from '../../components/ui/card/CardHeader.astro';
+import CardTitle from '../../components/ui/card/CardTitle.astro';
+import CardContent from '../../components/ui/card/CardContent.astro';
+import Badge from '../../components/ui/badge/Badge.astro';
+
+
+
+
+
+
+    const projects = [
+        { title: 'فروشگاه آنلاین مد و پوشاک', category: 'طراحی سایت و سئو', status: 'رتبه ۱ گوگل' },
+        { title: 'اپلیکیشن مدیریت مالی', category: 'تجربه کاربری و توسعه', status: 'تکمیل شده' },
+        { title: 'کمپین تبلیغاتی برند لوازم خانگی', category: 'دیجیتال مارکتینگ', status: '۳۰۰٪ رشد لید' },
+        { title: 'پرورتال خبری تخصصی', category: 'سئو تکنیکال', status: 'بهینه‌سازی سرعت' },
+        { title: 'پلتفرم آموزش آنلاین', category: 'طراحی سایت', status: 'واکنش‌گرا' },
+        { title: 'استراتژی محتوای هلدینگ صنعتی', category: 'بازاریابی محتوایی', status: 'رشد ارگانیک' }
+    ]
+
+    
+---
+<BaseLayout title='نمونه کارها | عصر سئو' description='مشاهده پروژه‌های موفق سئو، طراحی سایت و بازاریابی دیجیتال عصر سئو.' canonical='https://asreseo.com/portfolio/' ogType='website' twitterCard='summary_large_image'>
+<div class="min-h-screen bg-white">
+            <Header />
+            <main class="section-padding pt-32">
+                <div class="container-custom">
+                    <div class="text-center mb-16">
+                        <h1 class="text-4xl font-bold mb-6">نمونه کارهای ما</h1>
+                        <p class="text-xl text-gray-600 max-w-2xl mx-auto">داستان موفقیت مشتریانی که به ما اعتماد کردند</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-right">
+                        {projects.map((project, index) => (
+                            <Card class="hover:shadow-lg transition-shadow border-gray-100">
+                                <CardHeader>
+                                    <div class="flex justify-between items-start mb-2">
+                                        <Badge variant="secondary" class="bg-blue-50 text-blue-600">{project.category}</Badge>
+                                        <Badge class="bg-green-500">{project.status}</Badge>
+                                    </div>
+                                    <CardTitle class="text-xl mt-4 leading-relaxed">{project.title}</CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <div class="h-48 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400 italic">تصویر پروژه</div>
+                                </CardContent>
+                            </Card>
+                        ))}
+                    </div>
+                </div>
+            </main>
+            <Footer />
+        </div>
+</BaseLayout>

@@ -1,0 +1,29 @@
+---
+const data = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'عصر سئو',
+    url: 'https://asreseo.com',
+    logo: 'https://asreseo.com/logo.png',
+    description: 'شرکت پیشرو در خدمات دیجیتال مارکتینگ، سئو و هوش مصنوعی در ایران',
+    foundingDate: '2020',
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'IR',
+      addressRegion: 'Tehran',
+      addressLocality: 'Tehran'
+    },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+98-xxx-xxx-xxxx',
+      contactType: 'customer service',
+      availableLanguage: ['Persian', 'English']
+    },
+    sameAs: [
+      'https://instagram.com/asreseo',
+      'https://t.me/asreseo',
+      'https://linkedin.com/company/asreseo'
+    ]
+  };
+---
+<script type="application/ld+json" set:html={JSON.stringify(data)}></script>

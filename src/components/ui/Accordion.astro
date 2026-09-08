@@ -1,0 +1,35 @@
+---
+// Vanilla single/collapsible accordion (replaces the React context version).
+// Same compositional API: Accordion > Item(value) > Trigger + Content.
+export interface Props {
+  class?: string;
+  dir?: string;
+  type?: string;
+  collapsible?: boolean;
+  value?: string;
+}
+const { class: className, dir }: any = Astro.props;
+---
+<div class={className} dir={dir} data-accordion>
+  <slot />
+</div>
+<script>
+  document.querySelectorAll('[data-accordion]').forEach((root) => {
+    const items = root.querySelectorAll('[data-acc-item]');
+    items.forEach((item) => {
+      const btn = item.querySelector('[data-acc-trigger]');
+      const panel = item.querySelector('[data-acc-content]');
+      btn?.addEventListener('click', () => {
+        const isOpen = item.getAttribute('data-open') === 'true';
+        items.forEach((o) => {
+          o.setAttribute('data-open', 'false');
+          o.querySelector('[data-acc-content]')?.setAttribute('hidden', '');
+        });
+        if (!isOpen) {
+          item.setAttribute('data-open', 'true');
+          panel?.removeAttribute('hidden');
+        }
+      });
+    });
+  });
+</script>

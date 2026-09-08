@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Layout/Header.astro';
+import Footer from '../../components/Layout/Footer.astro';
+import BlogGrid from '../../components/Blog/BlogGrid.astro';
+import BlogHero from '../../components/Blog/BlogHero.astro';
+
+const entries = await getCollection('blog');
+const posts = entries.map((entry: any) => ({
+  slug: entry.id.replace(/\.mdx?$/, ''),
+  title: entry.data.title,
+  excerpt: entry.data.excerpt ?? '',
+  category: entry.data.category ?? '',
+  author: entry.data.author ?? '',
+  date: entry.data.date ?? '',
+  readTime: entry.data.readTime ?? '',
+  image: entry.data.image ?? '',
+  featured: entry.data.featured ?? false,
+}));
+---
+<BaseLayout
+  title='وبلاگ عصر سئو | آموزش دیجیتال مارکتینگ | مطالب آموزشی تخصصی'
+  description='وبلاگ آموزشی عصر سئو شامل مقالات تخصصی digital marketing، سئو، بهینه‌سازی وب‌سایت، تبلیغات گوگل، هوش مصنوعی و بازاریابی محتوایی.'
+  keywords='وبلاگ دیجیتال مارکتینگ, مقالات سئو, آموزش Marketing, مطالب آموزشی, عصر سئو'
+  canonical='https://asreseo.com/blog'
+  ogUrl='https://asreseo.com/blog'
+>
+  <Header />
+  <main>
+    <BlogHero />
+    <BlogGrid posts={posts} />
+  </main>
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Layout/Header.astro';
+import Footer from '../../components/Layout/Footer.astro';
+import Button from '../../components/ui/button/Button.astro';
+import Icon from '../../components/ui/Icon.astro';
+---
+<BaseLayout title='دریافت مشاوره رایگان | عصر سئو' description='رزرو وقت مشاوره رایگان برای پروژه‌های سئو، تبلیغات گوگل و طراحی وب‌سایت.' canonical='https://asreseo.com/consultation/' ogType='website' twitterCard='summary_large_image'>
+<div class="min-h-screen bg-white">
+            <Header />
+            <main class="section-padding pt-32">
+                <div class="container-custom">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div class="order-2 lg:order-1 bg-white p-8 rounded-3xl shadow-xl border border-gray-100">
+                            <h2 class="text-2xl font-bold mb-8 text-right">درخواست جلسه مشاوره</h2>
+                            <form class="space-y-6" dir="rtl">
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">نام و نام خانوادگی</label>
+                                        <input type="text" class="w-full p-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-hidden" />
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">شماره تماس</label>
+                                        <input type="tel" class="w-full p-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-hidden" />
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">زمینه مشاوره</label>
+                                    <select class="w-full p-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-hidden">
+                                        <option>سئو و بهینه‌سازی</option>
+                                        <option>تبلیغات گوگل</option>
+                                        <option>طراحی وب‌سایت</option>
+                                        <option>هوش مصنوعی</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">توضیحات کوتاه</label>
+                                    <textarea rows={4} class="w-full p-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-hidden"></textarea>
+                                </div>
+                                <Button class="w-full py-6 text-lg gradient-bg text-white shadow-lg shadow-blue-500/30">ثبت درخواست مشاوره</Button>
+                            </form>
+                        </div>
+
+                        <div class="order-1 lg:order-2 text-right">
+                            <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">رزرو <span class="gradient-text">مشاوره تخصصی</span> رایگان</h1>
+                            <p class="text-xl text-gray-600 mb-12 leading-relaxed">برای نیم ساعت، کسب‌وکار شما را تحلیل می‌کنیم و نقشه راه رشدتان را ترسیم می‌کنیم. این جلسه کاملاً رایگان و بدون تعهد است.</p>
+
+                            <div class="space-y-6">
+                                <div class="flex items-center gap-4 justify-end">
+                                    <span class="text-gray-700 font-medium">۳۰ دقیقه تحلیل اختصاصی</span>
+                                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 shrink-0"><Icon name="clock" /></div>
+                                </div>
+                                <div class="flex items-center gap-4 justify-end">
+                                    <span class="text-gray-700 font-medium">بررسی رقبا و کلمات کلیدی</span>
+                                    <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-green-600 shrink-0"><Icon name="calendar" /></div>
+                                </div>
+                                <div class="flex items-center gap-4 justify-end">
+                                    <span class="text-gray-700 font-medium">حضوری یا آنلاین (Zoom/Meet)</span>
+                                    <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 shrink-0"><Icon name="map-pin" /></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <Footer />
+        </div>
+</BaseLayout>

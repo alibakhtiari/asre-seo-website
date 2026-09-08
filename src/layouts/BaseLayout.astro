@@ -1,0 +1,83 @@
+---
+// Shared document shell: replaces Next.js root layout + per-page `metadata`.
+// Persian (fa), RTL, Vazirmatn via @font-face in globals.css (same woff2 files).
+export interface OgImage {
+  url: string;
+  width?: number;
+  height?: number;
+  alt?: string;
+}
+
+export interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  canonical?: string;
+  ogType?: string;
+  ogUrl?: string;
+  ogImages?: OgImage[];
+  twitterCard?: string;
+  noindex?: boolean;
+}
+
+const SITE = 'https://asreseo.com';
+const DEFAULT_TITLE = 'عصر سئو | بهترین خدمات دیجیتال مارکتینگ، سئو و هوش مصنوعی در ایران';
+
+const {
+  title = DEFAULT_TITLE,
+  description = '',
+  keywords = '',
+  canonical,
+  ogType = 'website',
+  ogUrl,
+  ogImages = [],
+  twitterCard = 'summary_large_image',
+  noindex = false,
+}: any = Astro.props;
+
+const canonicalUrl = canonical ?? new URL(Astro.url.pathname, SITE).href;
+const ogTitle = title;
+const ogDescription = description;
+
+import FloatingActions from '../components/FloatingActions.astro';
+import '../styles/globals.css';
+---
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    {keywords && <meta name="keywords" content={keywords} />}
+    <meta name="theme-color" content="#3b82f6" />
+    <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:locale" content="fa_IR" />
+    <meta property="og:site_name" content="عصر سئو" />
+    <meta property="og:title" content={ogTitle} />
+    {ogDescription && <meta property="og:description" content={ogDescription} />}
+    <meta property="og:url" content={ogUrl ?? canonicalUrl} />
+    {ogImages.map((img: OgImage) => (
+      <>
+        <meta property="og:image" content={new URL(img.url, SITE).href} />
+        {img.width && <meta property="og:image:width" content={String(img.width)} />}
+        {img.height && <meta property="og:image:height" content={String(img.height)} />}
+        {img.alt && <meta property="og:image:alt" content={img.alt} />}
+      </>
+    ))}
+    <meta name="twitter:card" content={twitterCard} />
+    <meta name="twitter:title" content={ogTitle} />
+    {ogDescription && <meta name="twitter:description" content={ogDescription} />}
+    <slot name="head" />
+  </head>
+  <body class="font-vazir antialiased">
+    <slot />
+    <FloatingActions />
+  </body>
+</html>

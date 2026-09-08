@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://asreseo.com/sitemap-index.xml

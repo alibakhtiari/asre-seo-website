@@ -1,0 +1,31 @@
+---
+import type { MenuCategory as MenuCategoryType } from './types';
+import MenuItem from './MenuItem.astro'
+const { category }: any = Astro.props;
+
+
+interface MenuCategoryProps {
+  category: MenuCategoryType;
+  onClose: () => void;
+}
+
+
+
+  
+---
+<div class="space-y-3">
+      <!-- Category Header -->
+      <div class="flex items-center space-x-2 space-x-reverse mb-3">
+        <span class="text-lg">{category.icon}</span>
+        <h4 class={`font-semibold text-sm ${category.color}`}>
+          {category.title}
+        </h4>
+      </div>
+
+      <!-- Category Items -->
+      <ul class="space-y-2">
+        {category.items.map((item: any, itemIndex: number) => (
+          <MenuItem item={item} />
+        ))}
+      </ul>
+    </div>

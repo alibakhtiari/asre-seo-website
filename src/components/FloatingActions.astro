@@ -1,0 +1,48 @@
+---
+import Icon from './ui/Icon.astro';
+import Button from './ui/button/Button.astro';
+
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+
+  
+---
+<!-- Back to Top Button -->
+      <div data-backtotop hidden>
+<div class="fixed bottom-6 left-6 z-50 animate-fade-in">
+          <Button
+            data-scrolltop
+            size="icon"
+            class="h-12 w-12 rounded-full bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300"
+            aria-label="بازگشت به بالا"
+          >
+            <Icon name="arrow-up" class="h-5 w-5" />
+          </Button>
+        </div>
+</div>
+
+      <!-- Contact Actions -->
+      <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/989125811880?text=سلام، برای مشاوره رایگان تماس گرفتم" target="_blank" rel="noopener" class="h-12 w-12 rounded-full bg-green-500 hover:bg-green-600 shadow-lg hover:shadow-xl transition-all duration-300 animate-float" aria-label="تماس با واتساپ">
+<Icon name="message-circle" class="h-5 w-5" />
+</a>
+
+        <!-- Call Button -->
+        <a href="tel:+989125811880" class="h-12 w-12 rounded-full bg-blue-500 hover:bg-blue-600 shadow-lg hover:shadow-xl transition-all duration-300 animate-float" aria-label="تماس تلفنی">
+<Icon name="phone" class="h-5 w-5" />
+</a>
+      </div>
+
+<script>
+  const btt = document.querySelector('[data-backtotop]');
+  const onScroll = () => btt?.toggleAttribute('hidden', window.scrollY <= 300);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  document.querySelectorAll('[data-scrolltop]').forEach((b) =>
+    b.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' })),
+  );
+</script>
