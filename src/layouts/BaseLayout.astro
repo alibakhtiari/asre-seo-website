@@ -11,6 +11,8 @@ export interface OgImage {
 export interface Props {
   title?: string;
   description?: string;
+  ogTitle?: string;
+  ogDescription?: string;
   keywords?: string;
   canonical?: string;
   ogType?: string;
@@ -25,7 +27,7 @@ const DEFAULT_TITLE = 'عصر سئو | بهترین خدمات دیجیتال م
 
 const {
   title = DEFAULT_TITLE,
-  description = '',
+  description = 'عصر سئو - شرکت پیشرو در ارائه خدمات دیجیتال مارکتینگ، سئو، هوش مصنوعی، تبلیغات گوگل و طراحی وب‌سایت. با تیم متخصص ما رشد ۳۰۰٪ کسب‌وکار خود را تضمین کنید.',
   keywords = '',
   canonical,
   ogType = 'website',
@@ -35,9 +37,12 @@ const {
   noindex = false,
 }: any = Astro.props;
 
-const canonicalUrl = canonical ?? new URL(Astro.url.pathname, SITE).href;
-const ogTitle = title;
-const ogDescription = description;
+const canonicalUrl = (() => {
+  const u = new URL(canonical ?? Astro.url.pathname, SITE).href;
+  return u === SITE + '/' ? SITE : u;
+})();
+const ogTitle = Astro.props.ogTitle ?? title;
+const ogDescription = Astro.props.ogDescription ?? description;
 
 import FloatingActions from '../components/FloatingActions.astro';
 import '../styles/globals.css';
@@ -62,7 +67,7 @@ import '../styles/globals.css';
     <meta property="og:site_name" content="عصر سئو" />
     <meta property="og:title" content={ogTitle} />
     {ogDescription && <meta property="og:description" content={ogDescription} />}
-    <meta property="og:url" content={ogUrl ?? canonicalUrl} />
+    <meta property="og:url" content={new URL(ogUrl ?? canonicalUrl, SITE).href} />
     {ogImages.map((img: OgImage) => (
       <>
         <meta property="og:image" content={new URL(img.url, SITE).href} />

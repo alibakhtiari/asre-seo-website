@@ -5,7 +5,8 @@ import Header from '../../components/Layout/Header.astro';
 import Footer from '../../components/Layout/Footer.astro';
 import BlogPost from '../../components/Blog/BlogPost.astro';
 import { parseSections } from '../../lib/blog';
-import { readFileSync } from 'node:fs';
+import { getBlogPost } from '../../lib/blog-data';
+import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 
 export async function getStaticPaths() {
@@ -19,7 +20,10 @@ export async function getStaticPaths() {
 const { entry }: any = Astro.props;
 const { Content, headings } = await render(entry);
 const rawFile = readFileSync(
-  join(process.cwd(), 'src', 'content', 'blog', entry.id.endsWith('.md') ? entry.id : `${entry.id}.md`),
+  (() => {
+    const base = join(process.cwd(), 'src', 'content', 'blog', entry.id.replace(/\.mdx?$/, ''));
+    return existsSync(base + '.mdx') ? base + '.mdx' : base + '.md';
+  })(),
   'utf8',
 );
 const rawBody = rawFile.replace(/^---[\s\S]*?---\n/, '');
@@ -28,18 +32,20 @@ const tableOfContents = headings
   .filter((h: any) => h.depth === 2 || h.depth === 3)
   .map((h: any) => ({ id: h.slug, title: h.text, level: h.depth }));
 
+const slug = entry.id.replace(/\.mdx?$/, '');
+const meta: any = getBlogPost(slug) ?? {};
 const post = {
-  slug: entry.id.replace(/\.mdx?$/, ''),
-  title: entry.data.title,
-  excerpt: entry.data.excerpt ?? '',
-  description: entry.data.description ?? entry.data.excerpt ?? '',
-  category: entry.data.category ?? '',
-  author: entry.data.author ?? '',
-  date: entry.data.date ?? '',
-  readTime: entry.data.readTime ?? '',
-  image: entry.data.image ?? '',
-  featured: entry.data.featured ?? false,
-  tags: entry.data.tags ?? [],
+  slug,
+  title: meta.title ?? entry.data.title,
+  excerpt: meta.excerpt ?? entry.data.excerpt ?? '',
+  description: meta.description ?? entry.data.description ?? entry.data.excerpt ?? '',
+  category: meta.category ?? entry.data.category ?? '',
+  author: meta.author ?? entry.data.author ?? '',
+  date: meta.date ?? entry.data.date ?? '',
+  readTime: meta.readTime ?? entry.data.readTime ?? '',
+  image: meta.image ?? entry.data.image ?? '',
+  featured: meta.featured ?? entry.data.featured ?? false,
+  tags: meta.tags ?? entry.data.tags ?? [],
   content,
   keyTakeaways,
   faqs,
@@ -53,6 +59,7 @@ const seoTitle = `${post.title} | \u0639\u0635\u0631 \u0633\u0626\u0648`;
   description={post.description}
   canonical={`https://asreseo.com/blog/${post.slug}`}
   ogType="article"
+  ogImages={[{ url: post.image, width: 1200, height: 630, alt: post.title }]}
   ogUrl={`https://asreseo.com/blog/${post.slug}`}
 >
   <Header />

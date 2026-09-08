@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+# Machine-readable site summary for AI consumers
+# See https://asreseo.com/llms.txt
+
 Sitemap: https://asreseo.com/sitemap-index.xml
